@@ -1,0 +1,905 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDPlantModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Avance">
+    <Key>
+      <PropertyRef Name="CodeAvance" />
+    </Key>
+    <Property Name="CodeAvance" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="RefCommande" Type="int" Nullable="false" />
+    <Property Name="Montant" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="DateAvance" Type="date" Nullable="false" />
+    <Property Name="CodeModeReglement" Type="int" Nullable="false" />
+    <Property Name="Note" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Banque">
+    <Key>
+      <PropertyRef Name="CodeBanque" />
+    </Key>
+    <Property Name="CodeBanque" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BonLivraison">
+    <Key>
+      <PropertyRef Name="CodeBL" />
+    </Key>
+    <Property Name="CodeBL" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="RefCommande" Type="int" Nullable="false" />
+    <Property Name="DateBL" Type="date" Nullable="false" />
+    <Property Name="TotalHT" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="TotalTTC" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="NomCommercial" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Remise" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="CodeClient" />
+    </Key>
+    <Property Name="CodeClient" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Adresse" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodeTVA" Type="int" Nullable="false" />
+    <Property Name="CIN" Type="int" Nullable="false" />
+    <Property Name="Ville" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodePostal" Type="int" Nullable="false" />
+    <Property Name="Tel" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Fax" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Banque" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RIB" Type="int" Nullable="false" />
+    <Property Name="Responsable" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NomCommercial" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SiteWeb" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TypeClient" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PointVente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Timbre" Type="int" Nullable="false" />
+    <Property Name="RegTVA" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PlafondCredit" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="PlafondEnCours" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="Tarif" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodeTypeClient" Type="int" Nullable="false" />
+    <Property Name="CodePointVente" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClotureCommande">
+    <Key>
+      <PropertyRef Name="CodeClotureCommande" />
+    </Key>
+    <Property Name="CodeClotureCommande" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="RefCommande" Type="int" Nullable="false" />
+    <Property Name="DateClotureCommande" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClotureProd">
+    <Key>
+      <PropertyRef Name="CodeClotureProd" />
+    </Key>
+    <Property Name="CodeClotureProd" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodeProduction" Type="int" Nullable="false" />
+    <Property Name="DateClotureProd" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Colisage">
+    <Key>
+      <PropertyRef Name="CodeColisage" />
+    </Key>
+    <Property Name="CodeColisage" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Commande">
+    <Key>
+      <PropertyRef Name="RefCommande" />
+    </Key>
+    <Property Name="RefCommande" Type="int" Nullable="false" />
+    <Property Name="CodeClient" Type="int" Nullable="false" />
+    <Property Name="DateCommande" Type="date" Nullable="false" />
+    <Property Name="Note" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NomCommercial" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CapaciteProd" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comptage">
+    <Key>
+      <PropertyRef Name="CodeComptage" />
+    </Key>
+    <Property Name="CodeComptage" Type="int" Nullable="false" />
+    <Property Name="CodeProduction" Type="int" Nullable="false" />
+    <Property Name="CodeUtilisateur" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DateCompatage" Type="date" Nullable="false" />
+    <Property Name="QuantiteComptage" Type="int" Nullable="false" />
+    <Property Name="TypeComptage" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetailsBL">
+    <Key>
+      <PropertyRef Name="CodeDetailsBL" />
+    </Key>
+    <Property Name="CodeDetailsBL" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodeBL" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DateLivraison" Type="date" Nullable="false" />
+    <Property Name="MntBrutHT" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="MntRemise" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="MntNETHT" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="TVA" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="MntNetTTC" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetailsCommande">
+    <Key>
+      <PropertyRef Name="RefDetailsCommande" />
+    </Key>
+    <Property Name="RefDetailsCommande" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodeVariete" Type="int" Nullable="false" />
+    <Property Name="RefCommande" Type="int" Nullable="false" />
+    <Property Name="DateLivraisonPrevu" Type="date" Nullable="false" />
+    <Property Name="MntBrutHT" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="Remise" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="MntRemise" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="MntNETHT" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="TVA" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="MntNETTTC" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="PrixUnitaire" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="PrixUnitaireNet" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="TotalBrut" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="TotalBrutNet" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="ReservationCons" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TypeReception" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Accompte" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="Brut" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="Timbre" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="Remise1" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="Net" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="CodeSupport" Type="int" Nullable="false" />
+    <Property Name="CodeTypeProd" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Emplacement">
+    <Key>
+      <PropertyRef Name="CodeEmplacement" />
+    </Key>
+    <Property Name="CodeEmplacement" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CapaciteEmplacement" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Espece">
+    <Key>
+      <PropertyRef Name="CodeEspece" />
+    </Key>
+    <Property Name="CodeEspece" Type="int" Nullable="false" />
+    <Property Name="CodeFamille" Type="int" Nullable="false" />
+    <Property Name="LibelleEspece" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Famille">
+    <Key>
+      <PropertyRef Name="CodeFamille" />
+    </Key>
+    <Property Name="CodeFamille" Type="int" Nullable="false" />
+    <Property Name="LibelleFamille" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Livreur">
+    <Key>
+      <PropertyRef Name="CodeLivreur" />
+    </Key>
+    <Property Name="CodeLivreur" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModeReglement">
+    <Key>
+      <PropertyRef Name="CodeModeReg" />
+    </Key>
+    <Property Name="CodeModeReg" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MouvementStock">
+    <Key>
+      <PropertyRef Name="RefDocument" />
+    </Key>
+    <Property Name="RefDocument" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodeDetailsBL" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodeSupport" Type="int" Nullable="false" />
+    <Property Name="CodeVariete" Type="int" Nullable="false" />
+    <Property Name="CodeClotureProd" Type="nvarchar" MaxLength="100" />
+    <Property Name="PrixUnitaire" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="Quantite" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="PrixTotal" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="TypeMouvement" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateMouvement" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MoyenTransport">
+    <Key>
+      <PropertyRef Name="CodeMoyenTransport" />
+    </Key>
+    <Property Name="CodeMoyenTransport" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PointVente">
+    <Key>
+      <PropertyRef Name="CodePointVente" />
+    </Key>
+    <Property Name="CodePointVente" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Adresse" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ville" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Production">
+    <Key>
+      <PropertyRef Name="CodeProduction" />
+    </Key>
+    <Property Name="CodeProduction" Type="int" Nullable="false" />
+    <Property Name="CodeVariete" Type="int" Nullable="false" />
+    <Property Name="RefCommande" Type="int" />
+    <Property Name="CodeTypeProduction" Type="int" Nullable="false" />
+    <Property Name="CodeSupport" Type="int" Nullable="false" />
+    <Property Name="RefSerre" Type="int" Nullable="false" />
+    <Property Name="CodeUtilisateur" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DateSemi" Type="date" Nullable="false" />
+    <Property Name="CapaciteProd" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="DateLivPrevu" Type="date" Nullable="false" />
+    <Property Name="DateLiv" Type="date" Nullable="false" />
+    <Property Name="DateGreffage" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReceptionSemence">
+    <Key>
+      <PropertyRef Name="CodeReceptionSemence" />
+    </Key>
+    <Property Name="CodeReceptionSemence" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="RefCommande" Type="int" Nullable="false" />
+    <Property Name="CodeSemence" Type="int" Nullable="false" />
+    <Property Name="TypeTiers" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Etat" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Semence">
+    <Key>
+      <PropertyRef Name="CodeSemence" />
+    </Key>
+    <Property Name="CodeSemence" Type="int" Nullable="false" />
+    <Property Name="CodeSemencier" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NBGraines" Type="int" Nullable="false" />
+    <Property Name="CodeColisage" Type="int" Nullable="false" />
+    <Property Name="CodeUnite" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Semencier">
+    <Key>
+      <PropertyRef Name="CodeSemencier" />
+    </Key>
+    <Property Name="CodeSemencier" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Pays" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SiteWeb" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Serre">
+    <Key>
+      <PropertyRef Name="RefSerre" />
+    </Key>
+    <Property Name="RefSerre" Type="int" Nullable="false" />
+    <Property Name="CodeEmplacement" Type="int" Nullable="false" />
+    <Property Name="Superficier" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="Capacite" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Support">
+    <Key>
+      <PropertyRef Name="CodeSupport" />
+    </Key>
+    <Property Name="CodeSupport" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Matiere" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Dimension" Type="int" Nullable="false" />
+    <Property Name="NbrAlv" Type="int" Nullable="false" />
+    <Property Name="VolAlv" Type="int" Nullable="false" />
+    <Property Name="Poids" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="PrixAchatHT" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="PrixAchatTTC" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="PrixVenteHT" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="PrixVenteTTC" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="Marge" Type="float" Nullable="false" />
+    <Property Name="TVA" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeClient">
+    <Key>
+      <PropertyRef Name="CodeTypeClient" />
+    </Key>
+    <Property Name="CodeTypeClient" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeComptage">
+    <Key>
+      <PropertyRef Name="CodeTypeCom" />
+    </Key>
+    <Property Name="CodeTypeCom" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeProduction">
+    <Key>
+      <PropertyRef Name="CodeTypeProd" />
+    </Key>
+    <Property Name="CodeTypeProd" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Unite">
+    <Key>
+      <PropertyRef Name="CodeUnite" />
+    </Key>
+    <Property Name="CodeUnite" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="CodeUtilisateur" />
+    </Key>
+    <Property Name="CodeUtilisateur" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Prenom" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Profil" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Variete">
+    <Key>
+      <PropertyRef Name="CodeVariete" />
+    </Key>
+    <Property Name="CodeVariete" Type="int" Nullable="false" />
+    <Property Name="CodeEspece" Type="int" Nullable="false" />
+    <Property Name="LibelleVariete" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodeTypeProd" Type="int" Nullable="false" />
+    <Property Name="NBjoursCV" Type="int" Nullable="false" />
+    <Property Name="NBjoursCG" Type="int" Nullable="false" />
+    <Property Name="NBjoursPG" Type="int" Nullable="false" />
+    <Property Name="Marge" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="MontantMarge" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="PrixVente" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Avance_Avance">
+    <End Role="ModeReglement" Type="Self.ModeReglement" Multiplicity="1" />
+    <End Role="Avance" Type="Self.Avance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModeReglement">
+        <PropertyRef Name="CodeModeReg" />
+      </Principal>
+      <Dependent Role="Avance">
+        <PropertyRef Name="CodeModeReglement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Avance_Commande">
+    <End Role="Commande" Type="Self.Commande" Multiplicity="1" />
+    <End Role="Avance" Type="Self.Avance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commande">
+        <PropertyRef Name="RefCommande" />
+      </Principal>
+      <Dependent Role="Avance">
+        <PropertyRef Name="RefCommande" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BonLivraison_Commande">
+    <End Role="Commande" Type="Self.Commande" Multiplicity="1" />
+    <End Role="BonLivraison" Type="Self.BonLivraison" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commande">
+        <PropertyRef Name="RefCommande" />
+      </Principal>
+      <Dependent Role="BonLivraison">
+        <PropertyRef Name="RefCommande" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_PointVente">
+    <End Role="PointVente" Type="Self.PointVente" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PointVente">
+        <PropertyRef Name="CodePointVente" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="CodePointVente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_TypeClient">
+    <End Role="TypeClient" Type="Self.TypeClient" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeClient">
+        <PropertyRef Name="CodeTypeClient" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="CodeTypeClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClotureCommande_Commande">
+    <End Role="Commande" Type="Self.Commande" Multiplicity="1" />
+    <End Role="ClotureCommande" Type="Self.ClotureCommande" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commande">
+        <PropertyRef Name="RefCommande" />
+      </Principal>
+      <Dependent Role="ClotureCommande">
+        <PropertyRef Name="RefCommande" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClotureProd_Production">
+    <End Role="Production" Type="Self.Production" Multiplicity="1" />
+    <End Role="ClotureProd" Type="Self.ClotureProd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Production">
+        <PropertyRef Name="CodeProduction" />
+      </Principal>
+      <Dependent Role="ClotureProd">
+        <PropertyRef Name="CodeProduction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Commande_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Commande" Type="Self.Commande" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="CodeClient" />
+      </Principal>
+      <Dependent Role="Commande">
+        <PropertyRef Name="CodeClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comptage_Comptage">
+    <End Role="TypeComptage" Type="Self.TypeComptage" Multiplicity="1" />
+    <End Role="Comptage" Type="Self.Comptage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeComptage">
+        <PropertyRef Name="CodeTypeCom" />
+      </Principal>
+      <Dependent Role="Comptage">
+        <PropertyRef Name="TypeComptage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comptage_Production">
+    <End Role="Production" Type="Self.Production" Multiplicity="1" />
+    <End Role="Comptage" Type="Self.Comptage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Production">
+        <PropertyRef Name="CodeProduction" />
+      </Principal>
+      <Dependent Role="Comptage">
+        <PropertyRef Name="CodeProduction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comptage_Utilisateur">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="1" />
+    <End Role="Comptage" Type="Self.Comptage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="CodeUtilisateur" />
+      </Principal>
+      <Dependent Role="Comptage">
+        <PropertyRef Name="CodeUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetailsBL_BonLivraison">
+    <End Role="BonLivraison" Type="Self.BonLivraison" Multiplicity="1" />
+    <End Role="DetailsBL" Type="Self.DetailsBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BonLivraison">
+        <PropertyRef Name="CodeBL" />
+      </Principal>
+      <Dependent Role="DetailsBL">
+        <PropertyRef Name="CodeBL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetailsCommande_Commande">
+    <End Role="Commande" Type="Self.Commande" Multiplicity="1" />
+    <End Role="DetailsCommande" Type="Self.DetailsCommande" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commande">
+        <PropertyRef Name="RefCommande" />
+      </Principal>
+      <Dependent Role="DetailsCommande">
+        <PropertyRef Name="RefCommande" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetailsCommande_Support">
+    <End Role="Support" Type="Self.Support" Multiplicity="1" />
+    <End Role="DetailsCommande" Type="Self.DetailsCommande" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Support">
+        <PropertyRef Name="CodeSupport" />
+      </Principal>
+      <Dependent Role="DetailsCommande">
+        <PropertyRef Name="CodeSupport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetailsCommande_TypeProduction">
+    <End Role="TypeProduction" Type="Self.TypeProduction" Multiplicity="1" />
+    <End Role="DetailsCommande" Type="Self.DetailsCommande" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeProduction">
+        <PropertyRef Name="CodeTypeProd" />
+      </Principal>
+      <Dependent Role="DetailsCommande">
+        <PropertyRef Name="CodeTypeProd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetailsCommande_Variete">
+    <End Role="Variete" Type="Self.Variete" Multiplicity="1" />
+    <End Role="DetailsCommande" Type="Self.DetailsCommande" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Variete">
+        <PropertyRef Name="CodeVariete" />
+      </Principal>
+      <Dependent Role="DetailsCommande">
+        <PropertyRef Name="CodeVariete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Espece_Famille">
+    <End Role="Famille" Type="Self.Famille" Multiplicity="1" />
+    <End Role="Espece" Type="Self.Espece" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Famille">
+        <PropertyRef Name="CodeFamille" />
+      </Principal>
+      <Dependent Role="Espece">
+        <PropertyRef Name="CodeFamille" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MouvementStock_ClotureProd">
+    <End Role="ClotureProd" Type="Self.ClotureProd" Multiplicity="0..1" />
+    <End Role="MouvementStock" Type="Self.MouvementStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClotureProd">
+        <PropertyRef Name="CodeClotureProd" />
+      </Principal>
+      <Dependent Role="MouvementStock">
+        <PropertyRef Name="CodeClotureProd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MouvementStock_DetailsBL">
+    <End Role="DetailsBL" Type="Self.DetailsBL" Multiplicity="1" />
+    <End Role="MouvementStock" Type="Self.MouvementStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DetailsBL">
+        <PropertyRef Name="CodeDetailsBL" />
+      </Principal>
+      <Dependent Role="MouvementStock">
+        <PropertyRef Name="CodeDetailsBL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MouvementStock_Support">
+    <End Role="Support" Type="Self.Support" Multiplicity="1" />
+    <End Role="MouvementStock" Type="Self.MouvementStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Support">
+        <PropertyRef Name="CodeSupport" />
+      </Principal>
+      <Dependent Role="MouvementStock">
+        <PropertyRef Name="CodeSupport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MouvementStock_Variete">
+    <End Role="Variete" Type="Self.Variete" Multiplicity="1" />
+    <End Role="MouvementStock" Type="Self.MouvementStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Variete">
+        <PropertyRef Name="CodeVariete" />
+      </Principal>
+      <Dependent Role="MouvementStock">
+        <PropertyRef Name="CodeVariete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Production_Commande">
+    <End Role="Commande" Type="Self.Commande" Multiplicity="0..1" />
+    <End Role="Production" Type="Self.Production" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commande">
+        <PropertyRef Name="RefCommande" />
+      </Principal>
+      <Dependent Role="Production">
+        <PropertyRef Name="RefCommande" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Production_Serre">
+    <End Role="Serre" Type="Self.Serre" Multiplicity="1" />
+    <End Role="Production" Type="Self.Production" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Serre">
+        <PropertyRef Name="RefSerre" />
+      </Principal>
+      <Dependent Role="Production">
+        <PropertyRef Name="RefSerre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Production_TypeProduction">
+    <End Role="TypeProduction" Type="Self.TypeProduction" Multiplicity="1" />
+    <End Role="Production" Type="Self.Production" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeProduction">
+        <PropertyRef Name="CodeTypeProd" />
+      </Principal>
+      <Dependent Role="Production">
+        <PropertyRef Name="CodeTypeProduction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Production_Utilisateur">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="1" />
+    <End Role="Production" Type="Self.Production" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="CodeUtilisateur" />
+      </Principal>
+      <Dependent Role="Production">
+        <PropertyRef Name="CodeUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReceptionSemence_Commande1">
+    <End Role="Commande" Type="Self.Commande" Multiplicity="1" />
+    <End Role="ReceptionSemence" Type="Self.ReceptionSemence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commande">
+        <PropertyRef Name="RefCommande" />
+      </Principal>
+      <Dependent Role="ReceptionSemence">
+        <PropertyRef Name="RefCommande" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReceptionSemence_Semence">
+    <End Role="Semence" Type="Self.Semence" Multiplicity="1" />
+    <End Role="ReceptionSemence" Type="Self.ReceptionSemence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Semence">
+        <PropertyRef Name="CodeSemence" />
+      </Principal>
+      <Dependent Role="ReceptionSemence">
+        <PropertyRef Name="CodeSemence" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Semence_Colisage">
+    <End Role="Colisage" Type="Self.Colisage" Multiplicity="1" />
+    <End Role="Semence" Type="Self.Semence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Colisage">
+        <PropertyRef Name="CodeColisage" />
+      </Principal>
+      <Dependent Role="Semence">
+        <PropertyRef Name="CodeColisage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Semence_Semencier">
+    <End Role="Semencier" Type="Self.Semencier" Multiplicity="1" />
+    <End Role="Semence" Type="Self.Semence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Semencier">
+        <PropertyRef Name="CodeSemencier" />
+      </Principal>
+      <Dependent Role="Semence">
+        <PropertyRef Name="CodeSemencier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Semence_Unite">
+    <End Role="Unite" Type="Self.Unite" Multiplicity="1" />
+    <End Role="Semence" Type="Self.Semence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unite">
+        <PropertyRef Name="CodeUnite" />
+      </Principal>
+      <Dependent Role="Semence">
+        <PropertyRef Name="CodeUnite" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Serre_Emplacement">
+    <End Role="Emplacement" Type="Self.Emplacement" Multiplicity="1" />
+    <End Role="Serre" Type="Self.Serre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emplacement">
+        <PropertyRef Name="CodeEmplacement" />
+      </Principal>
+      <Dependent Role="Serre">
+        <PropertyRef Name="CodeEmplacement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Variete_Espece">
+    <End Role="Espece" Type="Self.Espece" Multiplicity="1" />
+    <End Role="Variete" Type="Self.Variete" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Espece">
+        <PropertyRef Name="CodeEspece" />
+      </Principal>
+      <Dependent Role="Variete">
+        <PropertyRef Name="CodeEspece" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Variete_Variete">
+    <End Role="TypeProduction" Type="Self.TypeProduction" Multiplicity="1" />
+    <End Role="Variete" Type="Self.Variete" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeProduction">
+        <PropertyRef Name="CodeTypeProd" />
+      </Principal>
+      <Dependent Role="Variete">
+        <PropertyRef Name="CodeTypeProd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDPlantModelStoreContainer">
+    <EntitySet Name="Avance" EntityType="Self.Avance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Banque" EntityType="Self.Banque" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BonLivraison" EntityType="Self.BonLivraison" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClotureCommande" EntityType="Self.ClotureCommande" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClotureProd" EntityType="Self.ClotureProd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Colisage" EntityType="Self.Colisage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Commande" EntityType="Self.Commande" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comptage" EntityType="Self.Comptage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetailsBL" EntityType="Self.DetailsBL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetailsCommande" EntityType="Self.DetailsCommande" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emplacement" EntityType="Self.Emplacement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Espece" EntityType="Self.Espece" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Famille" EntityType="Self.Famille" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Livreur" EntityType="Self.Livreur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModeReglement" EntityType="Self.ModeReglement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MouvementStock" EntityType="Self.MouvementStock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MoyenTransport" EntityType="Self.MoyenTransport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PointVente" EntityType="Self.PointVente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Production" EntityType="Self.Production" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReceptionSemence" EntityType="Self.ReceptionSemence" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Semence" EntityType="Self.Semence" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Semencier" EntityType="Self.Semencier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Serre" EntityType="Self.Serre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Support" EntityType="Self.Support" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeClient" EntityType="Self.TypeClient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeComptage" EntityType="Self.TypeComptage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeProduction" EntityType="Self.TypeProduction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unite" EntityType="Self.Unite" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Variete" EntityType="Self.Variete" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Avance_Avance" Association="Self.FK_Avance_Avance">
+      <End Role="ModeReglement" EntitySet="ModeReglement" />
+      <End Role="Avance" EntitySet="Avance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Avance_Commande" Association="Self.FK_Avance_Commande">
+      <End Role="Commande" EntitySet="Commande" />
+      <End Role="Avance" EntitySet="Avance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BonLivraison_Commande" Association="Self.FK_BonLivraison_Commande">
+      <End Role="Commande" EntitySet="Commande" />
+      <End Role="BonLivraison" EntitySet="BonLivraison" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_PointVente" Association="Self.FK_Client_PointVente">
+      <End Role="PointVente" EntitySet="PointVente" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_TypeClient" Association="Self.FK_Client_TypeClient">
+      <End Role="TypeClient" EntitySet="TypeClient" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClotureCommande_Commande" Association="Self.FK_ClotureCommande_Commande">
+      <End Role="Commande" EntitySet="Commande" />
+      <End Role="ClotureCommande" EntitySet="ClotureCommande" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClotureProd_Production" Association="Self.FK_ClotureProd_Production">
+      <End Role="Production" EntitySet="Production" />
+      <End Role="ClotureProd" EntitySet="ClotureProd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Commande_Client" Association="Self.FK_Commande_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Commande" EntitySet="Commande" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comptage_Comptage" Association="Self.FK_Comptage_Comptage">
+      <End Role="TypeComptage" EntitySet="TypeComptage" />
+      <End Role="Comptage" EntitySet="Comptage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comptage_Production" Association="Self.FK_Comptage_Production">
+      <End Role="Production" EntitySet="Production" />
+      <End Role="Comptage" EntitySet="Comptage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comptage_Utilisateur" Association="Self.FK_Comptage_Utilisateur">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="Comptage" EntitySet="Comptage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetailsBL_BonLivraison" Association="Self.FK_DetailsBL_BonLivraison">
+      <End Role="BonLivraison" EntitySet="BonLivraison" />
+      <End Role="DetailsBL" EntitySet="DetailsBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetailsCommande_Commande" Association="Self.FK_DetailsCommande_Commande">
+      <End Role="Commande" EntitySet="Commande" />
+      <End Role="DetailsCommande" EntitySet="DetailsCommande" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetailsCommande_Support" Association="Self.FK_DetailsCommande_Support">
+      <End Role="Support" EntitySet="Support" />
+      <End Role="DetailsCommande" EntitySet="DetailsCommande" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetailsCommande_TypeProduction" Association="Self.FK_DetailsCommande_TypeProduction">
+      <End Role="TypeProduction" EntitySet="TypeProduction" />
+      <End Role="DetailsCommande" EntitySet="DetailsCommande" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetailsCommande_Variete" Association="Self.FK_DetailsCommande_Variete">
+      <End Role="Variete" EntitySet="Variete" />
+      <End Role="DetailsCommande" EntitySet="DetailsCommande" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Espece_Famille" Association="Self.FK_Espece_Famille">
+      <End Role="Famille" EntitySet="Famille" />
+      <End Role="Espece" EntitySet="Espece" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MouvementStock_ClotureProd" Association="Self.FK_MouvementStock_ClotureProd">
+      <End Role="ClotureProd" EntitySet="ClotureProd" />
+      <End Role="MouvementStock" EntitySet="MouvementStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MouvementStock_DetailsBL" Association="Self.FK_MouvementStock_DetailsBL">
+      <End Role="DetailsBL" EntitySet="DetailsBL" />
+      <End Role="MouvementStock" EntitySet="MouvementStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MouvementStock_Support" Association="Self.FK_MouvementStock_Support">
+      <End Role="Support" EntitySet="Support" />
+      <End Role="MouvementStock" EntitySet="MouvementStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MouvementStock_Variete" Association="Self.FK_MouvementStock_Variete">
+      <End Role="Variete" EntitySet="Variete" />
+      <End Role="MouvementStock" EntitySet="MouvementStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Production_Commande" Association="Self.FK_Production_Commande">
+      <End Role="Commande" EntitySet="Commande" />
+      <End Role="Production" EntitySet="Production" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Production_Serre" Association="Self.FK_Production_Serre">
+      <End Role="Serre" EntitySet="Serre" />
+      <End Role="Production" EntitySet="Production" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Production_TypeProduction" Association="Self.FK_Production_TypeProduction">
+      <End Role="TypeProduction" EntitySet="TypeProduction" />
+      <End Role="Production" EntitySet="Production" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Production_Utilisateur" Association="Self.FK_Production_Utilisateur">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="Production" EntitySet="Production" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReceptionSemence_Commande1" Association="Self.FK_ReceptionSemence_Commande1">
+      <End Role="Commande" EntitySet="Commande" />
+      <End Role="ReceptionSemence" EntitySet="ReceptionSemence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReceptionSemence_Semence" Association="Self.FK_ReceptionSemence_Semence">
+      <End Role="Semence" EntitySet="Semence" />
+      <End Role="ReceptionSemence" EntitySet="ReceptionSemence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Semence_Colisage" Association="Self.FK_Semence_Colisage">
+      <End Role="Colisage" EntitySet="Colisage" />
+      <End Role="Semence" EntitySet="Semence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Semence_Semencier" Association="Self.FK_Semence_Semencier">
+      <End Role="Semencier" EntitySet="Semencier" />
+      <End Role="Semence" EntitySet="Semence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Semence_Unite" Association="Self.FK_Semence_Unite">
+      <End Role="Unite" EntitySet="Unite" />
+      <End Role="Semence" EntitySet="Semence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Serre_Emplacement" Association="Self.FK_Serre_Emplacement">
+      <End Role="Emplacement" EntitySet="Emplacement" />
+      <End Role="Serre" EntitySet="Serre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Variete_Espece" Association="Self.FK_Variete_Espece">
+      <End Role="Espece" EntitySet="Espece" />
+      <End Role="Variete" EntitySet="Variete" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Variete_Variete" Association="Self.FK_Variete_Variete">
+      <End Role="TypeProduction" EntitySet="TypeProduction" />
+      <End Role="Variete" EntitySet="Variete" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
