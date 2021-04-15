@@ -32,6 +32,10 @@
             this.btnsave = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textville = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textadresse = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.textlibelle = new System.Windows.Forms.TextBox();
             this.textcode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,10 +45,6 @@
             this.Libelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textadresse = new System.Windows.Forms.TextBox();
-            this.textville = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PointVenteDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +86,7 @@
             this.btncancel.TabIndex = 19;
             this.btncancel.Text = "Annuler";
             this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // panel1
             // 
@@ -101,6 +102,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(460, 149);
             this.panel1.TabIndex = 18;
+            // 
+            // textville
+            // 
+            this.textville.Location = new System.Drawing.Point(170, 117);
+            this.textville.Name = "textville";
+            this.textville.Size = new System.Drawing.Size(154, 20);
+            this.textville.TabIndex = 7;
+            this.textville.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(107, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Ville : ";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // textadresse
+            // 
+            this.textadresse.Location = new System.Drawing.Point(170, 81);
+            this.textadresse.Name = "textadresse";
+            this.textadresse.Size = new System.Drawing.Size(154, 20);
+            this.textadresse.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(107, 81);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 16);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Adresse : ";
             // 
             // textlibelle
             // 
@@ -184,42 +221,6 @@
             this.Ville.HeaderText = "Ville";
             this.Ville.Name = "Ville";
             this.Ville.ReadOnly = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(107, 81);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Adresse : ";
-            // 
-            // textadresse
-            // 
-            this.textadresse.Location = new System.Drawing.Point(170, 81);
-            this.textadresse.Name = "textadresse";
-            this.textadresse.Size = new System.Drawing.Size(154, 20);
-            this.textadresse.TabIndex = 5;
-            // 
-            // textville
-            // 
-            this.textville.Location = new System.Drawing.Point(170, 117);
-            this.textville.Name = "textville";
-            this.textville.Size = new System.Drawing.Size(154, 20);
-            this.textville.TabIndex = 7;
-            this.textville.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(107, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Ville : ";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // PointDeVente
             // 

@@ -113,6 +113,7 @@
             this.paramétreSociétéToolStripMenuItem.Name = "paramétreSociétéToolStripMenuItem";
             this.paramétreSociétéToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.paramétreSociétéToolStripMenuItem.Text = "Paramétre Société";
+            this.paramétreSociétéToolStripMenuItem.Click += new System.EventHandler(this.paramétreSociétéToolStripMenuItem_Click);
             // 
             // gestionProfilsToolStripMenuItem
             // 
@@ -279,6 +280,7 @@
             this.listeVariétésToolStripMenuItem.Name = "listeVariétésToolStripMenuItem";
             this.listeVariétésToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.listeVariétésToolStripMenuItem.Text = "Liste Variétés";
+            this.listeVariétésToolStripMenuItem.Click += new System.EventHandler(this.listeVariétésToolStripMenuItem_Click);
             // 
             // typeDeProductionToolStripMenuItem
             // 

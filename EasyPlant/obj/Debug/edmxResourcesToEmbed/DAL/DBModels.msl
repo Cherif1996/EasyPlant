@@ -47,13 +47,11 @@
           <ScalarProperty Name="Tel" ColumnName="Tel" />
           <ScalarProperty Name="Fax" ColumnName="Fax" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Banque" ColumnName="Banque" />
+          <ScalarProperty Name="CodeBanque" ColumnName="CodeBanque" />
           <ScalarProperty Name="RIB" ColumnName="RIB" />
           <ScalarProperty Name="Responsable" ColumnName="Responsable" />
           <ScalarProperty Name="NomCommercial" ColumnName="NomCommercial" />
           <ScalarProperty Name="SiteWeb" ColumnName="SiteWeb" />
-          <ScalarProperty Name="TypeClient" ColumnName="TypeClient" />
-          <ScalarProperty Name="PointVente" ColumnName="PointVente" />
           <ScalarProperty Name="Timbre" ColumnName="Timbre" />
           <ScalarProperty Name="RegTVA" ColumnName="RegTVA" />
           <ScalarProperty Name="PlafondCredit" ColumnName="PlafondCredit" />
@@ -147,14 +145,17 @@
           <ScalarProperty Name="TotalBrut" ColumnName="TotalBrut" />
           <ScalarProperty Name="TotalBrutNet" ColumnName="TotalBrutNet" />
           <ScalarProperty Name="ReservationCons" ColumnName="ReservationCons" />
-          <ScalarProperty Name="TypeReception" ColumnName="TypeReception" />
+          <ScalarProperty Name="CodeReception" ColumnName="CodeReception" />
           <ScalarProperty Name="Accompte" ColumnName="Accompte" />
           <ScalarProperty Name="Brut" ColumnName="Brut" />
           <ScalarProperty Name="Timbre" ColumnName="Timbre" />
-          <ScalarProperty Name="Remise1" ColumnName="Remise1" />
+          <ScalarProperty Name="RemiseTot" ColumnName="RemiseTot" />
           <ScalarProperty Name="Net" ColumnName="Net" />
           <ScalarProperty Name="CodeSupport" ColumnName="CodeSupport" />
           <ScalarProperty Name="CodeTypeProd" ColumnName="CodeTypeProd" />
+          <ScalarProperty Name="DateCV" ColumnName="DateCV" />
+          <ScalarProperty Name="DateCG" ColumnName="DateCG" />
+          <ScalarProperty Name="DatePG" ColumnName="DatePG" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -184,11 +185,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="FonctionMenus">
+      <EntityTypeMapping TypeName="BDPlantModel.FonctionMenu">
+        <MappingFragment StoreEntitySet="FonctionMenu">
+          <ScalarProperty Name="CodeFonction" ColumnName="CodeFonction" />
+          <ScalarProperty Name="LibelleFonction" ColumnName="LibelleFonction" />
+          <ScalarProperty Name="CodeMenu" ColumnName="CodeMenu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Livreurs">
       <EntityTypeMapping TypeName="BDPlantModel.Livreur">
         <MappingFragment StoreEntitySet="Livreur">
           <ScalarProperty Name="CodeLivreur" ColumnName="CodeLivreur" />
           <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="BDPlantModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="CodeMenu" ColumnName="CodeMenu" />
+          <ScalarProperty Name="LibelleMenu" ColumnName="LibelleMenu" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -224,6 +242,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ParametrageProductions">
+      <EntityTypeMapping TypeName="BDPlantModel.ParametrageProduction">
+        <MappingFragment StoreEntitySet="ParametrageProduction">
+          <ScalarProperty Name="CodeParProduction" ColumnName="CodeParProduction" />
+          <ScalarProperty Name="Capacite" ColumnName="Capacite" />
+          <ScalarProperty Name="RappelLivraison" ColumnName="RappelLivraison" />
+          <ScalarProperty Name="RappelSemis" ColumnName="RappelSemis" />
+          <ScalarProperty Name="RappelSemisPorte" ColumnName="RappelSemisPorte" />
+          <ScalarProperty Name="RappelGreffage" ColumnName="RappelGreffage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="PointVentes">
       <EntityTypeMapping TypeName="BDPlantModel.PointVente">
         <MappingFragment StoreEntitySet="PointVente">
@@ -252,14 +282,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Profils">
+      <EntityTypeMapping TypeName="BDPlantModel.Profil">
+        <MappingFragment StoreEntitySet="Profil">
+          <ScalarProperty Name="CodeProfil" ColumnName="CodeProfil" />
+          <ScalarProperty Name="LibelleProfil" ColumnName="LibelleProfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ReceptionSemences">
       <EntityTypeMapping TypeName="BDPlantModel.ReceptionSemence">
         <MappingFragment StoreEntitySet="ReceptionSemence">
           <ScalarProperty Name="CodeReceptionSemence" ColumnName="CodeReceptionSemence" />
           <ScalarProperty Name="RefCommande" ColumnName="RefCommande" />
           <ScalarProperty Name="CodeSemence" ColumnName="CodeSemence" />
-          <ScalarProperty Name="TypeTiers" ColumnName="TypeTiers" />
-          <ScalarProperty Name="Etat" ColumnName="Etat" />
+          <ScalarProperty Name="CodeClient" ColumnName="CodeClient" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="DateReception" ColumnName="DateReception" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -270,8 +309,7 @@
           <ScalarProperty Name="CodeSemencier" ColumnName="CodeSemencier" />
           <ScalarProperty Name="Libelle" ColumnName="Libelle" />
           <ScalarProperty Name="NBGraines" ColumnName="NBGraines" />
-          <ScalarProperty Name="CodeColisage" ColumnName="CodeColisage" />
-          <ScalarProperty Name="CodeUnite" ColumnName="CodeUnite" />
+          <ScalarProperty Name="CodeEspece" ColumnName="CodeEspece" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -292,6 +330,32 @@
           <ScalarProperty Name="CodeEmplacement" ColumnName="CodeEmplacement" />
           <ScalarProperty Name="Superficier" ColumnName="Superficier" />
           <ScalarProperty Name="Capacite" ColumnName="Capacite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Societes">
+      <EntityTypeMapping TypeName="BDPlantModel.Societe">
+        <MappingFragment StoreEntitySet="Societe">
+          <ScalarProperty Name="CodeSociete" ColumnName="CodeSociete" />
+          <ScalarProperty Name="LibelleFr" ColumnName="LibelleFr" />
+          <ScalarProperty Name="VilleFr" ColumnName="VilleFr" />
+          <ScalarProperty Name="CodePostal" ColumnName="CodePostal" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Banque" ColumnName="Banque" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="Activite" ColumnName="Activite" />
+          <ScalarProperty Name="Responsable" ColumnName="Responsable" />
+          <ScalarProperty Name="SiteWeb" ColumnName="SiteWeb" />
+          <ScalarProperty Name="AdresseFr" ColumnName="AdresseFr" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="MF" ColumnName="MF" />
+          <ScalarProperty Name="CodeD" ColumnName="CodeD" />
+          <ScalarProperty Name="RegCom" ColumnName="RegCom" />
+          <ScalarProperty Name="Fonction" ColumnName="Fonction" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LibelleAr" ColumnName="LibelleAr" />
+          <ScalarProperty Name="AdresseAr" ColumnName="AdresseAr" />
+          <ScalarProperty Name="VilleAr" ColumnName="VilleAr" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -352,8 +416,9 @@
           <ScalarProperty Name="CodeUtilisateur" ColumnName="CodeUtilisateur" />
           <ScalarProperty Name="Nom" ColumnName="Nom" />
           <ScalarProperty Name="Prenom" ColumnName="Prenom" />
-          <ScalarProperty Name="Profil" ColumnName="Profil" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CodeProfil" ColumnName="CodeProfil" />
+          <ScalarProperty Name="Etat" ColumnName="Etat" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

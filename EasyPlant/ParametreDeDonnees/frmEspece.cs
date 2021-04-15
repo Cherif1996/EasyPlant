@@ -96,16 +96,6 @@ namespace EasyPlant.ParametreDeDonnees
                 textlibelle.Text = DataGridespece.CurrentRow.Cells["LibelleEspece"].Value.ToString();
                 combofamille.Text = DataGridespece.CurrentRow.Cells["Famille"].Value.ToString();
 
-                //foreach (Famille d in combofamille.Items)
-                //{
-                //    if(d.LibelleFamille == DataGridespece.CurrentRow.Cells["Famille"].Value.ToString())
-                //    {
-                //        combofamille.SelectedItem = d;
-                //        break;
-                //    }
-                //}
-
-
             }
             btnsave.Text = "Modifier";
             btndelete.Enabled = true;

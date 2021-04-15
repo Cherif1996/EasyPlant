@@ -14,16 +14,7 @@ namespace EasyPlant.DAL
     
     public partial class Unite
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Unite()
-        {
-            this.Semences = new HashSet<Semence>();
-        }
-    
         public int CodeUnite { get; set; }
         public string Libelle { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Semence> Semences { get; set; }
     }
 }

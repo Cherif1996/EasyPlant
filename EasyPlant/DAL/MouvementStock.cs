@@ -28,6 +28,5 @@ namespace EasyPlant.DAL
         public virtual ClotureProd ClotureProd { get; set; }
         public virtual DetailsBL DetailsBL { get; set; }
         public virtual Support Support { get; set; }
-        public virtual Variete Variete { get; set; }
     }
 }

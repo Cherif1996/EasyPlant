@@ -18,7 +18,6 @@ namespace EasyPlant.DAL
         public Variete()
         {
             this.DetailsCommandes = new HashSet<DetailsCommande>();
-            this.MouvementStocks = new HashSet<MouvementStock>();
         }
     
         public int CodeVariete { get; set; }
@@ -35,8 +34,20 @@ namespace EasyPlant.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetailsCommande> DetailsCommandes { get; set; }
         public virtual Espece Espece { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MouvementStock> MouvementStocks { get; set; }
+        public string LibelleEspece
+        {
+            get
+            {
+                return Espece.LibelleEspece;
+            }
+        }
         public virtual TypeProduction TypeProduction { get; set; }
+        public string Libelle
+        {
+            get
+            {
+                return TypeProduction.Libelle;
+            }
+        }
     }
 }

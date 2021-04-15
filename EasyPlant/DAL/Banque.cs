@@ -14,7 +14,16 @@ namespace EasyPlant.DAL
     
     public partial class Banque
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Banque()
+        {
+            this.Clients = new HashSet<Client>();
+        }
+    
         public int CodeBanque { get; set; }
         public string Libelle { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Client> Clients { get; set; }
     }
 }

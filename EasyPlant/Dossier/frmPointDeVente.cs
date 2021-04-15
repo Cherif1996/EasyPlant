@@ -28,10 +28,7 @@ namespace EasyPlant.DAL
         }
         void Clear()
         {
-            textcode.Text = textlibelle.Text = textadresse.Text=textville.Text = string.Empty; ;
-            btndelete.Enabled = true;
-            btnsave.Text = "Enregistrer";
-            Code = 0;
+            textcode.Text = textlibelle.Text = textadresse.Text = textville.Text = string.Empty;
 
         }
         void VenteDataGrid()
@@ -99,6 +96,11 @@ namespace EasyPlant.DAL
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }

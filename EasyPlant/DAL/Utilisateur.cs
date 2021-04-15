@@ -24,12 +24,14 @@ namespace EasyPlant.DAL
         public string CodeUtilisateur { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
-        public string Profil { get; set; }
         public string Password { get; set; }
+        public int CodeProfil { get; set; }
+        public string Etat { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comptage> Comptages { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Production> Productions { get; set; }
+        public virtual Profil Profil { get; set; }
     }
 }

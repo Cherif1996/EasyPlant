@@ -17,6 +17,7 @@ namespace EasyPlant.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Espece()
         {
+            this.Semences = new HashSet<Semence>();
             this.Varietes = new HashSet<Variete>();
         }
     
@@ -32,6 +33,8 @@ namespace EasyPlant.DAL
                 return Famille.LibelleFamille;
             }
         }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Semence> Semences { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Variete> Varietes { get; set; }
     }

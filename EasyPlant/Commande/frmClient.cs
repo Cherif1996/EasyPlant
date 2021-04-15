@@ -1,5 +1,5 @@
-﻿using DevExpress.Pdf;
-using EasyPlant.DAL;
+﻿using EasyPlant.DAL;
+using EasyPlant.ParametreDeDonnees;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,13 +41,18 @@ namespace EasyPlant.Commande
             comboBoxtypeclient.DisplayMember = "Libelle";
             comboBoxtypeclient.ValueMember = "CodeTypeClient";
 
+            List<Banque> banques = db.Banques.ToList();
+            comboBoxbanque.DataSource = banques;
+            comboBoxbanque.DisplayMember = "Libelle";
+            comboBoxbanque.ValueMember = "CodeBanque";
+
         }
 
         void Clear()
         {
             textcode.Text = textnom.Text = textemail.Text = textadresse.Text = textCIN.Text =
             textcodepostal.Text = textcodeTVA.Text = textfax.Text = textplafonCredit.Text =
-            textplafondEnCours.Text = textresponsable.Text = textville.Text = textRIB.Text =
+            textplafondEnCours.Text = textresponsable.Text = textville.Text = textRIB.Text = texttimbre.Text =
             textsiteweb.Text = comboBoxcommercial.Text = comboBoxPointVente.Text = comboBoxRegTVA.Text =
             comboBoxtypeclient.Text = comboBoxTarif.Text = comboBoxbanque.Text = string.Empty; ;
             btndelete.Enabled = true;
@@ -83,15 +88,12 @@ namespace EasyPlant.Commande
             model.CodeTVA = Convert.ToInt32(textcodeTVA.Text.Trim());
             model.RIB = Convert.ToInt32(textRIB.Text.Trim());
             model.NomCommercial = comboBoxPointVente.Text.Trim();
-            model.TypeClient = comboBoxtypeclient.Text.Trim();
             model.RegTVA = comboBoxRegTVA.Text.Trim();
             model.Tarif = comboBoxTarif.Text.Trim();
-            model.Banque = comboBoxbanque.Text.Trim();
+            model.Banque = (Banque)comboBoxbanque.SelectedItem;
             model.Timbre = Convert.ToInt32(texttimbre.Text.Trim());
-            model.PointVente1 = (PointVente)comboBoxPointVente.SelectedItem;
-            model.PointVente = model.PointVente1.Libelle;
-            model.TypeClient1 = (TypeClient)comboBoxtypeclient.SelectedItem;
-            model.TypeClient = model.TypeClient1.Libelle;
+            model.PointVente = (PointVente)comboBoxPointVente.SelectedItem;
+            model.TypeClient = (TypeClient)comboBoxtypeclient.SelectedItem;
             if (Client > 0)
                 db.Entry(model).State = EntityState.Modified;
             else
@@ -147,12 +149,13 @@ namespace EasyPlant.Commande
                 textRIB.Text = model.RIB.ToString();
                 textfax.Text = model.Fax.ToString();
                 texttel.Text = model.Tel.ToString();
-                comboBoxbanque.Text = model.Banque;
+                comboBoxbanque.Text = model.Banque.Libelle;
                 comboBoxcommercial.Text = model.NomCommercial;
-                comboBoxPointVente.Text = model.PointVente;
+                comboBoxPointVente.Text = model.PointVente.Libelle; ;
                 comboBoxRegTVA.Text = model.RegTVA;
                 comboBoxTarif.Text = model.Tarif;
-                comboBoxtypeclient.Text = model.TypeClient;
+                comboBoxtypeclient.Text = model.TypeClient.Libelle;
+
 
 
             }
@@ -173,7 +176,8 @@ namespace EasyPlant.Commande
 
         private void btnimprimer_Click(object sender, EventArgs e)
         {
-
+            frmListeClient listeCl = new frmListeClient();
+            listeCl.ShowDialog();
 
         }
 

@@ -14,13 +14,23 @@ namespace EasyPlant.DAL
     
     public partial class ReceptionSemence
     {
-        public string CodeReceptionSemence { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ReceptionSemence()
+        {
+            this.DetailsCommandes = new HashSet<DetailsCommande>();
+        }
+    
+        public int CodeReceptionSemence { get; set; }
         public int RefCommande { get; set; }
         public int CodeSemence { get; set; }
-        public string TypeTiers { get; set; }
-        public string Etat { get; set; }
+        public int CodeClient { get; set; }
+        public string Note { get; set; }
+        public System.DateTime DateReception { get; set; }
     
+        public virtual Client Client { get; set; }
         public virtual Commande Commande { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DetailsCommande> DetailsCommandes { get; set; }
         public virtual Semence Semence { get; set; }
     }
 }

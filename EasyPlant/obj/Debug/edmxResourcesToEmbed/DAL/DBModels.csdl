@@ -19,6 +19,7 @@
     </Key>
     <Property Name="CodeBanque" Type="Int32" Nullable="false" />
     <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Clients" Relationship="Self.FK_Client_Banque" FromRole="Banque" ToRole="Client" />
   </EntityType>
   <EntityType Name="BonLivraison">
     <Key>
@@ -48,13 +49,11 @@
     <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Banque" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodeBanque" Type="Int32" Nullable="false" />
     <Property Name="RIB" Type="Int32" Nullable="false" />
     <Property Name="Responsable" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="NomCommercial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="SiteWeb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TypeClient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="PointVente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SiteWeb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Timbre" Type="Int32" Nullable="false" />
     <Property Name="RegTVA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="PlafondCredit" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
@@ -62,9 +61,11 @@
     <Property Name="Tarif" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CodeTypeClient" Type="Int32" Nullable="false" />
     <Property Name="CodePointVente" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="PointVente1" Relationship="Self.FK_Client_PointVente" FromRole="Client" ToRole="PointVente" />
-    <NavigationProperty Name="TypeClient1" Relationship="Self.FK_Client_TypeClient" FromRole="Client" ToRole="TypeClient" />
+    <NavigationProperty Name="Banque" Relationship="Self.FK_Client_Banque" FromRole="Client" ToRole="Banque" />
+    <NavigationProperty Name="PointVente" Relationship="Self.FK_Client_PointVente" FromRole="Client" ToRole="PointVente" />
+    <NavigationProperty Name="TypeClient" Relationship="Self.FK_Client_TypeClient" FromRole="Client" ToRole="TypeClient" />
     <NavigationProperty Name="Commandes" Relationship="Self.FK_Commande_Client" FromRole="Client" ToRole="Commande" />
+    <NavigationProperty Name="ReceptionSemences" Relationship="Self.FK_ReceptionSemence_Client" FromRole="Client" ToRole="ReceptionSemence" />
   </EntityType>
   <EntityType Name="ClotureCommande">
     <Key>
@@ -91,7 +92,6 @@
     </Key>
     <Property Name="CodeColisage" Type="Int32" Nullable="false" />
     <Property Name="Libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Semences" Relationship="Self.FK_Semence_Colisage" FromRole="Colisage" ToRole="Semence" />
   </EntityType>
   <EntityType Name="Commande">
     <Key>
@@ -100,7 +100,7 @@
     <Property Name="RefCommande" Type="Int32" Nullable="false" />
     <Property Name="CodeClient" Type="Int32" Nullable="false" />
     <Property Name="DateCommande" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="Note" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="NomCommercial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CapaciteProd" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Avances" Relationship="Self.FK_Avance_Commande" FromRole="Commande" ToRole="Avance" />
@@ -117,7 +117,7 @@
     </Key>
     <Property Name="CodeComptage" Type="Int32" Nullable="false" />
     <Property Name="CodeProduction" Type="Int32" Nullable="false" />
-    <Property Name="CodeUtilisateur" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeUtilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="DateCompatage" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="QuantiteComptage" Type="Int32" Nullable="false" />
@@ -145,7 +145,7 @@
     <Key>
       <PropertyRef Name="RefDetailsCommande" />
     </Key>
-    <Property Name="RefDetailsCommande" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RefDetailsCommande" Type="Int32" Nullable="false" />
     <Property Name="CodeVariete" Type="Int32" Nullable="false" />
     <Property Name="RefCommande" Type="Int32" Nullable="false" />
     <Property Name="DateLivraisonPrevu" Type="DateTime" Nullable="false" Precision="0" />
@@ -160,15 +160,19 @@
     <Property Name="TotalBrut" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
     <Property Name="TotalBrutNet" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
     <Property Name="ReservationCons" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TypeReception" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodeReception" Type="Int32" Nullable="false" />
     <Property Name="Accompte" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
     <Property Name="Brut" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
     <Property Name="Timbre" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="Remise1" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="RemiseTot" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
     <Property Name="Net" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
     <Property Name="CodeSupport" Type="Int32" Nullable="false" />
     <Property Name="CodeTypeProd" Type="Int32" Nullable="false" />
+    <Property Name="DateCV" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateCG" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DatePG" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="Commande" Relationship="Self.FK_DetailsCommande_Commande" FromRole="DetailsCommande" ToRole="Commande" />
+    <NavigationProperty Name="ReceptionSemence" Relationship="Self.FK_DetailsCommande_ReceptionSemence" FromRole="DetailsCommande" ToRole="ReceptionSemence" />
     <NavigationProperty Name="Support" Relationship="Self.FK_DetailsCommande_Support" FromRole="DetailsCommande" ToRole="Support" />
     <NavigationProperty Name="TypeProduction" Relationship="Self.FK_DetailsCommande_TypeProduction" FromRole="DetailsCommande" ToRole="TypeProduction" />
     <NavigationProperty Name="Variete" Relationship="Self.FK_DetailsCommande_Variete" FromRole="DetailsCommande" ToRole="Variete" />
@@ -190,6 +194,7 @@
     <Property Name="CodeFamille" Type="Int32" Nullable="false" />
     <Property Name="LibelleEspece" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Famille" Relationship="Self.FK_Espece_Famille" FromRole="Espece" ToRole="Famille" />
+    <NavigationProperty Name="Semences" Relationship="Self.FK_Semence_Espece" FromRole="Espece" ToRole="Semence" />
     <NavigationProperty Name="Varietes" Relationship="Self.FK_Variete_Espece" FromRole="Espece" ToRole="Variete" />
   </EntityType>
   <EntityType Name="Famille">
@@ -200,12 +205,29 @@
     <Property Name="LibelleFamille" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Especes" Relationship="Self.FK_Espece_Famille" FromRole="Famille" ToRole="Espece" />
   </EntityType>
+  <EntityType Name="FonctionMenu">
+    <Key>
+      <PropertyRef Name="CodeFonction" />
+    </Key>
+    <Property Name="CodeFonction" Type="Int32" Nullable="false" />
+    <Property Name="LibelleFonction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodeMenu" Type="Int32" />
+    <NavigationProperty Name="Menu" Relationship="Self.FK_FonctionMenu_FonctionMenu" FromRole="FonctionMenu" ToRole="Menu" />
+  </EntityType>
   <EntityType Name="Livreur">
     <Key>
       <PropertyRef Name="CodeLivreur" />
     </Key>
     <Property Name="CodeLivreur" Type="Int32" Nullable="false" />
     <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="CodeMenu" />
+    </Key>
+    <Property Name="CodeMenu" Type="Int32" Nullable="false" />
+    <Property Name="LibelleMenu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="FonctionMenus" Relationship="Self.FK_FonctionMenu_FonctionMenu" FromRole="Menu" ToRole="FonctionMenu" />
   </EntityType>
   <EntityType Name="ModeReglement">
     <Key>
@@ -232,7 +254,6 @@
     <NavigationProperty Name="ClotureProd" Relationship="Self.FK_MouvementStock_ClotureProd" FromRole="MouvementStock" ToRole="ClotureProd" />
     <NavigationProperty Name="DetailsBL" Relationship="Self.FK_MouvementStock_DetailsBL" FromRole="MouvementStock" ToRole="DetailsBL" />
     <NavigationProperty Name="Support" Relationship="Self.FK_MouvementStock_Support" FromRole="MouvementStock" ToRole="Support" />
-    <NavigationProperty Name="Variete" Relationship="Self.FK_MouvementStock_Variete" FromRole="MouvementStock" ToRole="Variete" />
   </EntityType>
   <EntityType Name="MoyenTransport">
     <Key>
@@ -240,6 +261,17 @@
     </Key>
     <Property Name="CodeMoyenTransport" Type="Int32" Nullable="false" />
     <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ParametrageProduction">
+    <Key>
+      <PropertyRef Name="CodeParProduction" />
+    </Key>
+    <Property Name="CodeParProduction" Type="Int32" Nullable="false" />
+    <Property Name="Capacite" Type="Int32" Nullable="false" />
+    <Property Name="RappelLivraison" Type="Int32" Nullable="false" />
+    <Property Name="RappelSemis" Type="Int32" Nullable="false" />
+    <Property Name="RappelSemisPorte" Type="Int32" Nullable="false" />
+    <Property Name="RappelGreffage" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="PointVente">
     <Key>
@@ -261,7 +293,7 @@
     <Property Name="CodeTypeProduction" Type="Int32" Nullable="false" />
     <Property Name="CodeSupport" Type="Int32" Nullable="false" />
     <Property Name="RefSerre" Type="Int32" Nullable="false" />
-    <Property Name="CodeUtilisateur" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeUtilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DateSemi" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="CapaciteProd" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
     <Property Name="DateLivPrevu" Type="DateTime" Nullable="false" Precision="0" />
@@ -274,16 +306,27 @@
     <NavigationProperty Name="TypeProduction" Relationship="Self.FK_Production_TypeProduction" FromRole="Production" ToRole="TypeProduction" />
     <NavigationProperty Name="Utilisateur" Relationship="Self.FK_Production_Utilisateur" FromRole="Production" ToRole="Utilisateur" />
   </EntityType>
+  <EntityType Name="Profil">
+    <Key>
+      <PropertyRef Name="CodeProfil" />
+    </Key>
+    <Property Name="CodeProfil" Type="Int32" Nullable="false" />
+    <Property Name="LibelleProfil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Utilisateurs" Relationship="Self.FK_Utilisateur_Profil" FromRole="Profil" ToRole="Utilisateur" />
+  </EntityType>
   <EntityType Name="ReceptionSemence">
     <Key>
       <PropertyRef Name="CodeReceptionSemence" />
     </Key>
-    <Property Name="CodeReceptionSemence" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeReceptionSemence" Type="Int32" Nullable="false" />
     <Property Name="RefCommande" Type="Int32" Nullable="false" />
     <Property Name="CodeSemence" Type="Int32" Nullable="false" />
-    <Property Name="TypeTiers" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Etat" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodeClient" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateReception" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_ReceptionSemence_Client" FromRole="ReceptionSemence" ToRole="Client" />
     <NavigationProperty Name="Commande" Relationship="Self.FK_ReceptionSemence_Commande1" FromRole="ReceptionSemence" ToRole="Commande" />
+    <NavigationProperty Name="DetailsCommandes" Relationship="Self.FK_DetailsCommande_ReceptionSemence" FromRole="ReceptionSemence" ToRole="DetailsCommande" />
     <NavigationProperty Name="Semence" Relationship="Self.FK_ReceptionSemence_Semence" FromRole="ReceptionSemence" ToRole="Semence" />
   </EntityType>
   <EntityType Name="Semence">
@@ -294,12 +337,10 @@
     <Property Name="CodeSemencier" Type="Int32" Nullable="false" />
     <Property Name="Libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="NBGraines" Type="Int32" Nullable="false" />
-    <Property Name="CodeColisage" Type="Int32" Nullable="false" />
-    <Property Name="CodeUnite" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Colisage" Relationship="Self.FK_Semence_Colisage" FromRole="Semence" ToRole="Colisage" />
+    <Property Name="CodeEspece" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Espece" Relationship="Self.FK_Semence_Espece" FromRole="Semence" ToRole="Espece" />
     <NavigationProperty Name="ReceptionSemences" Relationship="Self.FK_ReceptionSemence_Semence" FromRole="Semence" ToRole="ReceptionSemence" />
     <NavigationProperty Name="Semencier" Relationship="Self.FK_Semence_Semencier" FromRole="Semence" ToRole="Semencier" />
-    <NavigationProperty Name="Unite" Relationship="Self.FK_Semence_Unite" FromRole="Semence" ToRole="Unite" />
   </EntityType>
   <EntityType Name="Semencier">
     <Key>
@@ -321,6 +362,31 @@
     <Property Name="Capacite" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
     <NavigationProperty Name="Emplacement" Relationship="Self.FK_Serre_Emplacement" FromRole="Serre" ToRole="Emplacement" />
     <NavigationProperty Name="Productions" Relationship="Self.FK_Production_Serre" FromRole="Serre" ToRole="Production" />
+  </EntityType>
+  <EntityType Name="Societe">
+    <Key>
+      <PropertyRef Name="CodeSociete" />
+    </Key>
+    <Property Name="CodeSociete" Type="Int32" Nullable="false" />
+    <Property Name="LibelleFr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VilleFr" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodePostal" Type="Int32" Nullable="false" />
+    <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Banque" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RIB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Activite" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Responsable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SiteWeb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AdresseFr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RegCom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Fonction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LibelleAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AdresseAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VilleAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="Support">
     <Key>
@@ -366,7 +432,7 @@
     <Property Name="Libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="DetailsCommandes" Relationship="Self.FK_DetailsCommande_TypeProduction" FromRole="TypeProduction" ToRole="DetailsCommande" />
     <NavigationProperty Name="Productions" Relationship="Self.FK_Production_TypeProduction" FromRole="TypeProduction" ToRole="Production" />
-    <NavigationProperty Name="Varietes" Relationship="Self.FK_Variete_Variete" FromRole="TypeProduction" ToRole="Variete" />
+    <NavigationProperty Name="Varietes" Relationship="Self.FK_Variete_TypeProduction" FromRole="TypeProduction" ToRole="Variete" />
   </EntityType>
   <EntityType Name="Unite">
     <Key>
@@ -374,19 +440,20 @@
     </Key>
     <Property Name="CodeUnite" Type="Int32" Nullable="false" />
     <Property Name="Libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Semences" Relationship="Self.FK_Semence_Unite" FromRole="Unite" ToRole="Semence" />
   </EntityType>
   <EntityType Name="Utilisateur">
     <Key>
       <PropertyRef Name="CodeUtilisateur" />
     </Key>
-    <Property Name="CodeUtilisateur" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeUtilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Nom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Prenom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Profil" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeProfil" Type="Int32" Nullable="false" />
+    <Property Name="Etat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Comptages" Relationship="Self.FK_Comptage_Utilisateur" FromRole="Utilisateur" ToRole="Comptage" />
     <NavigationProperty Name="Productions" Relationship="Self.FK_Production_Utilisateur" FromRole="Utilisateur" ToRole="Production" />
+    <NavigationProperty Name="Profil" Relationship="Self.FK_Utilisateur_Profil" FromRole="Utilisateur" ToRole="Profil" />
   </EntityType>
   <EntityType Name="Variete">
     <Key>
@@ -404,8 +471,7 @@
     <Property Name="PrixVente" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
     <NavigationProperty Name="DetailsCommandes" Relationship="Self.FK_DetailsCommande_Variete" FromRole="Variete" ToRole="DetailsCommande" />
     <NavigationProperty Name="Espece" Relationship="Self.FK_Variete_Espece" FromRole="Variete" ToRole="Espece" />
-    <NavigationProperty Name="MouvementStocks" Relationship="Self.FK_MouvementStock_Variete" FromRole="Variete" ToRole="MouvementStock" />
-    <NavigationProperty Name="TypeProduction" Relationship="Self.FK_Variete_Variete" FromRole="Variete" ToRole="TypeProduction" />
+    <NavigationProperty Name="TypeProduction" Relationship="Self.FK_Variete_TypeProduction" FromRole="Variete" ToRole="TypeProduction" />
   </EntityType>
   <Association Name="FK_Avance_Avance">
     <End Role="ModeReglement" Type="Self.ModeReglement" Multiplicity="1" />
@@ -428,6 +494,18 @@
       </Principal>
       <Dependent Role="Avance">
         <PropertyRef Name="RefCommande" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_Banque">
+    <End Role="Banque" Type="Self.Banque" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Banque">
+        <PropertyRef Name="CodeBanque" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="CodeBanque" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -491,6 +569,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ReceptionSemence_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ReceptionSemence" Type="Self.ReceptionSemence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="CodeClient" />
+      </Principal>
+      <Dependent Role="ReceptionSemence">
+        <PropertyRef Name="CodeClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ClotureCommande_Commande">
     <End Role="Commande" Type="Self.Commande" Multiplicity="1" />
     <End Role="ClotureCommande" Type="Self.ClotureCommande" Multiplicity="*" />
@@ -524,18 +614,6 @@
       </Principal>
       <Dependent Role="MouvementStock">
         <PropertyRef Name="CodeClotureProd" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Semence_Colisage">
-    <End Role="Colisage" Type="Self.Colisage" Multiplicity="1" />
-    <End Role="Semence" Type="Self.Semence" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Colisage">
-        <PropertyRef Name="CodeColisage" />
-      </Principal>
-      <Dependent Role="Semence">
-        <PropertyRef Name="CodeColisage" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -623,6 +701,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_DetailsCommande_ReceptionSemence">
+    <End Role="ReceptionSemence" Type="Self.ReceptionSemence" Multiplicity="1" />
+    <End Role="DetailsCommande" Type="Self.DetailsCommande" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReceptionSemence">
+        <PropertyRef Name="CodeReceptionSemence" />
+      </Principal>
+      <Dependent Role="DetailsCommande">
+        <PropertyRef Name="CodeReception" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_DetailsCommande_Support">
     <End Role="Support" Type="Self.Support" Multiplicity="1" />
     <End Role="DetailsCommande" Type="Self.DetailsCommande" Multiplicity="*" />
@@ -683,6 +773,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Semence_Espece">
+    <End Role="Espece" Type="Self.Espece" Multiplicity="1" />
+    <End Role="Semence" Type="Self.Semence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Espece">
+        <PropertyRef Name="CodeEspece" />
+      </Principal>
+      <Dependent Role="Semence">
+        <PropertyRef Name="CodeEspece" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Variete_Espece">
     <End Role="Espece" Type="Self.Espece" Multiplicity="1" />
     <End Role="Variete" Type="Self.Variete" Multiplicity="*" />
@@ -695,6 +797,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_FonctionMenu_FonctionMenu">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="0..1" />
+    <End Role="FonctionMenu" Type="Self.FonctionMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="CodeMenu" />
+      </Principal>
+      <Dependent Role="FonctionMenu">
+        <PropertyRef Name="CodeMenu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_MouvementStock_Support">
     <End Role="Support" Type="Self.Support" Multiplicity="1" />
     <End Role="MouvementStock" Type="Self.MouvementStock" Multiplicity="*" />
@@ -704,18 +818,6 @@
       </Principal>
       <Dependent Role="MouvementStock">
         <PropertyRef Name="CodeSupport" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MouvementStock_Variete">
-    <End Role="Variete" Type="Self.Variete" Multiplicity="1" />
-    <End Role="MouvementStock" Type="Self.MouvementStock" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Variete">
-        <PropertyRef Name="CodeVariete" />
-      </Principal>
-      <Dependent Role="MouvementStock">
-        <PropertyRef Name="CodeVariete" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -755,6 +857,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Utilisateur_Profil">
+    <End Role="Profil" Type="Self.Profil" Multiplicity="1" />
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profil">
+        <PropertyRef Name="CodeProfil" />
+      </Principal>
+      <Dependent Role="Utilisateur">
+        <PropertyRef Name="CodeProfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ReceptionSemence_Semence">
     <End Role="Semence" Type="Self.Semence" Multiplicity="1" />
     <End Role="ReceptionSemence" Type="Self.ReceptionSemence" Multiplicity="*" />
@@ -779,19 +893,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Semence_Unite">
-    <End Role="Unite" Type="Self.Unite" Multiplicity="1" />
-    <End Role="Semence" Type="Self.Semence" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Unite">
-        <PropertyRef Name="CodeUnite" />
-      </Principal>
-      <Dependent Role="Semence">
-        <PropertyRef Name="CodeUnite" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Variete_Variete">
+  <Association Name="FK_Variete_TypeProduction">
     <End Role="TypeProduction" Type="Self.TypeProduction" Multiplicity="1" />
     <End Role="Variete" Type="Self.Variete" Multiplicity="*" />
     <ReferentialConstraint>
@@ -818,16 +920,21 @@
     <EntitySet Name="Emplacements" EntityType="Self.Emplacement" />
     <EntitySet Name="Especes" EntityType="Self.Espece" />
     <EntitySet Name="Familles" EntityType="Self.Famille" />
+    <EntitySet Name="FonctionMenus" EntityType="Self.FonctionMenu" />
     <EntitySet Name="Livreurs" EntityType="Self.Livreur" />
+    <EntitySet Name="Menus" EntityType="Self.Menu" />
     <EntitySet Name="ModeReglements" EntityType="Self.ModeReglement" />
     <EntitySet Name="MouvementStocks" EntityType="Self.MouvementStock" />
     <EntitySet Name="MoyenTransports" EntityType="Self.MoyenTransport" />
+    <EntitySet Name="ParametrageProductions" EntityType="Self.ParametrageProduction" />
     <EntitySet Name="PointVentes" EntityType="Self.PointVente" />
     <EntitySet Name="Productions" EntityType="Self.Production" />
+    <EntitySet Name="Profils" EntityType="Self.Profil" />
     <EntitySet Name="ReceptionSemences" EntityType="Self.ReceptionSemence" />
     <EntitySet Name="Semences" EntityType="Self.Semence" />
     <EntitySet Name="Semenciers" EntityType="Self.Semencier" />
     <EntitySet Name="Serres" EntityType="Self.Serre" />
+    <EntitySet Name="Societes" EntityType="Self.Societe" />
     <EntitySet Name="Supports" EntityType="Self.Support" />
     <EntitySet Name="TypeClients" EntityType="Self.TypeClient" />
     <EntitySet Name="TypeComptages" EntityType="Self.TypeComptage" />
@@ -842,6 +949,10 @@
     <AssociationSet Name="FK_Avance_Commande" Association="Self.FK_Avance_Commande">
       <End Role="Commande" EntitySet="Commandes" />
       <End Role="Avance" EntitySet="Avances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Banque" Association="Self.FK_Client_Banque">
+      <End Role="Banque" EntitySet="Banques" />
+      <End Role="Client" EntitySet="Clients" />
     </AssociationSet>
     <AssociationSet Name="FK_BonLivraison_Commande" Association="Self.FK_BonLivraison_Commande">
       <End Role="Commande" EntitySet="Commandes" />
@@ -863,6 +974,10 @@
       <End Role="Client" EntitySet="Clients" />
       <End Role="Commande" EntitySet="Commandes" />
     </AssociationSet>
+    <AssociationSet Name="FK_ReceptionSemence_Client" Association="Self.FK_ReceptionSemence_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="ReceptionSemence" EntitySet="ReceptionSemences" />
+    </AssociationSet>
     <AssociationSet Name="FK_ClotureCommande_Commande" Association="Self.FK_ClotureCommande_Commande">
       <End Role="Commande" EntitySet="Commandes" />
       <End Role="ClotureCommande" EntitySet="ClotureCommandes" />
@@ -874,10 +989,6 @@
     <AssociationSet Name="FK_MouvementStock_ClotureProd" Association="Self.FK_MouvementStock_ClotureProd">
       <End Role="ClotureProd" EntitySet="ClotureProds" />
       <End Role="MouvementStock" EntitySet="MouvementStocks" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Semence_Colisage" Association="Self.FK_Semence_Colisage">
-      <End Role="Colisage" EntitySet="Colisages" />
-      <End Role="Semence" EntitySet="Semences" />
     </AssociationSet>
     <AssociationSet Name="FK_DetailsCommande_Commande" Association="Self.FK_DetailsCommande_Commande">
       <End Role="Commande" EntitySet="Commandes" />
@@ -907,6 +1018,10 @@
       <End Role="DetailsBL" EntitySet="DetailsBLs" />
       <End Role="MouvementStock" EntitySet="MouvementStocks" />
     </AssociationSet>
+    <AssociationSet Name="FK_DetailsCommande_ReceptionSemence" Association="Self.FK_DetailsCommande_ReceptionSemence">
+      <End Role="ReceptionSemence" EntitySet="ReceptionSemences" />
+      <End Role="DetailsCommande" EntitySet="DetailsCommandes" />
+    </AssociationSet>
     <AssociationSet Name="FK_DetailsCommande_Support" Association="Self.FK_DetailsCommande_Support">
       <End Role="Support" EntitySet="Supports" />
       <End Role="DetailsCommande" EntitySet="DetailsCommandes" />
@@ -927,16 +1042,20 @@
       <End Role="Famille" EntitySet="Familles" />
       <End Role="Espece" EntitySet="Especes" />
     </AssociationSet>
+    <AssociationSet Name="FK_Semence_Espece" Association="Self.FK_Semence_Espece">
+      <End Role="Espece" EntitySet="Especes" />
+      <End Role="Semence" EntitySet="Semences" />
+    </AssociationSet>
     <AssociationSet Name="FK_Variete_Espece" Association="Self.FK_Variete_Espece">
       <End Role="Espece" EntitySet="Especes" />
       <End Role="Variete" EntitySet="Varietes" />
     </AssociationSet>
+    <AssociationSet Name="FK_FonctionMenu_FonctionMenu" Association="Self.FK_FonctionMenu_FonctionMenu">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="FonctionMenu" EntitySet="FonctionMenus" />
+    </AssociationSet>
     <AssociationSet Name="FK_MouvementStock_Support" Association="Self.FK_MouvementStock_Support">
       <End Role="Support" EntitySet="Supports" />
-      <End Role="MouvementStock" EntitySet="MouvementStocks" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MouvementStock_Variete" Association="Self.FK_MouvementStock_Variete">
-      <End Role="Variete" EntitySet="Varietes" />
       <End Role="MouvementStock" EntitySet="MouvementStocks" />
     </AssociationSet>
     <AssociationSet Name="FK_Production_Serre" Association="Self.FK_Production_Serre">
@@ -951,6 +1070,10 @@
       <End Role="Utilisateur" EntitySet="Utilisateurs" />
       <End Role="Production" EntitySet="Productions" />
     </AssociationSet>
+    <AssociationSet Name="FK_Utilisateur_Profil" Association="Self.FK_Utilisateur_Profil">
+      <End Role="Profil" EntitySet="Profils" />
+      <End Role="Utilisateur" EntitySet="Utilisateurs" />
+    </AssociationSet>
     <AssociationSet Name="FK_ReceptionSemence_Semence" Association="Self.FK_ReceptionSemence_Semence">
       <End Role="Semence" EntitySet="Semences" />
       <End Role="ReceptionSemence" EntitySet="ReceptionSemences" />
@@ -959,11 +1082,7 @@
       <End Role="Semencier" EntitySet="Semenciers" />
       <End Role="Semence" EntitySet="Semences" />
     </AssociationSet>
-    <AssociationSet Name="FK_Semence_Unite" Association="Self.FK_Semence_Unite">
-      <End Role="Unite" EntitySet="Unites" />
-      <End Role="Semence" EntitySet="Semences" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Variete_Variete" Association="Self.FK_Variete_Variete">
+    <AssociationSet Name="FK_Variete_TypeProduction" Association="Self.FK_Variete_TypeProduction">
       <End Role="TypeProduction" EntitySet="TypeProductions" />
       <End Role="Variete" EntitySet="Varietes" />
     </AssociationSet>

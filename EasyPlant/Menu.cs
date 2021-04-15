@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using EasyPlant.Commun;
 using EasyPlant.Commande;
 using EasyPlant.ParametreDeDonnees;
+using EasyPlant.Dossier;
 
 namespace EasyPlant
 {
@@ -164,6 +165,19 @@ namespace EasyPlant
         {
            frmEspece espece = new frmEspece();
            espece.ShowDialog();
+
+        }
+
+        private void paramétreSociétéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSociete societe = new frmSociete();
+            societe.ShowDialog();
+        }
+
+        private void listeVariétésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVariete variete = new frmVariete();
+            variete.ShowDialog();
 
         }
     }

@@ -14,7 +14,7 @@ namespace EasyPlant.DAL
     
     public partial class DetailsCommande
     {
-        public string RefDetailsCommande { get; set; }
+        public int RefDetailsCommande { get; set; }
         public int CodeVariete { get; set; }
         public int RefCommande { get; set; }
         public System.DateTime DateLivraisonPrevu { get; set; }
@@ -29,16 +29,20 @@ namespace EasyPlant.DAL
         public decimal TotalBrut { get; set; }
         public decimal TotalBrutNet { get; set; }
         public string ReservationCons { get; set; }
-        public string TypeReception { get; set; }
+        public int CodeReception { get; set; }
         public decimal Accompte { get; set; }
         public decimal Brut { get; set; }
         public decimal Timbre { get; set; }
-        public decimal Remise1 { get; set; }
+        public decimal RemiseTot { get; set; }
         public decimal Net { get; set; }
         public int CodeSupport { get; set; }
         public int CodeTypeProd { get; set; }
+        public System.DateTime DateCV { get; set; }
+        public System.DateTime DateCG { get; set; }
+        public System.DateTime DatePG { get; set; }
     
         public virtual Commande Commande { get; set; }
+        public virtual ReceptionSemence ReceptionSemence { get; set; }
         public virtual Support Support { get; set; }
         public virtual TypeProduction TypeProduction { get; set; }
         public virtual Variete Variete { get; set; }

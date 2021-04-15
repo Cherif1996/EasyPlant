@@ -18,6 +18,7 @@ namespace EasyPlant.DAL
         public Client()
         {
             this.Commandes = new HashSet<Commande>();
+            this.ReceptionSemences = new HashSet<ReceptionSemence>();
         }
     
         public int CodeClient { get; set; }
@@ -30,13 +31,11 @@ namespace EasyPlant.DAL
         public string Tel { get; set; }
         public string Fax { get; set; }
         public string Email { get; set; }
-        public string Banque { get; set; }
+        public int CodeBanque { get; set; }
         public int RIB { get; set; }
         public string Responsable { get; set; }
         public string NomCommercial { get; set; }
         public string SiteWeb { get; set; }
-        public string TypeClient { get; set; }
-        public string PointVente { get; set; }
         public int Timbre { get; set; }
         public string RegTVA { get; set; }
         public decimal PlafondCredit { get; set; }
@@ -45,9 +44,12 @@ namespace EasyPlant.DAL
         public int CodeTypeClient { get; set; }
         public int CodePointVente { get; set; }
     
-        public virtual PointVente PointVente1 { get; set; }
-        public virtual TypeClient TypeClient1 { get; set; }
+        public virtual Banque Banque { get; set; }
+        public virtual PointVente PointVente { get; set; }
+        public virtual TypeClient TypeClient { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Commande> Commandes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReceptionSemence> ReceptionSemences { get; set; }
     }
 }
