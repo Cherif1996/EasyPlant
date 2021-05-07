@@ -76,49 +76,24 @@
     <Compile Include="Authentification.designer.cs">
       <DependentUpon>Authentification.cs</DependentUpon>
     </Compile>
+    <Compile Include="Commande\frmAvance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Commande\frmAvance.Designer.cs">
+      <DependentUpon>frmAvance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Commande\frmListeClient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Commande\frmListeClient.Designer.cs">
       <DependentUpon>frmListeClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="ParametreDeDonnees\frmVariete.cs">
+    <Compile Include="Commande\frmReceptionS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ParametreDeDonnees\frmVariete.Designer.cs">
-      <DependentUpon>frmVariete.cs</DependentUpon>
+    <Compile Include="Commande\frmReceptionS.Designer.cs">
+      <DependentUpon>frmReceptionS.cs</DependentUpon>
     </Compile>
-    <Compile Include="ParametreDeDonnees\HeaderSociete.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParametreDeDonnees\HeaderSociete.Designer.cs">
-      <DependentUpon>HeaderSociete.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\ListeClient.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ListeClient.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\ModelePrincipal.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelePrincipal.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Commande\frmClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Commande\frmClient.Designer.cs">
-      <DependentUpon>frmClient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Commande\frmContratCommande.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Commande\frmContratCommande.Designer.cs">
-      <DependentUpon>frmContratCommande.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Commun\LibelleForm.cs" />
     <Compile Include="DAL\Avance.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
@@ -137,7 +112,6 @@
     <Compile Include="DAL\ClotureProd.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\CodeLibelle.cs" />
     <Compile Include="DAL\Colisage.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
@@ -165,9 +139,6 @@
     <Compile Include="DAL\DetailsBL.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\DetailsCommande.cs">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\Emplacement.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
@@ -180,7 +151,6 @@
     <Compile Include="DAL\FonctionMenu.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\GenericRepository.cs" />
     <Compile Include="DAL\Livreur.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
@@ -244,6 +214,45 @@
     <Compile Include="DAL\Variete.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="ParametreDeDonnees\frmVariete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametreDeDonnees\frmVariete.Designer.cs">
+      <DependentUpon>frmVariete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametreDeDonnees\HeaderSociete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametreDeDonnees\HeaderSociete.Designer.cs">
+      <DependentUpon>HeaderSociete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ListeClient.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListeClient.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ModelePrincipal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelePrincipal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Commande\frmClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Commande\frmClient.Designer.cs">
+      <DependentUpon>frmClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commande\frmContratCommande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Commande\frmContratCommande.Designer.cs">
+      <DependentUpon>frmContratCommande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commun\LibelleForm.cs" />
+    <Compile Include="DAL\CodeLibelle.cs" />
+    <Compile Include="DAL\GenericRepository.cs" />
     <Compile Include="Dossier\frmCodeLibelle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,8 +301,14 @@
     <EmbeddedResource Include="Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Commande\frmAvance.resx">
+      <DependentUpon>frmAvance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Commande\frmListeClient.resx">
       <DependentUpon>frmListeClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commande\frmReceptionS.resx">
+      <DependentUpon>frmReceptionS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParametreDeDonnees\frmVariete.resx">
       <DependentUpon>frmVariete.cs</DependentUpon>

@@ -97,6 +97,31 @@
           <ScalarProperty Name="Note" ColumnName="Note" />
           <ScalarProperty Name="NomCommercial" ColumnName="NomCommercial" />
           <ScalarProperty Name="CapaciteProd" ColumnName="CapaciteProd" />
+          <ScalarProperty Name="CodeVariete" ColumnName="CodeVariete" />
+          <ScalarProperty Name="DateLivraisonPrevu" ColumnName="DateLivraisonPrevu" />
+          <ScalarProperty Name="MntBrutHT" ColumnName="MntBrutHT" />
+          <ScalarProperty Name="Remise" ColumnName="Remise" />
+          <ScalarProperty Name="MntRemise" ColumnName="MntRemise" />
+          <ScalarProperty Name="MntNETHT" ColumnName="MntNETHT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="MntNETTTC" ColumnName="MntNETTTC" />
+          <ScalarProperty Name="PrixUnitaire" ColumnName="PrixUnitaire" />
+          <ScalarProperty Name="PrixUnitaireNet" ColumnName="PrixUnitaireNet" />
+          <ScalarProperty Name="TotalBrut" ColumnName="TotalBrut" />
+          <ScalarProperty Name="TotalBrutNet" ColumnName="TotalBrutNet" />
+          <ScalarProperty Name="ReservationCons" ColumnName="ReservationCons" />
+          <ScalarProperty Name="Accompte" ColumnName="Accompte" />
+          <ScalarProperty Name="Brut" ColumnName="Brut" />
+          <ScalarProperty Name="Timbre" ColumnName="Timbre" />
+          <ScalarProperty Name="RemiseTot" ColumnName="RemiseTot" />
+          <ScalarProperty Name="Net" ColumnName="Net" />
+          <ScalarProperty Name="CodeSupport" ColumnName="CodeSupport" />
+          <ScalarProperty Name="CodeTypeProd" ColumnName="CodeTypeProd" />
+          <ScalarProperty Name="DateCV" ColumnName="DateCV" />
+          <ScalarProperty Name="DateCG" ColumnName="DateCG" />
+          <ScalarProperty Name="DatePG" ColumnName="DatePG" />
+          <ScalarProperty Name="Qte" ColumnName="Qte" />
+          <ScalarProperty Name="TypeCommande" ColumnName="TypeCommande" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -124,38 +149,6 @@
           <ScalarProperty Name="MntNETHT" ColumnName="MntNETHT" />
           <ScalarProperty Name="TVA" ColumnName="TVA" />
           <ScalarProperty Name="MntNetTTC" ColumnName="MntNetTTC" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="DetailsCommandes">
-      <EntityTypeMapping TypeName="BDPlantModel.DetailsCommande">
-        <MappingFragment StoreEntitySet="DetailsCommande">
-          <ScalarProperty Name="RefDetailsCommande" ColumnName="RefDetailsCommande" />
-          <ScalarProperty Name="CodeVariete" ColumnName="CodeVariete" />
-          <ScalarProperty Name="RefCommande" ColumnName="RefCommande" />
-          <ScalarProperty Name="DateLivraisonPrevu" ColumnName="DateLivraisonPrevu" />
-          <ScalarProperty Name="MntBrutHT" ColumnName="MntBrutHT" />
-          <ScalarProperty Name="Remise" ColumnName="Remise" />
-          <ScalarProperty Name="MntRemise" ColumnName="MntRemise" />
-          <ScalarProperty Name="MntNETHT" ColumnName="MntNETHT" />
-          <ScalarProperty Name="TVA" ColumnName="TVA" />
-          <ScalarProperty Name="MntNETTTC" ColumnName="MntNETTTC" />
-          <ScalarProperty Name="PrixUnitaire" ColumnName="PrixUnitaire" />
-          <ScalarProperty Name="PrixUnitaireNet" ColumnName="PrixUnitaireNet" />
-          <ScalarProperty Name="TotalBrut" ColumnName="TotalBrut" />
-          <ScalarProperty Name="TotalBrutNet" ColumnName="TotalBrutNet" />
-          <ScalarProperty Name="ReservationCons" ColumnName="ReservationCons" />
-          <ScalarProperty Name="CodeReception" ColumnName="CodeReception" />
-          <ScalarProperty Name="Accompte" ColumnName="Accompte" />
-          <ScalarProperty Name="Brut" ColumnName="Brut" />
-          <ScalarProperty Name="Timbre" ColumnName="Timbre" />
-          <ScalarProperty Name="RemiseTot" ColumnName="RemiseTot" />
-          <ScalarProperty Name="Net" ColumnName="Net" />
-          <ScalarProperty Name="CodeSupport" ColumnName="CodeSupport" />
-          <ScalarProperty Name="CodeTypeProd" ColumnName="CodeTypeProd" />
-          <ScalarProperty Name="DateCV" ColumnName="DateCV" />
-          <ScalarProperty Name="DateCG" ColumnName="DateCG" />
-          <ScalarProperty Name="DatePG" ColumnName="DatePG" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -298,7 +291,12 @@
           <ScalarProperty Name="CodeSemence" ColumnName="CodeSemence" />
           <ScalarProperty Name="CodeClient" ColumnName="CodeClient" />
           <ScalarProperty Name="Note" ColumnName="Note" />
-          <ScalarProperty Name="DateReception" ColumnName="DateReception" />
+          <ScalarProperty Name="DateProduction" ColumnName="DateProduction" />
+          <ScalarProperty Name="Qte" ColumnName="Qte" />
+          <ScalarProperty Name="CodeUnite" ColumnName="CodeUnite" />
+          <ScalarProperty Name="CodeColisage" ColumnName="CodeColisage" />
+          <ScalarProperty Name="Nbrgraines" ColumnName="Nbrgraines" />
+          <ScalarProperty Name="Nlot" ColumnName="Nlot" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

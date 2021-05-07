@@ -201,11 +201,11 @@
             // 
             // textMarge
             // 
-            this.textMarge.Location = new System.Drawing.Point(485, 10);
+            this.textMarge.Location = new System.Drawing.Point(628, 5);
             this.textMarge.Name = "textMarge";
             this.textMarge.Size = new System.Drawing.Size(71, 20);
             this.textMarge.TabIndex = 26;
-            this.textMarge.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            this.textMarge.TextChanged += new System.EventHandler(this.textMarge_TextChanged);
             // 
             // textPrixAchatTTC
             // 
@@ -218,12 +218,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(411, 12);
+            this.label12.Location = new System.Drawing.Point(554, 6);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(68, 16);
             this.label12.TabIndex = 25;
             this.label12.Text = "Marge % :";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label11
             // 
@@ -254,16 +253,17 @@
             // 
             // textTVA
             // 
-            this.textTVA.Location = new System.Drawing.Point(334, 9);
+            this.textTVA.Location = new System.Drawing.Point(408, 5);
             this.textTVA.Name = "textTVA";
             this.textTVA.Size = new System.Drawing.Size(71, 20);
             this.textTVA.TabIndex = 26;
+            this.textTVA.TextChanged += new System.EventHandler(this.textTVA_TextChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(276, 10);
+            this.label9.Location = new System.Drawing.Point(346, 10);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 16);
             this.label9.TabIndex = 25;
@@ -282,6 +282,7 @@
             this.textPrixAchatHT.Name = "textPrixAchatHT";
             this.textPrixAchatHT.Size = new System.Drawing.Size(71, 20);
             this.textPrixAchatHT.TabIndex = 24;
+            this.textPrixAchatHT.TextChanged += new System.EventHandler(this.textPrixAchatHT_TextChanged);
             // 
             // label8
             // 
@@ -309,7 +310,6 @@
             this.textVolAlv.Name = "textVolAlv";
             this.textVolAlv.Size = new System.Drawing.Size(71, 20);
             this.textVolAlv.TabIndex = 21;
-            this.textVolAlv.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label6
             // 

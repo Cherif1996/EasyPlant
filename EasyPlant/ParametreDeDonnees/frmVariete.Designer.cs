@@ -45,24 +45,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textcode = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textPG = new System.Windows.Forms.TextBox();
-            this.textCG = new System.Windows.Forms.TextBox();
-            this.textCV = new System.Windows.Forms.TextBox();
-            this.textmarge = new System.Windows.Forms.TextBox();
-            this.textprixvente = new System.Windows.Forms.TextBox();
-            this.textmntmarge = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboprod = new System.Windows.Forms.ComboBox();
-            this.comboespece = new System.Windows.Forms.ComboBox();
-            this.textlibelle = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.textlibelle = new System.Windows.Forms.TextBox();
+            this.comboespece = new System.Windows.Forms.ComboBox();
+            this.comboprod = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textmntmarge = new System.Windows.Forms.TextBox();
+            this.textprixvente = new System.Windows.Forms.TextBox();
+            this.textmarge = new System.Windows.Forms.TextBox();
+            this.textCV = new System.Windows.Forms.TextBox();
+            this.textCG = new System.Windows.Forms.TextBox();
+            this.textPG = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridvariete)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -214,6 +216,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.textlibelle);
             this.panel1.Controls.Add(this.comboespece);
@@ -239,110 +243,37 @@
             this.panel1.Size = new System.Drawing.Size(889, 184);
             this.panel1.TabIndex = 20;
             // 
-            // textPG
+            // label10
             // 
-            this.textPG.Location = new System.Drawing.Point(658, 142);
-            this.textPG.Name = "textPG";
-            this.textPG.Size = new System.Drawing.Size(100, 20);
-            this.textPG.TabIndex = 20;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(225, 26);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 13);
+            this.label10.TabIndex = 37;
+            this.label10.Text = "Libelle :";
             // 
-            // textCG
+            // textlibelle
             // 
-            this.textCG.Location = new System.Drawing.Point(449, 142);
-            this.textCG.Name = "textCG";
-            this.textCG.Size = new System.Drawing.Size(100, 20);
-            this.textCG.TabIndex = 21;
+            this.textlibelle.Location = new System.Drawing.Point(274, 20);
+            this.textlibelle.Name = "textlibelle";
+            this.textlibelle.Size = new System.Drawing.Size(100, 20);
+            this.textlibelle.TabIndex = 36;
             // 
-            // textCV
+            // comboespece
             // 
-            this.textCV.Location = new System.Drawing.Point(204, 142);
-            this.textCV.Name = "textCV";
-            this.textCV.Size = new System.Drawing.Size(100, 20);
-            this.textCV.TabIndex = 22;
+            this.comboespece.FormattingEnabled = true;
+            this.comboespece.Location = new System.Drawing.Point(732, 20);
+            this.comboespece.Name = "comboespece";
+            this.comboespece.Size = new System.Drawing.Size(121, 21);
+            this.comboespece.TabIndex = 35;
             // 
-            // textmarge
+            // comboprod
             // 
-            this.textmarge.Location = new System.Drawing.Point(178, 82);
-            this.textmarge.Name = "textmarge";
-            this.textmarge.Size = new System.Drawing.Size(100, 20);
-            this.textmarge.TabIndex = 23;
-            // 
-            // textprixvente
-            // 
-            this.textprixvente.Location = new System.Drawing.Point(449, 78);
-            this.textprixvente.Name = "textprixvente";
-            this.textprixvente.Size = new System.Drawing.Size(100, 20);
-            this.textprixvente.TabIndex = 24;
-            // 
-            // textmntmarge
-            // 
-            this.textmntmarge.Location = new System.Drawing.Point(658, 79);
-            this.textmntmarge.Name = "textmntmarge";
-            this.textmntmarge.Size = new System.Drawing.Size(100, 20);
-            this.textmntmarge.TabIndex = 25;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(148, 145);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Nbr. CV :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(129, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Marge :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(567, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 13);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Montant Marge :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(601, 145);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Nbr. PG :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(392, 145);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 13);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Nbr. CG :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(424, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 13);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "Type Production :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(367, 82);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 13);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "Prix de Vente :";
+            this.comboprod.FormattingEnabled = true;
+            this.comboprod.Location = new System.Drawing.Point(518, 20);
+            this.comboprod.Name = "comboprod";
+            this.comboprod.Size = new System.Drawing.Size(121, 21);
+            this.comboprod.TabIndex = 34;
             // 
             // label9
             // 
@@ -353,37 +284,126 @@
             this.label9.TabIndex = 33;
             this.label9.Text = "Espèces :";
             // 
-            // comboprod
+            // label8
             // 
-            this.comboprod.FormattingEnabled = true;
-            this.comboprod.Location = new System.Drawing.Point(531, 20);
-            this.comboprod.Name = "comboprod";
-            this.comboprod.Size = new System.Drawing.Size(121, 21);
-            this.comboprod.TabIndex = 34;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(650, 89);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 13);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "Prix de Vente :";
             // 
-            // comboespece
+            // label7
             // 
-            this.comboespece.FormattingEnabled = true;
-            this.comboespece.Location = new System.Drawing.Point(732, 20);
-            this.comboespece.Name = "comboespece";
-            this.comboespece.Size = new System.Drawing.Size(121, 21);
-            this.comboespece.TabIndex = 35;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(424, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 13);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Type Production :";
             // 
-            // textlibelle
+            // label6
             // 
-            this.textlibelle.Location = new System.Drawing.Point(274, 20);
-            this.textlibelle.Name = "textlibelle";
-            this.textlibelle.Size = new System.Drawing.Size(100, 20);
-            this.textlibelle.TabIndex = 36;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(392, 145);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 13);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Nbr. CG :";
             // 
-            // label10
+            // label5
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(225, 26);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 13);
-            this.label10.TabIndex = 37;
-            this.label10.Text = "Libelle :";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(601, 145);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Nbr. PG :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(424, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 13);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Montant Marge :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 13);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "P :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(148, 145);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Nbr. CV :";
+            // 
+            // textmntmarge
+            // 
+            this.textmntmarge.Location = new System.Drawing.Point(732, 86);
+            this.textmntmarge.Name = "textmntmarge";
+            this.textmntmarge.Size = new System.Drawing.Size(121, 20);
+            this.textmntmarge.TabIndex = 25;
+            // 
+            // textprixvente
+            // 
+            this.textprixvente.Location = new System.Drawing.Point(518, 82);
+            this.textprixvente.Name = "textprixvente";
+            this.textprixvente.Size = new System.Drawing.Size(121, 20);
+            this.textprixvente.TabIndex = 24;
+            // 
+            // textmarge
+            // 
+            this.textmarge.Location = new System.Drawing.Point(66, 82);
+            this.textmarge.Name = "textmarge";
+            this.textmarge.Size = new System.Drawing.Size(100, 20);
+            this.textmarge.TabIndex = 23;
+            // 
+            // textCV
+            // 
+            this.textCV.Location = new System.Drawing.Point(204, 142);
+            this.textCV.Name = "textCV";
+            this.textCV.Size = new System.Drawing.Size(100, 20);
+            this.textCV.TabIndex = 22;
+            // 
+            // textCG
+            // 
+            this.textCG.Location = new System.Drawing.Point(449, 142);
+            this.textCG.Name = "textCG";
+            this.textCG.Size = new System.Drawing.Size(100, 20);
+            this.textCG.TabIndex = 21;
+            // 
+            // textPG
+            // 
+            this.textPG.Location = new System.Drawing.Point(658, 142);
+            this.textPG.Name = "textPG";
+            this.textPG.Size = new System.Drawing.Size(100, 20);
+            this.textPG.TabIndex = 20;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(274, 82);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 38;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(214, 86);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 13);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Marge % :";
             // 
             // frmVariete
             // 
@@ -442,5 +462,7 @@
         private System.Windows.Forms.TextBox textCV;
         private System.Windows.Forms.TextBox textCG;
         private System.Windows.Forms.TextBox textPG;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

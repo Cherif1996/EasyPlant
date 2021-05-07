@@ -17,7 +17,7 @@ namespace EasyPlant.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Variete()
         {
-            this.DetailsCommandes = new HashSet<DetailsCommande>();
+            this.Commandes = new HashSet<Commande>();
         }
     
         public int CodeVariete { get; set; }
@@ -32,22 +32,8 @@ namespace EasyPlant.DAL
         public decimal PrixVente { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetailsCommande> DetailsCommandes { get; set; }
+        public virtual ICollection<Commande> Commandes { get; set; }
         public virtual Espece Espece { get; set; }
-        public string LibelleEspece
-        {
-            get
-            {
-                return Espece.LibelleEspece;
-            }
-        }
         public virtual TypeProduction TypeProduction { get; set; }
-        public string Libelle
-        {
-            get
-            {
-                return TypeProduction.Libelle;
-            }
-        }
     }
 }

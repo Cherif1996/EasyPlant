@@ -57,28 +57,28 @@ namespace EasyPlant.ParametreDeDonnees
 
 
         }
-
+        
         private void btnsave_Click(object sender, EventArgs e)
         {
-            model.CodeVariete = Convert.ToInt32(textcode.Text.Trim());
-            model.LibelleVariete = textlibelle.Text.Trim();
-            model.Espece = (Espece)comboespece.SelectedItem;
-            model.TypeProduction = (TypeProduction)comboprod.SelectedItem;
-            model.NBjoursCG = Convert.ToInt32(textCV.Text.Trim());
-            model.NBjoursCG = Convert.ToInt32(textCG.Text.Trim());
-            model.NBjoursPG = Convert.ToInt32(textPG.Text.Trim());
-            model.Marge = decimal.Parse(textmarge.Text, CultureInfo.InvariantCulture);
-            model.MontantMarge = decimal.Parse(textmntmarge.Text, CultureInfo.InvariantCulture);
-            model.PrixVente = decimal.Parse(textprixvente.Text, CultureInfo.InvariantCulture);
-            if (Code > 0)
-                db.Entry(model).State = EntityState.Modified;
-            else
+            model = db.Varietes.ToList().Where(x=>x.CodeVariete== Convert.ToInt32(textcode.Text.Trim())).FirstOrDefault() ;
+            if(model!=null)
             {
-                db.Varietes.Add(model);
+                model.LibelleVariete = textlibelle.Text.Trim();
+                model.Espece = (Espece)comboespece.SelectedItem;
+                model.TypeProduction = (TypeProduction)comboprod.SelectedItem;
+                model.NBjoursCG = Convert.ToInt32(textCV.Text.Trim());
+                model.NBjoursCG = Convert.ToInt32(textCG.Text.Trim());
+                model.NBjoursPG = Convert.ToInt32(textPG.Text.Trim());
+                model.Marge = decimal.Parse(textmarge.Text, CultureInfo.InvariantCulture);
+                model.MontantMarge = decimal.Parse(textmntmarge.Text, CultureInfo.InvariantCulture);
+                model.PrixVente = decimal.Parse(textprixvente.Text, CultureInfo.InvariantCulture);
+                db.SaveChanges();
+
             }
-            db.SaveChanges();
+            
             Clear();
             varieteDataGrid();
+
             MessageBox.Show("Enregistrement avec succées");
         }
 

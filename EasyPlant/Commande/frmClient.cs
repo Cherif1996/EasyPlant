@@ -73,7 +73,6 @@ namespace EasyPlant.Commande
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-
             model.CodeClient = Convert.ToInt32(textcode.Text.Trim());
             model.Libelle = textnom.Text.Trim();
             model.Adresse = textadresse.Text.Trim();
@@ -94,6 +93,7 @@ namespace EasyPlant.Commande
             model.Timbre = Convert.ToInt32(texttimbre.Text.Trim());
             model.PointVente = (PointVente)comboBoxPointVente.SelectedItem;
             model.TypeClient = (TypeClient)comboBoxtypeclient.SelectedItem;
+
             if (Client > 0)
                 db.Entry(model).State = EntityState.Modified;
             else
@@ -130,6 +130,7 @@ namespace EasyPlant.Commande
         {
             if (dataGridClient.CurrentRow.Index != -1)
             {
+
                 Client = Convert.ToInt32(dataGridClient.CurrentRow.Cells["CodeClient"].Value);
                 model = db.Clients.Where(x => x.CodeClient == Client).FirstOrDefault();
                 Client = model.CodeClient;

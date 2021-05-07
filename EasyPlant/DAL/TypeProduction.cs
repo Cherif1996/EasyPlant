@@ -17,7 +17,7 @@ namespace EasyPlant.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TypeProduction()
         {
-            this.DetailsCommandes = new HashSet<DetailsCommande>();
+            this.Commandes = new HashSet<Commande>();
             this.Productions = new HashSet<Production>();
             this.Varietes = new HashSet<Variete>();
         }
@@ -26,11 +26,10 @@ namespace EasyPlant.DAL
         public string Libelle { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetailsCommande> DetailsCommandes { get; set; }
+        public virtual ICollection<Commande> Commandes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Production> Productions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Variete> Varietes { get; set; }
-
     }
 }

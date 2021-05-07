@@ -39,8 +39,7 @@ namespace EasyPlant
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            /*this.TopMost = true;
-            this.WindowState = FormWindowState.Maximized;*/
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void listeDesSemenciersToolStripMenuItem_Click(object sender, EventArgs e)

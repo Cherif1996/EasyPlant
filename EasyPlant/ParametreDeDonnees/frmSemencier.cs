@@ -54,9 +54,11 @@ namespace EasyPlant
         }
         private void btnsave_Click(object sender, EventArgs e)
         {
+            model.CodeSemencier = Convert.ToInt32(textcode.Text.Trim());
             model.Libelle = textlibelle.Text.Trim();
             model.Pays = textpays.Text.Trim();
             model.SiteWeb = textweb.Text.Trim();
+
             if (Code > 0)
                 db.Entry(model).State = EntityState.Modified;
             else
@@ -67,6 +69,7 @@ namespace EasyPlant
             
             db.SaveChanges();
             Clear();
+            SemencierDataGrid();
             MessageBox.Show("Enregistrement avec succées");
         }
 
@@ -74,11 +77,13 @@ namespace EasyPlant
         {
             if(SemecierDataGrid.CurrentRow.Index != -1)
             {
-                Code = Convert.ToInt32(SemecierDataGrid.CurrentRow.Cells["CodeSemencier"].Value);
-                model = db.Semenciers.Where(x => x.CodeSemencier == Code).FirstOrDefault();
-                textlibelle.Text = model.Libelle;
-                textweb.Text = model.SiteWeb;
-                textpays.Text = model.Pays;
+                
+                textcode.Text = SemecierDataGrid.CurrentRow.Cells["CodeSemencier"].Value.ToString();
+                textlibelle.Text = SemecierDataGrid.CurrentRow.Cells["Libelle"].Value.ToString();
+                textpays.Text = SemecierDataGrid.CurrentRow.Cells["Pays"].Value.ToString();
+                textweb.Text = SemecierDataGrid.CurrentRow.Cells["SiteWeb"].Value.ToString();
+
+               
              }
              btnsave.Text = "Modifier";
              btndelete.Enabled = true;
@@ -87,13 +92,21 @@ namespace EasyPlant
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Etes-vous sûr de vouloir supprimer ce semencier ?", "Supprimer ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Etes-vous sûr de vouloir supprimer cet semencier?", "Supprimer?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                db.Semenciers.Remove(model);
+                int codeParametrage = Convert.ToInt32(textcode.Text.Trim());
+                string libelle = textlibelle.Text.Trim();
+
+                if (MessageBox.Show("Etes-vous sûr de vouloir supprimer ce type?", "Supprimer?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Semencier es = db.Semenciers.ToList<DAL.Semencier>().Where(w => w.CodeSemencier == codeParametrage).FirstOrDefault();
+                    GenericRepository<Semencier> sem = new GenericRepository<Semencier>(db);
+                    sem.Delete(es);
+                }
                 db.SaveChanges();
                 Clear();
                 SemencierDataGrid();
-                MessageBox.Show("Semencier supprimé ");
+                MessageBox.Show("semencier supprimé ");
             }
 
         }

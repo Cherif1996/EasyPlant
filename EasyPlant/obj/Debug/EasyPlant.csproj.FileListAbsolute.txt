@@ -69,3 +69,5 @@ E:\PFE\authentification\EasyPlant\EasyPlant\EasyPlant\bin\Debug\stdole.dll
 E:\PFE\authentification\EasyPlant\EasyPlant\EasyPlant\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 E:\PFE\authentification\EasyPlant\EasyPlant\EasyPlant\obj\Debug\EasyPlant.ParametreDeDonnees.HeaderSociete.resources
 E:\PFE\authentification\EasyPlant\EasyPlant\EasyPlant\obj\Debug\EasyPlant.Commande.frmListeClient.resources
+E:\PFE\authentification\EasyPlant\EasyPlant\EasyPlant\obj\Debug\EasyPlant.Commande.frmAvance.resources
+E:\PFE\authentification\EasyPlant\EasyPlant\EasyPlant\obj\Debug\EasyPlant.Commande.frmReceptionS.resources

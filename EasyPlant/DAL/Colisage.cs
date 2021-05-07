@@ -14,7 +14,16 @@ namespace EasyPlant.DAL
     
     public partial class Colisage
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Colisage()
+        {
+            this.ReceptionSemences = new HashSet<ReceptionSemence>();
+        }
+    
         public int CodeColisage { get; set; }
         public string Libelle { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReceptionSemence> ReceptionSemences { get; set; }
     }
 }

@@ -35,7 +35,6 @@ namespace EasyPlant.DAL
         public virtual DbSet<Commande> Commandes { get; set; }
         public virtual DbSet<Comptage> Comptages { get; set; }
         public virtual DbSet<DetailsBL> DetailsBLs { get; set; }
-        public virtual DbSet<DetailsCommande> DetailsCommandes { get; set; }
         public virtual DbSet<Emplacement> Emplacements { get; set; }
         public virtual DbSet<Espece> Especes { get; set; }
         public virtual DbSet<Famille> Familles { get; set; }

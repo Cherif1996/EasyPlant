@@ -33,7 +33,6 @@
             this.radioButtonService = new System.Windows.Forms.RadioButton();
             this.dateTimeCommande = new System.Windows.Forms.DateTimePicker();
             this.CommandedataGrid = new System.Windows.Forms.DataGridView();
-            this.CodeVariete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LibelleVariete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remise = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,18 +46,15 @@
             this.DGR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DPG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeSupport = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NbrSupports = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResevasionConsignes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeCommande = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelCommande = new System.Windows.Forms.Panel();
-            this.textcapacitéProd = new System.Windows.Forms.TextBox();
-            this.labelCapaciteProd = new System.Windows.Forms.Label();
+            this.comboclient = new System.Windows.Forms.ComboBox();
             this.comboBoxCommercial = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textnoteComm = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBoxNomClient = new System.Windows.Forms.ComboBox();
-            this.textCodeClient = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,6 +62,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.combovariete = new System.Windows.Forms.ComboBox();
             this.btnvalider = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.checkBoxConsignes = new System.Windows.Forms.CheckBox();
@@ -90,8 +87,6 @@
             this.comboBoxTypeProd = new System.Windows.Forms.ComboBox();
             this.comboBoxSupport = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBoxVariete = new System.Windows.Forms.ComboBox();
-            this.textCodeVariete = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btndelete = new System.Windows.Forms.Button();
@@ -120,6 +115,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnReSemences = new System.Windows.Forms.Button();
             this.btnAvance = new System.Windows.Forms.Button();
+            this.textBoxcode = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CommandedataGrid)).BeginInit();
             this.panelCommande.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -138,7 +134,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 17);
+            this.label1.Location = new System.Drawing.Point(17, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 1;
@@ -147,6 +143,7 @@
             // radioButtonService
             // 
             this.radioButtonService.AutoSize = true;
+            this.radioButtonService.Checked = true;
             this.radioButtonService.Location = new System.Drawing.Point(584, 78);
             this.radioButtonService.Name = "radioButtonService";
             this.radioButtonService.Size = new System.Drawing.Size(61, 17);
@@ -167,7 +164,6 @@
             // 
             this.CommandedataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CommandedataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CodeVariete,
             this.LibelleVariete,
             this.PU,
             this.Remise,
@@ -181,25 +177,19 @@
             this.DGR,
             this.DPG,
             this.TypeSupport,
-            this.NbrSupports,
             this.TypeProd,
+            this.ResevasionConsignes,
             this.TypeCommande});
             this.CommandedataGrid.Location = new System.Drawing.Point(12, 295);
             this.CommandedataGrid.Name = "CommandedataGrid";
             this.CommandedataGrid.Size = new System.Drawing.Size(972, 90);
             this.CommandedataGrid.TabIndex = 4;
-            // 
-            // CodeVariete
-            // 
-            this.CodeVariete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CodeVariete.DataPropertyName = "CodeVariete";
-            this.CodeVariete.HeaderText = "Code Variété";
-            this.CodeVariete.Name = "CodeVariete";
+            this.CommandedataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CommandedataGrid_CellContentClick);
             // 
             // LibelleVariete
             // 
             this.LibelleVariete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.LibelleVariete.DataPropertyName = "Libelle";
+            this.LibelleVariete.DataPropertyName = "LibelleVariete";
             this.LibelleVariete.HeaderText = "Libelle Variéte";
             this.LibelleVariete.Name = "LibelleVariete";
             // 
@@ -272,38 +262,40 @@
             // TypeSupport
             // 
             this.TypeSupport.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TypeSupport.DataPropertyName = "LibelleSupport";
             this.TypeSupport.HeaderText = "Type Support";
             this.TypeSupport.Name = "TypeSupport";
-            // 
-            // NbrSupports
-            // 
-            this.NbrSupports.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NbrSupports.HeaderText = "Nbr Supports";
-            this.NbrSupports.Name = "NbrSupports";
             // 
             // TypeProd
             // 
             this.TypeProd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TypeProd.DataPropertyName = "LibelleTypeProd";
             this.TypeProd.HeaderText = "Type Production";
             this.TypeProd.Name = "TypeProd";
+            // 
+            // ResevasionConsignes
+            // 
+            this.ResevasionConsignes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ResevasionConsignes.DataPropertyName = "ReservationCons";
+            this.ResevasionConsignes.HeaderText = "Reserv.C";
+            this.ResevasionConsignes.Name = "ResevasionConsignes";
             // 
             // TypeCommande
             // 
             this.TypeCommande.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TypeCommande.DataPropertyName = "TypeCommande";
             this.TypeCommande.HeaderText = "Type Commande";
             this.TypeCommande.Name = "TypeCommande";
             // 
             // panelCommande
             // 
             this.panelCommande.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCommande.Controls.Add(this.textcapacitéProd);
-            this.panelCommande.Controls.Add(this.labelCapaciteProd);
+            this.panelCommande.Controls.Add(this.textBoxcode);
+            this.panelCommande.Controls.Add(this.comboclient);
             this.panelCommande.Controls.Add(this.comboBoxCommercial);
             this.panelCommande.Controls.Add(this.label11);
             this.panelCommande.Controls.Add(this.textnoteComm);
             this.panelCommande.Controls.Add(this.label10);
-            this.panelCommande.Controls.Add(this.comboBoxNomClient);
-            this.panelCommande.Controls.Add(this.textCodeClient);
             this.panelCommande.Controls.Add(this.textnumeroCom);
             this.panelCommande.Controls.Add(this.label1);
             this.panelCommande.Controls.Add(this.label2);
@@ -314,22 +306,14 @@
             this.panelCommande.Size = new System.Drawing.Size(972, 100);
             this.panelCommande.TabIndex = 5;
             // 
-            // textcapacitéProd
+            // comboclient
             // 
-            this.textcapacitéProd.Location = new System.Drawing.Point(741, 65);
-            this.textcapacitéProd.Name = "textcapacitéProd";
-            this.textcapacitéProd.Size = new System.Drawing.Size(100, 20);
-            this.textcapacitéProd.TabIndex = 16;
-            this.textcapacitéProd.Text = "50000";
-            // 
-            // labelCapaciteProd
-            // 
-            this.labelCapaciteProd.AutoSize = true;
-            this.labelCapaciteProd.Location = new System.Drawing.Point(608, 68);
-            this.labelCapaciteProd.Name = "labelCapaciteProd";
-            this.labelCapaciteProd.Size = new System.Drawing.Size(127, 13);
-            this.labelCapaciteProd.TabIndex = 15;
-            this.labelCapaciteProd.Text = "Capacité de Production  :";
+            this.comboclient.FormattingEnabled = true;
+            this.comboclient.Location = new System.Drawing.Point(466, 9);
+            this.comboclient.Name = "comboclient";
+            this.comboclient.Size = new System.Drawing.Size(131, 21);
+            this.comboclient.TabIndex = 32;
+            this.comboclient.SelectedIndexChanged += new System.EventHandler(this.comboclient_SelectedIndexChanged);
             // 
             // comboBoxCommercial
             // 
@@ -337,7 +321,7 @@
             this.comboBoxCommercial.Items.AddRange(new object[] {
             "Sarra",
             "Oumaima"});
-            this.comboBoxCommercial.Location = new System.Drawing.Point(720, 14);
+            this.comboBoxCommercial.Location = new System.Drawing.Point(734, 9);
             this.comboBoxCommercial.Name = "comboBoxCommercial";
             this.comboBoxCommercial.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCommercial.TabIndex = 14;
@@ -345,7 +329,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(608, 15);
+            this.label11.Location = new System.Drawing.Point(649, 13);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(70, 13);
             this.label11.TabIndex = 13;
@@ -353,7 +337,7 @@
             // 
             // textnoteComm
             // 
-            this.textnoteComm.Location = new System.Drawing.Point(71, 61);
+            this.textnoteComm.Location = new System.Drawing.Point(71, 57);
             this.textnoteComm.Name = "textnoteComm";
             this.textnoteComm.Size = new System.Drawing.Size(481, 20);
             this.textnoteComm.TabIndex = 12;
@@ -361,26 +345,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 64);
+            this.label10.Location = new System.Drawing.Point(29, 60);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 13);
             this.label10.TabIndex = 11;
             this.label10.Text = "Note :";
-            // 
-            // comboBoxNomClient
-            // 
-            this.comboBoxNomClient.FormattingEnabled = true;
-            this.comboBoxNomClient.Location = new System.Drawing.Point(431, 12);
-            this.comboBoxNomClient.Name = "comboBoxNomClient";
-            this.comboBoxNomClient.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxNomClient.TabIndex = 10;
-            // 
-            // textCodeClient
-            // 
-            this.textCodeClient.Location = new System.Drawing.Point(394, 12);
-            this.textCodeClient.Name = "textCodeClient";
-            this.textCodeClient.Size = new System.Drawing.Size(35, 20);
-            this.textCodeClient.TabIndex = 9;
             // 
             // label2
             // 
@@ -394,7 +363,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(341, 16);
+            this.label3.Location = new System.Drawing.Point(339, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 7;
@@ -403,7 +372,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(601, 8);
+            this.label4.Location = new System.Drawing.Point(619, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 8;
@@ -412,7 +381,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(328, 9);
+            this.label7.Location = new System.Drawing.Point(346, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(28, 13);
             this.label7.TabIndex = 11;
@@ -421,7 +390,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(271, 9);
+            this.label8.Location = new System.Drawing.Point(289, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(27, 13);
             this.label8.TabIndex = 12;
@@ -430,7 +399,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(388, 9);
+            this.label9.Location = new System.Drawing.Point(406, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 13);
             this.label9.TabIndex = 13;
@@ -439,6 +408,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.combovariete);
             this.panel2.Controls.Add(this.btnvalider);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.checkBoxConsignes);
@@ -468,13 +438,19 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.comboBoxSupport);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.comboBoxVariete);
-            this.panel2.Controls.Add(this.textCodeVariete);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Location = new System.Drawing.Point(12, 133);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(972, 156);
             this.panel2.TabIndex = 17;
+            // 
+            // combovariete
+            // 
+            this.combovariete.FormattingEnabled = true;
+            this.combovariete.Location = new System.Drawing.Point(63, 19);
+            this.combovariete.Name = "combovariete";
+            this.combovariete.Size = new System.Drawing.Size(131, 21);
+            this.combovariete.TabIndex = 33;
             // 
             // btnvalider
             // 
@@ -501,7 +477,7 @@
             // checkBoxConsignes
             // 
             this.checkBoxConsignes.AutoSize = true;
-            this.checkBoxConsignes.Location = new System.Drawing.Point(150, 124);
+            this.checkBoxConsignes.Location = new System.Drawing.Point(163, 124);
             this.checkBoxConsignes.Name = "checkBoxConsignes";
             this.checkBoxConsignes.Size = new System.Drawing.Size(135, 17);
             this.checkBoxConsignes.TabIndex = 29;
@@ -521,32 +497,38 @@
             // 
             // dateTimeDSV
             // 
-            this.dateTimeDSV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeDSV.CustomFormat = "dd/MM/yyyy";
+            this.dateTimeDSV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeDSV.Location = new System.Drawing.Point(876, 9);
             this.dateTimeDSV.Name = "dateTimeDSV";
             this.dateTimeDSV.Size = new System.Drawing.Size(84, 20);
             this.dateTimeDSV.TabIndex = 27;
+            this.dateTimeDSV.Value = new System.DateTime(2021, 5, 4, 0, 0, 0, 0);
             // 
             // dateTimeDGR
             // 
-            this.dateTimeDGR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeDGR.Location = new System.Drawing.Point(876, 40);
+            this.dateTimeDGR.CustomFormat = "dd/MM/yyyy";
+            this.dateTimeDGR.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeDGR.Location = new System.Drawing.Point(876, 70);
             this.dateTimeDGR.Name = "dateTimeDGR";
             this.dateTimeDGR.Size = new System.Drawing.Size(84, 20);
             this.dateTimeDGR.TabIndex = 26;
+            this.dateTimeDGR.Value = new System.DateTime(2021, 5, 4, 0, 0, 0, 0);
             // 
             // dateTimeDPG
             // 
-            this.dateTimeDPG.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeDPG.Location = new System.Drawing.Point(876, 68);
+            this.dateTimeDPG.CustomFormat = "dd/MM/yyyy";
+            this.dateTimeDPG.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeDPG.Location = new System.Drawing.Point(876, 44);
             this.dateTimeDPG.Name = "dateTimeDPG";
             this.dateTimeDPG.Size = new System.Drawing.Size(84, 20);
             this.dateTimeDPG.TabIndex = 25;
+            this.dateTimeDPG.Value = new System.DateTime(2021, 5, 4, 0, 0, 0, 0);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(834, 73);
+            this.label20.Location = new System.Drawing.Point(832, 50);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(42, 13);
             this.label20.TabIndex = 18;
@@ -555,7 +537,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(834, 46);
+            this.label21.Location = new System.Drawing.Point(834, 76);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(43, 13);
             this.label21.TabIndex = 19;
@@ -573,7 +555,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(685, 8);
+            this.label19.Location = new System.Drawing.Point(703, 8);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(69, 13);
             this.label19.TabIndex = 17;
@@ -581,14 +563,14 @@
             // 
             // textTotNet
             // 
-            this.textTotNet.Location = new System.Drawing.Point(596, 24);
+            this.textTotNet.Location = new System.Drawing.Point(614, 24);
             this.textTotNet.Name = "textTotNet";
             this.textTotNet.Size = new System.Drawing.Size(57, 20);
             this.textTotNet.TabIndex = 24;
             // 
             // textTotBrut
             // 
-            this.textTotBrut.Location = new System.Drawing.Point(522, 24);
+            this.textTotBrut.Location = new System.Drawing.Point(540, 24);
             this.textTotBrut.Name = "textTotBrut";
             this.textTotBrut.Size = new System.Drawing.Size(57, 20);
             this.textTotBrut.TabIndex = 23;
@@ -596,7 +578,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(526, 9);
+            this.label13.Location = new System.Drawing.Point(544, 9);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(51, 13);
             this.label13.TabIndex = 18;
@@ -604,23 +586,26 @@
             // 
             // textPUNet
             // 
-            this.textPUNet.Location = new System.Drawing.Point(450, 25);
+            this.textPUNet.Location = new System.Drawing.Point(468, 25);
             this.textPUNet.Name = "textPUNet";
             this.textPUNet.Size = new System.Drawing.Size(57, 20);
             this.textPUNet.TabIndex = 22;
             // 
             // dateTimeLivPrevu
             // 
-            this.dateTimeLivPrevu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeLivPrevu.Location = new System.Drawing.Point(680, 24);
+            this.dateTimeLivPrevu.CustomFormat = "dd/MM/yyyy";
+            this.dateTimeLivPrevu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeLivPrevu.Location = new System.Drawing.Point(698, 24);
             this.dateTimeLivPrevu.Name = "dateTimeLivPrevu";
             this.dateTimeLivPrevu.Size = new System.Drawing.Size(84, 20);
             this.dateTimeLivPrevu.TabIndex = 3;
+            this.dateTimeLivPrevu.Value = new System.DateTime(2021, 5, 4, 0, 0, 0, 0);
+            this.dateTimeLivPrevu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimeLivPrevu_KeyPress);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(454, 9);
+            this.label12.Location = new System.Drawing.Point(472, 9);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 13);
             this.label12.TabIndex = 18;
@@ -628,24 +613,27 @@
             // 
             // textRemise
             // 
-            this.textRemise.Location = new System.Drawing.Point(387, 25);
+            this.textRemise.Location = new System.Drawing.Point(405, 25);
             this.textRemise.Name = "textRemise";
             this.textRemise.Size = new System.Drawing.Size(57, 20);
             this.textRemise.TabIndex = 21;
+            this.textRemise.TextChanged += new System.EventHandler(this.textRemise_TextChanged);
             // 
             // textPU
             // 
-            this.textPU.Location = new System.Drawing.Point(314, 25);
+            this.textPU.Location = new System.Drawing.Point(332, 25);
             this.textPU.Name = "textPU";
             this.textPU.Size = new System.Drawing.Size(57, 20);
             this.textPU.TabIndex = 20;
+            this.textPU.TextChanged += new System.EventHandler(this.textPU_TextChanged);
             // 
             // textQte
             // 
-            this.textQte.Location = new System.Drawing.Point(257, 25);
+            this.textQte.Location = new System.Drawing.Point(275, 25);
             this.textQte.Name = "textQte";
             this.textQte.Size = new System.Drawing.Size(57, 20);
             this.textQte.TabIndex = 19;
+            this.textQte.TextChanged += new System.EventHandler(this.textQte_TextChanged);
             // 
             // label18
             // 
@@ -681,21 +669,6 @@
             this.label14.TabIndex = 11;
             this.label14.Text = "Support :";
             // 
-            // comboBoxVariete
-            // 
-            this.comboBoxVariete.FormattingEnabled = true;
-            this.comboBoxVariete.Location = new System.Drawing.Point(98, 24);
-            this.comboBoxVariete.Name = "comboBoxVariete";
-            this.comboBoxVariete.Size = new System.Drawing.Size(140, 21);
-            this.comboBoxVariete.TabIndex = 10;
-            // 
-            // textCodeVariete
-            // 
-            this.textCodeVariete.Location = new System.Drawing.Point(63, 24);
-            this.textCodeVariete.Name = "textCodeVariete";
-            this.textCodeVariete.Size = new System.Drawing.Size(35, 20);
-            this.textCodeVariete.TabIndex = 9;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -727,7 +700,7 @@
             this.btndelete.BackColor = System.Drawing.Color.Green;
             this.btndelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndelete.ForeColor = System.Drawing.Color.White;
-            this.btndelete.Location = new System.Drawing.Point(163, 94);
+            this.btndelete.Location = new System.Drawing.Point(151, 94);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(123, 44);
             this.btndelete.TabIndex = 41;
@@ -745,6 +718,7 @@
             this.btncancel.TabIndex = 40;
             this.btncancel.Text = "Annuler";
             this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // btnImpConsignes
             // 
@@ -805,6 +779,7 @@
             this.btnsave.TabIndex = 35;
             this.btnsave.Text = "Enregistrer";
             this.btnsave.UseVisualStyleBackColor = false;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // groupBox1
             // 
@@ -990,6 +965,15 @@
             this.btnAvance.TabIndex = 32;
             this.btnAvance.Text = "Saisie Avance";
             this.btnAvance.UseVisualStyleBackColor = false;
+            this.btnAvance.Click += new System.EventHandler(this.btnAvance_Click);
+            // 
+            // textBoxcode
+            // 
+            this.textBoxcode.Location = new System.Drawing.Point(402, 10);
+            this.textBoxcode.Name = "textBoxcode";
+            this.textBoxcode.Size = new System.Drawing.Size(58, 20);
+            this.textBoxcode.TabIndex = 33;
+            this.textBoxcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxcode_KeyPress);
             // 
             // frmContratCommande
             // 
@@ -1035,18 +1019,10 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textnoteComm;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBoxNomClient;
-        private System.Windows.Forms.TextBox textCodeClient;
-        private System.Windows.Forms.TextBox textcapacitéProd;
-        private System.Windows.Forms.Label labelCapaciteProd;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBoxVariete;
-        private System.Windows.Forms.TextBox textCodeVariete;
-        private System.Windows.Forms.DateTimePicker dateTimeLivPrevu;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBoxSupport;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textTotNet;
         private System.Windows.Forms.TextBox textTotBrut;
@@ -1067,23 +1043,6 @@
         private System.Windows.Forms.CheckBox checkBoxConsignes;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnvalider;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodeVariete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LibelleVariete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Remise;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PUNet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotBrut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mnt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotNet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateLiv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DPG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TypeSupport;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NbrSupports;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TypeProd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TypeCommande;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox texttimbre;
@@ -1111,5 +1070,26 @@
         private System.Windows.Forms.Button btnconsignes;
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.ComboBox comboBoxSupport;
+        private System.Windows.Forms.DateTimePicker dateTimeLivPrevu;
+        private System.Windows.Forms.ComboBox comboclient;
+        private System.Windows.Forms.ComboBox combovariete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LibelleVariete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Remise;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PUNet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotBrut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mnt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotNet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateLiv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DPG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypeSupport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypeProd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ResevasionConsignes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypeCommande;
+        private System.Windows.Forms.TextBox textBoxcode;
     }
 }

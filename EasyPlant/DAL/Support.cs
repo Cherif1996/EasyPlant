@@ -17,7 +17,7 @@ namespace EasyPlant.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Support()
         {
-            this.DetailsCommandes = new HashSet<DetailsCommande>();
+            this.Commandes = new HashSet<Commande>();
             this.MouvementStocks = new HashSet<MouvementStock>();
         }
     
@@ -36,7 +36,7 @@ namespace EasyPlant.DAL
         public double TVA { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetailsCommande> DetailsCommandes { get; set; }
+        public virtual ICollection<Commande> Commandes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MouvementStock> MouvementStocks { get; set; }
     }

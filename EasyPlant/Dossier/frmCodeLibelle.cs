@@ -399,7 +399,6 @@ namespace EasyPlant
                     GenericRepository<EasyPlant.DAL.Colisage> cols = new GenericRepository<EasyPlant.DAL.Colisage>(db);
                     cols.Insert(col);
                 }
-                
                 if (LibelleForm.libelle == "Unité")
                 {
                     EasyPlant.DAL.Unite uni = db.Unites.ToList<DAL.Unite>().Where(w => w.CodeUnite == codeParametrage).FirstOrDefault();

@@ -52,11 +52,11 @@
             // code
             // 
             this.code.AutoSize = true;
-            this.code.Location = new System.Drawing.Point(74, 35);
+            this.code.Location = new System.Drawing.Point(30, 36);
             this.code.Name = "code";
-            this.code.Size = new System.Drawing.Size(32, 13);
+            this.code.Size = new System.Drawing.Size(38, 13);
             this.code.TabIndex = 1;
-            this.code.Text = "Code";
+            this.code.Text = "Code :";
             // 
             // panel1
             // 
@@ -78,32 +78,41 @@
             // 
             // btndelete
             // 
-            this.btndelete.Location = new System.Drawing.Point(443, 164);
+            this.btndelete.BackColor = System.Drawing.Color.Green;
+            this.btndelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndelete.ForeColor = System.Drawing.Color.White;
+            this.btndelete.Location = new System.Drawing.Point(455, 164);
             this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(75, 23);
+            this.btndelete.Size = new System.Drawing.Size(120, 47);
             this.btndelete.TabIndex = 13;
             this.btndelete.Text = "Supprimer";
-            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.UseVisualStyleBackColor = false;
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnsave
             // 
-            this.btnsave.Location = new System.Drawing.Point(174, 164);
+            this.btnsave.BackColor = System.Drawing.Color.Green;
+            this.btnsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsave.ForeColor = System.Drawing.Color.White;
+            this.btnsave.Location = new System.Drawing.Point(146, 164);
             this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(75, 23);
+            this.btnsave.Size = new System.Drawing.Size(123, 47);
             this.btnsave.TabIndex = 12;
             this.btnsave.Text = "Enregistrer";
-            this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.UseVisualStyleBackColor = false;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // btncancel
             // 
-            this.btncancel.Location = new System.Drawing.Point(313, 164);
+            this.btncancel.BackColor = System.Drawing.Color.Green;
+            this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.ForeColor = System.Drawing.Color.White;
+            this.btncancel.Location = new System.Drawing.Point(300, 164);
             this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(75, 23);
+            this.btncancel.Size = new System.Drawing.Size(123, 47);
             this.btncancel.TabIndex = 11;
             this.btncancel.Text = "Annuler";
-            this.btncancel.UseVisualStyleBackColor = true;
+            this.btncancel.UseVisualStyleBackColor = false;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // textpays
@@ -115,50 +124,50 @@
             // 
             // textweb
             // 
-            this.textweb.Location = new System.Drawing.Point(622, 36);
+            this.textweb.Location = new System.Drawing.Point(530, 36);
             this.textweb.Name = "textweb";
-            this.textweb.Size = new System.Drawing.Size(100, 20);
+            this.textweb.Size = new System.Drawing.Size(175, 20);
             this.textweb.TabIndex = 7;
             // 
             // textlibelle
             // 
-            this.textlibelle.Location = new System.Drawing.Point(353, 32);
+            this.textlibelle.Location = new System.Drawing.Point(313, 36);
             this.textlibelle.Name = "textlibelle";
-            this.textlibelle.Size = new System.Drawing.Size(100, 20);
+            this.textlibelle.Size = new System.Drawing.Size(148, 20);
             this.textlibelle.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(310, 36);
+            this.label3.Location = new System.Drawing.Point(258, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Libelle";
+            this.label3.Text = "Libelle :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(530, 39);
+            this.label2.Location = new System.Drawing.Point(467, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Site Web";
+            this.label2.Text = "Site Web :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(288, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Pays";
+            this.label1.Text = "Pays :";
             // 
             // textcode
             // 
-            this.textcode.Location = new System.Drawing.Point(112, 32);
+            this.textcode.Location = new System.Drawing.Point(74, 33);
             this.textcode.Name = "textcode";
-            this.textcode.Size = new System.Drawing.Size(100, 20);
+            this.textcode.Size = new System.Drawing.Size(110, 20);
             this.textcode.TabIndex = 2;
             // 
             // SemecierDataGrid
@@ -209,14 +218,14 @@
             this.Pays.Name = "Pays";
             this.Pays.ReadOnly = true;
             // 
-            // Semencier
+            // frmSemencier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.SemecierDataGrid);
             this.Controls.Add(this.panel1);
-            this.Name = "Semencier";
+            this.Name = "frmSemencier";
             this.Text = "Semencier";
             this.Load += new System.EventHandler(this.frmSemencier_Load);
             this.panel1.ResumeLayout(false);
