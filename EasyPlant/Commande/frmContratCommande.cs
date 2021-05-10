@@ -1,4 +1,5 @@
-﻿using EasyPlant.DAL;
+﻿using EasyPlant.Commun;
+using EasyPlant.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//saratestgit
 namespace EasyPlant.Commande
 {
     public partial class frmContratCommande : Form
@@ -40,13 +41,7 @@ namespace EasyPlant.Commande
         {      
 
             List<DAL.Client> clients = db.Clients.ToList();
-            foreach (Client client in clients)
-            {
-                comboclient.Items.Add(clients);
-            }
-            comboclient.DataSource = clients;
-            comboclient.DisplayMember = "Libelle";
-            comboclient.ValueMember = "CodeClient";
+            
 
             List<DAL.Variete> varietes = db.Varietes.ToList();
             combovariete.DataSource = varietes;
@@ -56,7 +51,7 @@ namespace EasyPlant.Commande
 
             List<DAL.Support> supports = db.Supports.ToList();
             comboBoxSupport.DataSource = supports;
-            comboBoxSupport.DisplayMember = "Libelle";
+            comboBoxSupport.DisplayMember = "codeLibelle";
             comboBoxSupport.ValueMember = "CodeSupport";
 
             List<TypeProduction>  typeProductions= db.TypeProductions.ToList();
@@ -72,7 +67,6 @@ namespace EasyPlant.Commande
         {
             //Commande
             model.RefCommande = Convert.ToInt32(textnumeroCom.Text.Trim());
-            model.Client = (Client)comboclient.SelectedItem;
             model.NomCommercial = comboBoxCommercial.Text.Trim();
             model.Note = textnoteComm.Text.Trim();
             model.DateCommande = DateTime.Parse(dateTimeCommande.Text);
@@ -120,7 +114,7 @@ namespace EasyPlant.Commande
         }
         void Clear()
         {
-           textnumeroCom.Text = dateTimeCommande.Text=  comboclient.Text =  textnoteComm.Text = textBoxcode.Text=
+           textnumeroCom.Text = dateTimeCommande.Text=  textclient.Text= textBoxcode.Text =  textnoteComm.Text = textBoxcode.Text=
            combovariete.Text =   textQte.Text= textRemise.Text = textPU.Text = textTotBrut.Text =
            textTotNet.Text = textPUNet.Text = dateTimeLivPrevu.Text = comboBoxSupport.Text = comboBoxTypeProd.Text= radioButtonPepi.Text =
            radioButtonService.Text = checkBoxConsignes.Text =  string.Empty;
@@ -241,16 +235,18 @@ namespace EasyPlant.Commande
 
         private void textBoxcode_KeyPress(object sender, KeyPressEventArgs e)
         {
-//            if (e.KeyChar == (char)Keys.Enter)
-//            {
-//               Form cl = new Form();
-//               cl.add = db.Clients.ToList();
-//                cl.ShowDialog();
-//                if(e.KeyChar == (char)Keys.Escape)
-//{
-//                    this.Close();
-//                }
-//            }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                frmEnter frm = new frmEnter();
+                frm.ShowDialog();
+                Client client=frm.getSelectedClient();
+                textBoxcode.Text = client.CodeClient.ToString();
+                textclient.Text = client.Libelle.ToString();
+                if (e.KeyChar == (char)Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
 
         }
     }

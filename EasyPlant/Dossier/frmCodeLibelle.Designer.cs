@@ -57,6 +57,7 @@
             this.LivreurDataGrid.ReadOnly = true;
             this.LivreurDataGrid.Size = new System.Drawing.Size(460, 150);
             this.LivreurDataGrid.TabIndex = 17;
+            this.LivreurDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LivreurDataGrid_CellContentClick);
             this.LivreurDataGrid.DoubleClick += new System.EventHandler(this.LivreurDataGrid_DoubleClick);
             // 
             // CodeLivreur

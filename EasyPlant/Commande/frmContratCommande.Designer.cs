@@ -50,7 +50,7 @@
             this.ResevasionConsignes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeCommande = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelCommande = new System.Windows.Forms.Panel();
-            this.comboclient = new System.Windows.Forms.ComboBox();
+            this.textBoxcode = new System.Windows.Forms.TextBox();
             this.comboBoxCommercial = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textnoteComm = new System.Windows.Forms.TextBox();
@@ -115,7 +115,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnReSemences = new System.Windows.Forms.Button();
             this.btnAvance = new System.Windows.Forms.Button();
-            this.textBoxcode = new System.Windows.Forms.TextBox();
+            this.textclient = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CommandedataGrid)).BeginInit();
             this.panelCommande.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -290,8 +290,8 @@
             // panelCommande
             // 
             this.panelCommande.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCommande.Controls.Add(this.textclient);
             this.panelCommande.Controls.Add(this.textBoxcode);
-            this.panelCommande.Controls.Add(this.comboclient);
             this.panelCommande.Controls.Add(this.comboBoxCommercial);
             this.panelCommande.Controls.Add(this.label11);
             this.panelCommande.Controls.Add(this.textnoteComm);
@@ -306,14 +306,13 @@
             this.panelCommande.Size = new System.Drawing.Size(972, 100);
             this.panelCommande.TabIndex = 5;
             // 
-            // comboclient
+            // textBoxcode
             // 
-            this.comboclient.FormattingEnabled = true;
-            this.comboclient.Location = new System.Drawing.Point(466, 9);
-            this.comboclient.Name = "comboclient";
-            this.comboclient.Size = new System.Drawing.Size(131, 21);
-            this.comboclient.TabIndex = 32;
-            this.comboclient.SelectedIndexChanged += new System.EventHandler(this.comboclient_SelectedIndexChanged);
+            this.textBoxcode.Location = new System.Drawing.Point(402, 10);
+            this.textBoxcode.Name = "textBoxcode";
+            this.textBoxcode.Size = new System.Drawing.Size(58, 20);
+            this.textBoxcode.TabIndex = 33;
+            this.textBoxcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxcode_KeyPress);
             // 
             // comboBoxCommercial
             // 
@@ -967,13 +966,12 @@
             this.btnAvance.UseVisualStyleBackColor = false;
             this.btnAvance.Click += new System.EventHandler(this.btnAvance_Click);
             // 
-            // textBoxcode
+            // textclient
             // 
-            this.textBoxcode.Location = new System.Drawing.Point(402, 10);
-            this.textBoxcode.Name = "textBoxcode";
-            this.textBoxcode.Size = new System.Drawing.Size(58, 20);
-            this.textBoxcode.TabIndex = 33;
-            this.textBoxcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxcode_KeyPress);
+            this.textclient.Location = new System.Drawing.Point(462, 9);
+            this.textclient.Name = "textclient";
+            this.textclient.Size = new System.Drawing.Size(90, 20);
+            this.textclient.TabIndex = 34;
             // 
             // frmContratCommande
             // 
@@ -1072,7 +1070,6 @@
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.ComboBox comboBoxSupport;
         private System.Windows.Forms.DateTimePicker dateTimeLivPrevu;
-        private System.Windows.Forms.ComboBox comboclient;
         private System.Windows.Forms.ComboBox combovariete;
         private System.Windows.Forms.DataGridViewTextBoxColumn LibelleVariete;
         private System.Windows.Forms.DataGridViewTextBoxColumn PU;
@@ -1091,5 +1088,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ResevasionConsignes;
         private System.Windows.Forms.DataGridViewTextBoxColumn TypeCommande;
         private System.Windows.Forms.TextBox textBoxcode;
+        private System.Windows.Forms.TextBox textclient;
     }
 }

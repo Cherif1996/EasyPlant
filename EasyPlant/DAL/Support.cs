@@ -34,7 +34,15 @@ namespace EasyPlant.DAL
         public decimal PrixVenteTTC { get; set; }
         public double Marge { get; set; }
         public double TVA { get; set; }
-    
+
+        public string codeLibelle
+        {
+            get
+            {
+                return CodeSupport+":"+Libelle;
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Commande> Commandes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

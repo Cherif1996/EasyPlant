@@ -39,6 +39,17 @@ namespace EasyPlant
             Clear();
             listeCodeLibelle = new List<CodeLibelle>();
             LivreurDataGrid.AutoGenerateColumns = false;
+            if (LibelleForm.libelle == "Client")
+            {
+                this.Text = "Client";
+                List<Client> listeClients = new List<Client>();
+                listeClients = db.Clients.ToList<Client>();
+                listeClients.ForEach(x => listeCodeLibelle.Add(new CodeLibelle { Code = x.CodeClient, Libelle = x.Libelle }));
+                panel1.Visible = false;
+                btncancel.Visible = false;
+                btndelete.Visible = false;
+                btnModifier.Visible = false;
+            }
             if (LibelleForm.libelle == "Livreur")
             {
                 this.Text = "Livreur";
@@ -135,7 +146,10 @@ namespace EasyPlant
             textcode.Text = textlibelle.Text = string.Empty; ;
             btndelete.Enabled = true;
             btnsave.Text = "Enregistrer";
-
+            panel1.Visible = true;
+            btncancel.Visible = true;
+            btndelete.Visible = true;
+            btnModifier.Visible = true;
 
         }
 
@@ -610,7 +624,12 @@ namespace EasyPlant
             Clear();
             frmCodeLibelle_Load(sender, e);
             }
+
+        private void LivreurDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
+    }
     }
 
 

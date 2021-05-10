@@ -82,6 +82,12 @@
     <Compile Include="Commande\frmAvance.Designer.cs">
       <DependentUpon>frmAvance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Commande\frmEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Commande\frmEnter.Designer.cs">
+      <DependentUpon>frmEnter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Commande\frmListeClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Commande\frmAvance.resx">
       <DependentUpon>frmAvance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commande\frmEnter.resx">
+      <DependentUpon>frmEnter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Commande\frmListeClient.resx">
       <DependentUpon>frmListeClient.cs</DependentUpon>
