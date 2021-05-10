@@ -1,0 +1,227 @@
+# # Ignorer les fichiers temporaires de Visual Studio, générer les résultats et
+# # fichiers générés par les modules complémentaires Visual Studio populaires.
+
+# Fichiers spécifiques à l'utilisateur
+* .suo
+* .user
+* .userosscache
+* .sln.docstates
+
+# Fichiers spécifiques à l'utilisateur (MonoDevelop / Xamarin Studio)
+* .userprefs
+
+# Construire les résultats
+[ Dd ] ebug /
+[ Dd ] ebugPublic /
+[ Rr ] élease /
+[ Rr ] éleases /
+x64 /
+x86 /
+construire /
+bld /
+[ Bb ] dans /
+[ Oo ] bj /
+
+# Répertoire cache / options de Visual Studio 2015
+.vs /
+
+# Résultats du test MSTest
+[ Tt ] est [ Rr ] esult * /
+[ Bb ] uild [ Ll ] og. *
+
+# NUNIT
+* .VisualState.xml
+TestResult.xml
+
+# Générer les résultats d'un projet ATL
+[ Dd ] ebugPS /
+[ Rr ] eleasePS /
+dlldata.c
+
+# DNX
+project.lock.json
+artefacts /
+
+* _i.c
+* _p.c
+* _i.h
+* .ilk
+* .meta
+* .obj
+* .pch
+* .pdb
+* .pgc
+* .pgd
+* .rsp
+* .sbr
+* .tlb
+* .tli
+* .tlh
+* .tmp
+* .tmp_proj
+* .log
+* .vspscc
+* .vssscc
+.builds
+* .pidb
+* .svclog
+* .scc
+
+# Fichiers de test Chutzpah
+_Chutzpah *
+
+# Fichiers de cache Visual C ++
+ipch /
+* .aps
+* .ncb
+* .opensdf
+* .sdf
+* .cachefile
+
+# Profileur Visual Studio
+* .psess
+* .vsp
+* .vspx
+
+# Espace de travail local TFS 2012
+$ tf /
+
+# Boîte à outils d'automatisation du guidage
+* .gpState
+
+# ReSharper est un complément de codage .NET
+_ReSharper * /
+* . [ Rr ] e [ Ss ] harper
+* .DotSettings.user
+
+# JustCode est un complément de codage .NET
+.JustCode
+
+# TeamCity est un complément de build
+_TeamCity *
+
+# DotCover est un outil de couverture de code
+* .dotCover
+
+# NCrunch
+_NCrunch_ *
+. * crunch * .local.xml
+
+# MightyMoose
+* .mm. *
+AutoTest.Net /
+
+# Atelier Web (sass)
+.sass-cache /
+
+# Dossier de sortie Installshield
+[ Ee ] xpress /
+
+# DocProject est un complément de générateur de documentation
+DocProject / buildhelp /
+DocProject / Help / * .HxT
+DocProject / Help / * .HxC
+DocProject / Help / * .hhc
+DocProject / Help / * .hhk
+DocProject / Help / * .hhp
+DocProject / Aide / Html2
+DocProject / Aide / html
+
+# Répertoire Click-Once
+publier /
+
+# Publier la sortie Web
+* . [ Pp ] ublish.xml
+* .azurePubxml
+# # TODO: commentez la ligne suivante si vous souhaitez enregistrer votre
+# # paramètres de déploiement Web, mais notez que ceux-ci incluront des paramètres non chiffrés
+# # mots de passe
+# * .pubxml
+
+* .publishproj
+
+# Forfaits NuGet
+* .nupkg
+# Le dossier packages peut être ignoré en raison de la restauration de package
+** / packages / *
+# sauf build /, qui est utilisé comme cible MSBuild.
+! ** / packages / build /
+# Décommentez si nécessaire mais généralement, il sera régénéré en cas de besoin
+# ! ** / packages / repositories.config
+
+# Sortie Windows Azure Build
+csx /
+* .build.csdef
+
+# Répertoire du package d'application du Windows Store
+AppPackages /
+
+# Fichiers de cache Visual Studio
+# fichiers se terminant par .cache peuvent être ignorés
+* . [ Cc ] mal
+# mais gardez une trace des répertoires se terminant par .cache
+! * . [ Cc ] mal /
+
+# Autres
+ClientBin /
+[ Ss ] tyle [ Cc ] op. *
+~ $ *
+* ~
+* .dbmdl
+* .dbproj.schemaview
+* .pfx
+* .publishsettings
+node_modules /
+orleans.codegen.cs
+
+# Projets RIA / Silverlight
+Generated_Code /
+
+# Sauvegarde et rapport des fichiers de la conversion d'un ancien fichier de projet
+# vers une version plus récente de Visual Studio. Les fichiers de sauvegarde ne sont pas nécessaires,
+# parce que nous avons git ;-)
+_UpgradeReport_Files /
+Sauvegarde * /
+UpgradeLog * .XML
+UpgradeLog * .htm
+
+# Fichiers SQL Server
+* .mdf
+* .ldf
+
+# Projets de Business Intelligence
+* .rdl.data
+* .bim.layout
+* .bim_ * .settings
+
+# Microsoft Fakes
+FauxAssemblées /
+
+# Outils Node.js pour Visual Studio
+.ntvs_analysis.dat
+
+# Journal de génération de Visual Studio 6
+* .plg
+
+# Fichier d'options de l'espace de travail Visual Studio 6
+* .opt
+
+# Fichiers générés par LightSwitch
+GeneratedArtifacts /
+_Pvt_Extensions /
+ModelManifest.xml
+BundleArtifacts
+! / construire
+/ build / tools / GitVersion.CommandLine
+AppPackages
+
+# Artefacts NuGet V3
+* -packages.config
+* .nuget.props
+* .nuget.targets
+project.lock.json
+msbuild.binlog
+* .project.lock.json
+/ build / tools / **
+! / build / tools / packages.config
+/ build / dotnet-install.ps1
