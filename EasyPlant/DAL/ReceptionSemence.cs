@@ -17,14 +17,14 @@ namespace EasyPlant.DAL
         public int CodeReceptionSemence { get; set; }
         public int RefCommande { get; set; }
         public int CodeSemence { get; set; }
-        public int CodeClient { get; set; }
+        public int CodeCient { get; set; }
+        public Nullable<System.DateTime> DateProduction { get; set; }
         public string Note { get; set; }
-        public System.DateTime DateProduction { get; set; }
-        public decimal Qte { get; set; }
-        public int CodeUnite { get; set; }
-        public int CodeColisage { get; set; }
-        public int Nbrgraines { get; set; }
-        public int Nlot { get; set; }
+        public Nullable<int> CodeColisage { get; set; }
+        public Nullable<int> CodeUnite { get; set; }
+        public Nullable<int> Qte { get; set; }
+        public Nullable<int> Nbrgraines { get; set; }
+        public Nullable<int> Nlot { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Colisage Colisage { get; set; }

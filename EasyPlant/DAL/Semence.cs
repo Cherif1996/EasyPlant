@@ -24,7 +24,7 @@ namespace EasyPlant.DAL
         public int CodeSemencier { get; set; }
         public string Libelle { get; set; }
         public int NBGraines { get; set; }
-        public int CodeEspece { get; set; }
+        public Nullable<int> CodeEspece { get; set; }
     
         public virtual Espece Espece { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

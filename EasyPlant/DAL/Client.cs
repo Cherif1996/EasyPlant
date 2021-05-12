@@ -23,26 +23,26 @@ namespace EasyPlant.DAL
     
         public int CodeClient { get; set; }
         public string Libelle { get; set; }
-        public string Adresse { get; set; }
-        public int CodeTVA { get; set; }
-        public int CIN { get; set; }
-        public string Ville { get; set; }
-        public int CodePostal { get; set; }
-        public string Tel { get; set; }
-        public string Fax { get; set; }
-        public string Email { get; set; }
-        public int CodeBanque { get; set; }
-        public int RIB { get; set; }
         public string Responsable { get; set; }
+        public string Adresse { get; set; }
+        public Nullable<int> CodePostal { get; set; }
+        public string Ville { get; set; }
+        public string Tel { get; set; }
+        public string Email { get; set; }
+        public string Fax { get; set; }
+        public Nullable<int> CIN { get; set; }
         public string NomCommercial { get; set; }
+        public Nullable<int> CodeTVA { get; set; }
+        public Nullable<int> CodeBanque { get; set; }
+        public Nullable<int> RIB { get; set; }
         public string SiteWeb { get; set; }
-        public int Timbre { get; set; }
+        public Nullable<int> CodeTypeClient { get; set; }
+        public Nullable<int> CodePointVente { get; set; }
+        public Nullable<int> Timbre { get; set; }
         public string RegTVA { get; set; }
-        public decimal PlafondCredit { get; set; }
-        public decimal PlafondEnCours { get; set; }
+        public Nullable<decimal> PlafondCredit { get; set; }
+        public Nullable<decimal> PlafondEnCours { get; set; }
         public string Tarif { get; set; }
-        public int CodeTypeClient { get; set; }
-        public int CodePointVente { get; set; }
     
         public virtual Banque Banque { get; set; }
         public virtual PointVente PointVente { get; set; }

@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="CodeAvance" />
     </Key>
-    <Property Name="CodeAvance" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodeAvance" Type="int" Nullable="false" />
     <Property Name="RefCommande" Type="int" Nullable="false" />
     <Property Name="Montant" Type="decimal" Precision="10" Scale="3" Nullable="false" />
     <Property Name="DateAvance" Type="date" Nullable="false" />
@@ -35,27 +35,27 @@
       <PropertyRef Name="CodeClient" />
     </Key>
     <Property Name="CodeClient" Type="int" Nullable="false" />
-    <Property Name="Libelle" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Adresse" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="CodeTVA" Type="int" Nullable="false" />
-    <Property Name="CIN" Type="int" Nullable="false" />
-    <Property Name="Ville" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="CodePostal" Type="int" Nullable="false" />
-    <Property Name="Tel" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Fax" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="CodeBanque" Type="int" Nullable="false" />
-    <Property Name="RIB" Type="int" Nullable="false" />
-    <Property Name="Responsable" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="NomCommercial" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="SiteWeb" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Timbre" Type="int" Nullable="false" />
-    <Property Name="RegTVA" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="PlafondCredit" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="PlafondEnCours" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="Tarif" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="CodeTypeClient" Type="int" Nullable="false" />
-    <Property Name="CodePointVente" Type="int" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="100" />
+    <Property Name="Responsable" Type="varchar" MaxLength="100" />
+    <Property Name="Adresse" Type="nvarchar" MaxLength="100" />
+    <Property Name="CodePostal" Type="int" />
+    <Property Name="Ville" Type="varchar" MaxLength="100" />
+    <Property Name="Tel" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="100" />
+    <Property Name="CIN" Type="int" />
+    <Property Name="NomCommercial" Type="varchar" MaxLength="100" />
+    <Property Name="CodeTVA" Type="int" />
+    <Property Name="CodeBanque" Type="int" />
+    <Property Name="RIB" Type="int" />
+    <Property Name="SiteWeb" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodeTypeClient" Type="int" />
+    <Property Name="CodePointVente" Type="int" />
+    <Property Name="Timbre" Type="int" />
+    <Property Name="RegTVA" Type="varchar" MaxLength="50" />
+    <Property Name="PlafondCredit" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="PlafondEnCours" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="Tarif" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="ClotureCommande">
     <Key>
@@ -87,34 +87,35 @@
     <Property Name="RefCommande" Type="int" Nullable="false" />
     <Property Name="CodeClient" Type="int" Nullable="false" />
     <Property Name="DateCommande" Type="date" Nullable="false" />
-    <Property Name="Note" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="NomCommercial" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="CapaciteProd" Type="int" Nullable="false" />
-    <Property Name="CodeVariete" Type="int" Nullable="false" />
-    <Property Name="DateLivraisonPrevu" Type="date" Nullable="false" />
-    <Property Name="MntBrutHT" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="Remise" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="MntRemise" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="MntNETHT" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="TVA" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="MntNETTTC" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="PrixUnitaire" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="PrixUnitaireNet" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="TotalBrut" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="TotalBrutNet" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="ReservationCons" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Accompte" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="Brut" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="Timbre" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="RemiseTot" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="Net" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="CodeSupport" Type="int" Nullable="false" />
-    <Property Name="CodeTypeProd" Type="int" Nullable="false" />
-    <Property Name="DateCV" Type="date" Nullable="false" />
-    <Property Name="DateCG" Type="date" Nullable="false" />
-    <Property Name="DatePG" Type="date" Nullable="false" />
-    <Property Name="Qte" Type="int" Nullable="false" />
-    <Property Name="TypeCommande" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NomCommercial" Type="varchar" MaxLength="50" />
+    <Property Name="CapaciteProd" Type="nchar" MaxLength="10" />
+    <Property Name="Note" Type="varchar" MaxLength="50" />
+    <Property Name="CodeVariete" Type="int" />
+    <Property Name="DateLivraisonPrevu" Type="date" />
+    <Property Name="MntBrutHT" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="Remise" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="MntRemise" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="MntNETHT" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="TVA" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="MntNETTTC" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="PrixUnitaire" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="PrixUnitaireNet" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="TotalBrut" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="TotalBrutNet" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="ReservationCons" Type="varchar" MaxLength="50" />
+    <Property Name="Accompte" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="Brut" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="Timbre" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="RemiseTot" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="Net" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="CodeSupport" Type="int" />
+    <Property Name="CodeTypeProd" Type="int" />
+    <Property Name="DateCV" Type="date" />
+    <Property Name="DateCG" Type="date" />
+    <Property Name="DatePG" Type="date" />
+    <Property Name="Qte" Type="int" />
+    <Property Name="TypeCommande" Type="varchar" MaxLength="50" />
+    <Property Name="LibelleVariete" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Comptage">
     <Key>
@@ -122,11 +123,11 @@
     </Key>
     <Property Name="CodeComptage" Type="int" Nullable="false" />
     <Property Name="CodeProduction" Type="int" Nullable="false" />
-    <Property Name="CodeUtilisateur" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodeUtilisateur" Type="int" Nullable="false" />
     <Property Name="Libelle" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="DateCompatage" Type="date" Nullable="false" />
     <Property Name="QuantiteComptage" Type="int" Nullable="false" />
-    <Property Name="TypeComptage" Type="int" Nullable="false" />
+    <Property Name="TypeComptage" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <EntityType Name="DetailsBL">
     <Key>
@@ -154,8 +155,34 @@
       <PropertyRef Name="CodeEspece" />
     </Key>
     <Property Name="CodeEspece" Type="int" Nullable="false" />
-    <Property Name="CodeFamille" Type="int" Nullable="false" />
+    <Property Name="CodeFamille" Type="int" />
     <Property Name="LibelleEspece" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FactureConsigne">
+    <Key>
+      <PropertyRef Name="CodeFacture" />
+    </Key>
+    <Property Name="CodeFacture" Type="int" Nullable="false" />
+    <Property Name="DateFacture" Type="date" />
+    <Property Name="CodeFourniseur" Type="int" />
+    <Property Name="CodeSupport" Type="int" Nullable="false" />
+    <Property Name="Quantite" Type="int" />
+    <Property Name="PUht" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="PuTTC" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Remise" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="FodecArticle" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TVA" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Ht" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TTC" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="MntRemise" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Timbre" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="NetTTc" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="NetHt" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TotRemise" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TotHt" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TotFodec" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TotTva" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="PointdeVente" Type="int" />
   </EntityType>
   <EntityType Name="Famille">
     <Key>
@@ -164,13 +191,28 @@
     <Property Name="CodeFamille" Type="int" Nullable="false" />
     <Property Name="LibelleFamille" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <EntityType Name="FonctionMenu">
+  <EntityType Name="Fourniseur">
     <Key>
-      <PropertyRef Name="CodeFonction" />
+      <PropertyRef Name="CodeFouriseur" />
     </Key>
-    <Property Name="CodeFonction" Type="int" Nullable="false" />
-    <Property Name="LibelleFonction" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="CodeMenu" Type="int" />
+    <Property Name="CodeFouriseur" Type="int" Nullable="false" />
+    <Property Name="NomFourniseur" Type="nvarchar" MaxLength="50" />
+    <Property Name="CIN" Type="int" />
+    <Property Name="Ville" Type="nvarchar" MaxLength="50" />
+    <Property Name="Site" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodeBanque" Type="int" />
+    <Property Name="Commercial" Type="nvarchar" MaxLength="50" />
+    <Property Name="TypeClient" Type="int" />
+    <Property Name="Pointdevente" Type="int" />
+    <Property Name="Adresse" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="RIB" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Responsable" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodeTva" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodePostal" Type="int" />
+    <Property Name="GSM" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Livreur">
     <Key>
@@ -178,13 +220,6 @@
     </Key>
     <Property Name="CodeLivreur" Type="int" Nullable="false" />
     <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Menu">
-    <Key>
-      <PropertyRef Name="CodeMenu" />
-    </Key>
-    <Property Name="CodeMenu" Type="int" Nullable="false" />
-    <Property Name="LibelleMenu" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="ModeReglement">
     <Key>
@@ -241,23 +276,23 @@
     </Key>
     <Property Name="CodeProduction" Type="int" Nullable="false" />
     <Property Name="CodeVariete" Type="int" Nullable="false" />
-    <Property Name="RefCommande" Type="int" />
+    <Property Name="RefCommande" Type="int" Nullable="false" />
     <Property Name="CodeTypeProduction" Type="int" Nullable="false" />
     <Property Name="CodeSupport" Type="int" Nullable="false" />
     <Property Name="RefSerre" Type="int" Nullable="false" />
-    <Property Name="CodeUtilisateur" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodeUtilisateur" Type="int" Nullable="false" />
     <Property Name="DateSemi" Type="date" Nullable="false" />
-    <Property Name="CapaciteProd" Type="decimal" Precision="10" Scale="3" Nullable="false" />
     <Property Name="DateLivPrevu" Type="date" Nullable="false" />
     <Property Name="DateLiv" Type="date" Nullable="false" />
     <Property Name="DateGreffage" Type="date" Nullable="false" />
+    <Property Name="CodeParProduction" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Profil">
     <Key>
       <PropertyRef Name="CodeProfil" />
     </Key>
     <Property Name="CodeProfil" Type="int" Nullable="false" />
-    <Property Name="LibelleProfil" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LibelleProfil" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="ReceptionSemence">
     <Key>
@@ -266,14 +301,14 @@
     <Property Name="CodeReceptionSemence" Type="int" Nullable="false" />
     <Property Name="RefCommande" Type="int" Nullable="false" />
     <Property Name="CodeSemence" Type="int" Nullable="false" />
-    <Property Name="CodeClient" Type="int" Nullable="false" />
-    <Property Name="Note" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="DateProduction" Type="date" Nullable="false" />
-    <Property Name="Qte" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="CodeUnite" Type="int" Nullable="false" />
-    <Property Name="CodeColisage" Type="int" Nullable="false" />
-    <Property Name="Nbrgraines" Type="int" Nullable="false" />
-    <Property Name="Nlot" Type="int" Nullable="false" />
+    <Property Name="CodeCient" Type="int" Nullable="false" />
+    <Property Name="DateProduction" Type="date" />
+    <Property Name="Note" Type="varchar" MaxLength="100" />
+    <Property Name="CodeColisage" Type="int" />
+    <Property Name="CodeUnite" Type="int" />
+    <Property Name="Qte" Type="int" />
+    <Property Name="Nbrgraines" Type="int" />
+    <Property Name="Nlot" Type="int" />
   </EntityType>
   <EntityType Name="Semence">
     <Key>
@@ -283,7 +318,7 @@
     <Property Name="CodeSemencier" Type="int" Nullable="false" />
     <Property Name="Libelle" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="NBGraines" Type="int" Nullable="false" />
-    <Property Name="CodeEspece" Type="int" Nullable="false" />
+    <Property Name="CodeEspece" Type="int" />
   </EntityType>
   <EntityType Name="Semencier">
     <Key>
@@ -296,9 +331,9 @@
   </EntityType>
   <EntityType Name="Serre">
     <Key>
-      <PropertyRef Name="RefSerre" />
+      <PropertyRef Name="CodeSerre" />
     </Key>
-    <Property Name="RefSerre" Type="int" Nullable="false" />
+    <Property Name="CodeSerre" Type="int" Nullable="false" />
     <Property Name="CodeEmplacement" Type="int" Nullable="false" />
     <Property Name="Superficier" Type="decimal" Precision="10" Scale="3" Nullable="false" />
     <Property Name="Capacite" Type="decimal" Precision="10" Scale="3" Nullable="false" />
@@ -308,43 +343,59 @@
       <PropertyRef Name="CodeSociete" />
     </Key>
     <Property Name="CodeSociete" Type="int" Nullable="false" />
-    <Property Name="LibelleFr" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="VilleFr" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="CodePostal" Type="int" Nullable="false" />
-    <Property Name="Tel" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Banque" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="RIB" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Activite" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Responsable" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="SiteWeb" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="AdresseFr" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="Fax" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="MF" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="CodeD" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="RegCom" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Fonction" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="LibelleAr" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="AdresseAr" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="VilleAr" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LibelleFr" Type="varchar" MaxLength="50" />
+    <Property Name="CodePostal" Type="int" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Banque" Type="varchar" MaxLength="50" />
+    <Property Name="RIB" Type="nvarchar" MaxLength="50" />
+    <Property Name="Activite" Type="varchar" MaxLength="50" />
+    <Property Name="Responsable" Type="varchar" MaxLength="50" />
+    <Property Name="SiteWeb" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdresseFr" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="MF" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodeD" Type="nvarchar" MaxLength="50" />
+    <Property Name="RegCom" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fonction" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="VilleFr" Type="varchar" MaxLength="100" />
+    <Property Name="LibelleAr" Type="varchar" MaxLength="100" />
+    <Property Name="AdresseAr" Type="nvarchar" MaxLength="100" />
+    <Property Name="VilleAr" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SortieConsigne">
+    <Key>
+      <PropertyRef Name="NumeroSortie" />
+    </Key>
+    <Property Name="NumeroSortie" Type="int" Nullable="false" />
+    <Property Name="DateSortie" Type="date" />
+    <Property Name="CodeLivreur" Type="int" />
+    <Property Name="CodePointVente" Type="int" />
+    <Property Name="CodeMoyenTransport" Type="int" />
+    <Property Name="Note" Type="varchar" MaxLength="100" />
+    <Property Name="CodeSupport" Type="int" />
+    <Property Name="Qte" Type="int" />
+    <Property Name="PrixTot" Type="decimal" Precision="18" Scale="10" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="PrixUnit" Type="decimal" Precision="18" Scale="10" />
   </EntityType>
   <EntityType Name="Support">
     <Key>
       <PropertyRef Name="CodeSupport" />
     </Key>
     <Property Name="CodeSupport" Type="int" Nullable="false" />
-    <Property Name="Libelle" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Matiere" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Dimension" Type="int" Nullable="false" />
-    <Property Name="NbrAlv" Type="int" Nullable="false" />
-    <Property Name="VolAlv" Type="int" Nullable="false" />
-    <Property Name="Poids" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="PrixAchatHT" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="PrixAchatTTC" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="PrixVenteHT" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="PrixVenteTTC" Type="decimal" Precision="10" Scale="3" Nullable="false" />
-    <Property Name="Marge" Type="float" Nullable="false" />
-    <Property Name="TVA" Type="float" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="100" />
+    <Property Name="Matiere" Type="varchar" MaxLength="100" />
+    <Property Name="Dimension" Type="int" />
+    <Property Name="NbrAlv" Type="int" />
+    <Property Name="VolAlv" Type="int" />
+    <Property Name="Poids" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="PrixAchatHT" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="PrixAchatTTC" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="PrixVenteHT" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="PrixVenteTTC" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="Marge" Type="float" />
+    <Property Name="TVA" Type="float" />
   </EntityType>
   <EntityType Name="TypeClient">
     <Key>
@@ -358,7 +409,7 @@
       <PropertyRef Name="CodeTypeCom" />
     </Key>
     <Property Name="CodeTypeCom" Type="int" Nullable="false" />
-    <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="TypeProduction">
     <Key>
@@ -378,12 +429,13 @@
     <Key>
       <PropertyRef Name="CodeUtilisateur" />
     </Key>
-    <Property Name="CodeUtilisateur" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Nom" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodeUtilisateur" Type="int" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Prenom" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Password" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="CodeProfil" Type="int" Nullable="false" />
-    <Property Name="Etat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="100" />
+    <Property Name="CodeProfil" Type="int" />
+    <Property Name="Etat" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="Variete">
     <Key>
@@ -391,27 +443,16 @@
     </Key>
     <Property Name="CodeVariete" Type="int" Nullable="false" />
     <Property Name="CodeEspece" Type="int" Nullable="false" />
-    <Property Name="LibelleVariete" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="CodeTypeProd" Type="int" Nullable="false" />
+    <Property Name="TypeVariete" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="NBjoursCV" Type="int" Nullable="false" />
     <Property Name="NBjoursCG" Type="int" Nullable="false" />
     <Property Name="NBjoursPG" Type="int" Nullable="false" />
     <Property Name="Marge" Type="decimal" Precision="10" Scale="3" Nullable="false" />
     <Property Name="MontantMarge" Type="decimal" Precision="10" Scale="3" Nullable="false" />
     <Property Name="PrixVente" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="LibelleVariete" Type="nvarchar" MaxLength="100" />
+    <Property Name="CodeTypeProd" Type="int" />
   </EntityType>
-  <Association Name="FK_Avance_Avance">
-    <End Role="ModeReglement" Type="Self.ModeReglement" Multiplicity="1" />
-    <End Role="Avance" Type="Self.Avance" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ModeReglement">
-        <PropertyRef Name="CodeModeReg" />
-      </Principal>
-      <Dependent Role="Avance">
-        <PropertyRef Name="CodeModeReglement" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Avance_Commande">
     <End Role="Commande" Type="Self.Commande" Multiplicity="1" />
     <End Role="Avance" Type="Self.Avance" Multiplicity="*" />
@@ -421,6 +462,18 @@
       </Principal>
       <Dependent Role="Avance">
         <PropertyRef Name="RefCommande" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Avance_ModeReglement">
+    <End Role="ModeReglement" Type="Self.ModeReglement" Multiplicity="1" />
+    <End Role="Avance" Type="Self.Avance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModeReglement">
+        <PropertyRef Name="CodeModeReg" />
+      </Principal>
+      <Dependent Role="Avance">
+        <PropertyRef Name="CodeModeReglement" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -437,7 +490,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Client_Banque">
-    <End Role="Banque" Type="Self.Banque" Multiplicity="1" />
+    <End Role="Banque" Type="Self.Banque" Multiplicity="0..1" />
     <End Role="Client" Type="Self.Client" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Banque">
@@ -449,7 +502,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Client_PointVente">
-    <End Role="PointVente" Type="Self.PointVente" Multiplicity="1" />
+    <End Role="PointVente" Type="Self.PointVente" Multiplicity="0..1" />
     <End Role="Client" Type="Self.Client" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PointVente">
@@ -461,7 +514,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Client_TypeClient">
-    <End Role="TypeClient" Type="Self.TypeClient" Multiplicity="1" />
+    <End Role="TypeClient" Type="Self.TypeClient" Multiplicity="0..1" />
     <End Role="Client" Type="Self.Client" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TypeClient">
@@ -509,7 +562,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Commande_Support">
-    <End Role="Support" Type="Self.Support" Multiplicity="1" />
+    <End Role="Support" Type="Self.Support" Multiplicity="0..1" />
     <End Role="Commande" Type="Self.Commande" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Support">
@@ -521,7 +574,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Commande_TypeProduction">
-    <End Role="TypeProduction" Type="Self.TypeProduction" Multiplicity="1" />
+    <End Role="TypeProduction" Type="Self.TypeProduction" Multiplicity="0..1" />
     <End Role="Commande" Type="Self.Commande" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TypeProduction">
@@ -533,7 +586,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Commande_Variete">
-    <End Role="Variete" Type="Self.Variete" Multiplicity="1" />
+    <End Role="Variete" Type="Self.Variete" Multiplicity="0..1" />
     <End Role="Commande" Type="Self.Commande" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Variete">
@@ -541,18 +594,6 @@
       </Principal>
       <Dependent Role="Commande">
         <PropertyRef Name="CodeVariete" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Comptage_Comptage">
-    <End Role="TypeComptage" Type="Self.TypeComptage" Multiplicity="1" />
-    <End Role="Comptage" Type="Self.Comptage" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TypeComptage">
-        <PropertyRef Name="CodeTypeCom" />
-      </Principal>
-      <Dependent Role="Comptage">
-        <PropertyRef Name="TypeComptage" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -593,7 +634,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Espece_Famille">
-    <End Role="Famille" Type="Self.Famille" Multiplicity="1" />
+    <End Role="Famille" Type="Self.Famille" Multiplicity="0..1" />
     <End Role="Espece" Type="Self.Espece" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Famille">
@@ -604,15 +645,75 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_FonctionMenu_FonctionMenu">
-    <End Role="Menu" Type="Self.Menu" Multiplicity="0..1" />
-    <End Role="FonctionMenu" Type="Self.FonctionMenu" Multiplicity="*" />
+  <Association Name="FK_FactureConsigne_Fourniseur">
+    <End Role="Fourniseur" Type="Self.Fourniseur" Multiplicity="0..1" />
+    <End Role="FactureConsigne" Type="Self.FactureConsigne" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Menu">
-        <PropertyRef Name="CodeMenu" />
+      <Principal Role="Fourniseur">
+        <PropertyRef Name="CodeFouriseur" />
       </Principal>
-      <Dependent Role="FonctionMenu">
-        <PropertyRef Name="CodeMenu" />
+      <Dependent Role="FactureConsigne">
+        <PropertyRef Name="CodeFourniseur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactureConsigne_PointVente">
+    <End Role="PointVente" Type="Self.PointVente" Multiplicity="0..1" />
+    <End Role="FactureConsigne" Type="Self.FactureConsigne" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PointVente">
+        <PropertyRef Name="CodePointVente" />
+      </Principal>
+      <Dependent Role="FactureConsigne">
+        <PropertyRef Name="PointdeVente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FactureConsigne_Support">
+    <End Role="Support" Type="Self.Support" Multiplicity="1" />
+    <End Role="FactureConsigne" Type="Self.FactureConsigne" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Support">
+        <PropertyRef Name="CodeSupport" />
+      </Principal>
+      <Dependent Role="FactureConsigne">
+        <PropertyRef Name="CodeSupport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fourniseur_Banque">
+    <End Role="Banque" Type="Self.Banque" Multiplicity="0..1" />
+    <End Role="Fourniseur" Type="Self.Fourniseur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Banque">
+        <PropertyRef Name="CodeBanque" />
+      </Principal>
+      <Dependent Role="Fourniseur">
+        <PropertyRef Name="CodeBanque" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fourniseur_PointVente">
+    <End Role="PointVente" Type="Self.PointVente" Multiplicity="0..1" />
+    <End Role="Fourniseur" Type="Self.Fourniseur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PointVente">
+        <PropertyRef Name="CodePointVente" />
+      </Principal>
+      <Dependent Role="Fourniseur">
+        <PropertyRef Name="Pointdevente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fourniseur_TypeClient">
+    <End Role="TypeClient" Type="Self.TypeClient" Multiplicity="0..1" />
+    <End Role="Fourniseur" Type="Self.Fourniseur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeClient">
+        <PropertyRef Name="CodeTypeClient" />
+      </Principal>
+      <Dependent Role="Fourniseur">
+        <PropertyRef Name="TypeClient" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -652,8 +753,32 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_MouvementStock_Variete">
+    <End Role="Variete" Type="Self.Variete" Multiplicity="1" />
+    <End Role="MouvementStock" Type="Self.MouvementStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Variete">
+        <PropertyRef Name="CodeVariete" />
+      </Principal>
+      <Dependent Role="MouvementStock">
+        <PropertyRef Name="CodeVariete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParametrageProduction_ParametrageProduction">
+    <End Role="ParametrageProduction" Type="Self.ParametrageProduction" Multiplicity="1" />
+    <End Role="ParametrageProduction1" Type="Self.ParametrageProduction" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ParametrageProduction">
+        <PropertyRef Name="CodeParProduction" />
+      </Principal>
+      <Dependent Role="ParametrageProduction1">
+        <PropertyRef Name="CodeParProduction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Production_Commande">
-    <End Role="Commande" Type="Self.Commande" Multiplicity="0..1" />
+    <End Role="Commande" Type="Self.Commande" Multiplicity="1" />
     <End Role="Production" Type="Self.Production" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Commande">
@@ -664,12 +789,36 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Production_ParametrageProduction">
+    <End Role="ParametrageProduction" Type="Self.ParametrageProduction" Multiplicity="1" />
+    <End Role="Production" Type="Self.Production" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ParametrageProduction">
+        <PropertyRef Name="CodeParProduction" />
+      </Principal>
+      <Dependent Role="Production">
+        <PropertyRef Name="CodeParProduction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Production_Production">
+    <End Role="Production" Type="Self.Production" Multiplicity="1" />
+    <End Role="Production1" Type="Self.Production" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Production">
+        <PropertyRef Name="CodeProduction" />
+      </Principal>
+      <Dependent Role="Production1">
+        <PropertyRef Name="CodeProduction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Production_Serre">
     <End Role="Serre" Type="Self.Serre" Multiplicity="1" />
     <End Role="Production" Type="Self.Production" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Serre">
-        <PropertyRef Name="RefSerre" />
+        <PropertyRef Name="CodeSerre" />
       </Principal>
       <Dependent Role="Production">
         <PropertyRef Name="RefSerre" />
@@ -708,12 +857,12 @@
         <PropertyRef Name="CodeClient" />
       </Principal>
       <Dependent Role="ReceptionSemence">
-        <PropertyRef Name="CodeClient" />
+        <PropertyRef Name="CodeCient" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ReceptionSemence_Colisage">
-    <End Role="Colisage" Type="Self.Colisage" Multiplicity="1" />
+    <End Role="Colisage" Type="Self.Colisage" Multiplicity="0..1" />
     <End Role="ReceptionSemence" Type="Self.ReceptionSemence" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Colisage">
@@ -749,7 +898,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ReceptionSemence_Unite">
-    <End Role="Unite" Type="Self.Unite" Multiplicity="1" />
+    <End Role="Unite" Type="Self.Unite" Multiplicity="0..1" />
     <End Role="ReceptionSemence" Type="Self.ReceptionSemence" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Unite">
@@ -761,7 +910,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Semence_Espece">
-    <End Role="Espece" Type="Self.Espece" Multiplicity="1" />
+    <End Role="Espece" Type="Self.Espece" Multiplicity="0..1" />
     <End Role="Semence" Type="Self.Semence" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Espece">
@@ -796,8 +945,56 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_SortieConsigne_Livreur">
+    <End Role="Livreur" Type="Self.Livreur" Multiplicity="0..1" />
+    <End Role="SortieConsigne" Type="Self.SortieConsigne" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Livreur">
+        <PropertyRef Name="CodeLivreur" />
+      </Principal>
+      <Dependent Role="SortieConsigne">
+        <PropertyRef Name="CodeLivreur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SortieConsigne_MoyenTransport">
+    <End Role="MoyenTransport" Type="Self.MoyenTransport" Multiplicity="0..1" />
+    <End Role="SortieConsigne" Type="Self.SortieConsigne" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MoyenTransport">
+        <PropertyRef Name="CodeMoyenTransport" />
+      </Principal>
+      <Dependent Role="SortieConsigne">
+        <PropertyRef Name="CodeMoyenTransport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SortieConsigne_PointVente">
+    <End Role="PointVente" Type="Self.PointVente" Multiplicity="0..1" />
+    <End Role="SortieConsigne" Type="Self.SortieConsigne" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PointVente">
+        <PropertyRef Name="CodePointVente" />
+      </Principal>
+      <Dependent Role="SortieConsigne">
+        <PropertyRef Name="CodePointVente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SortieConsigne_Support">
+    <End Role="Support" Type="Self.Support" Multiplicity="0..1" />
+    <End Role="SortieConsigne" Type="Self.SortieConsigne" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Support">
+        <PropertyRef Name="CodeSupport" />
+      </Principal>
+      <Dependent Role="SortieConsigne">
+        <PropertyRef Name="CodeSupport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Utilisateur_Profil">
-    <End Role="Profil" Type="Self.Profil" Multiplicity="1" />
+    <End Role="Profil" Type="Self.Profil" Multiplicity="0..1" />
     <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Profil">
@@ -821,7 +1018,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Variete_TypeProduction">
-    <End Role="TypeProduction" Type="Self.TypeProduction" Multiplicity="1" />
+    <End Role="TypeProduction" Type="Self.TypeProduction" Multiplicity="0..1" />
     <End Role="Variete" Type="Self.Variete" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TypeProduction">
@@ -845,10 +1042,10 @@
     <EntitySet Name="DetailsBL" EntityType="Self.DetailsBL" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Emplacement" EntityType="Self.Emplacement" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Espece" EntityType="Self.Espece" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FactureConsigne" EntityType="Self.FactureConsigne" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Famille" EntityType="Self.Famille" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="FonctionMenu" EntityType="Self.FonctionMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fourniseur" EntityType="Self.Fourniseur" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Livreur" EntityType="Self.Livreur" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ModeReglement" EntityType="Self.ModeReglement" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MouvementStock" EntityType="Self.MouvementStock" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MoyenTransport" EntityType="Self.MoyenTransport" Schema="dbo" store:Type="Tables" />
@@ -861,6 +1058,7 @@
     <EntitySet Name="Semencier" EntityType="Self.Semencier" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Serre" EntityType="Self.Serre" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Societe" EntityType="Self.Societe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SortieConsigne" EntityType="Self.SortieConsigne" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Support" EntityType="Self.Support" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeClient" EntityType="Self.TypeClient" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeComptage" EntityType="Self.TypeComptage" Schema="dbo" store:Type="Tables" />
@@ -868,12 +1066,12 @@
     <EntitySet Name="Unite" EntityType="Self.Unite" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Variete" EntityType="Self.Variete" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Avance_Avance" Association="Self.FK_Avance_Avance">
-      <End Role="ModeReglement" EntitySet="ModeReglement" />
-      <End Role="Avance" EntitySet="Avance" />
-    </AssociationSet>
     <AssociationSet Name="FK_Avance_Commande" Association="Self.FK_Avance_Commande">
       <End Role="Commande" EntitySet="Commande" />
+      <End Role="Avance" EntitySet="Avance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Avance_ModeReglement" Association="Self.FK_Avance_ModeReglement">
+      <End Role="ModeReglement" EntitySet="ModeReglement" />
       <End Role="Avance" EntitySet="Avance" />
     </AssociationSet>
     <AssociationSet Name="FK_BonLivraison_Commande" Association="Self.FK_BonLivraison_Commande">
@@ -916,10 +1114,6 @@
       <End Role="Variete" EntitySet="Variete" />
       <End Role="Commande" EntitySet="Commande" />
     </AssociationSet>
-    <AssociationSet Name="FK_Comptage_Comptage" Association="Self.FK_Comptage_Comptage">
-      <End Role="TypeComptage" EntitySet="TypeComptage" />
-      <End Role="Comptage" EntitySet="Comptage" />
-    </AssociationSet>
     <AssociationSet Name="FK_Comptage_Production" Association="Self.FK_Comptage_Production">
       <End Role="Production" EntitySet="Production" />
       <End Role="Comptage" EntitySet="Comptage" />
@@ -936,9 +1130,29 @@
       <End Role="Famille" EntitySet="Famille" />
       <End Role="Espece" EntitySet="Espece" />
     </AssociationSet>
-    <AssociationSet Name="FK_FonctionMenu_FonctionMenu" Association="Self.FK_FonctionMenu_FonctionMenu">
-      <End Role="Menu" EntitySet="Menu" />
-      <End Role="FonctionMenu" EntitySet="FonctionMenu" />
+    <AssociationSet Name="FK_FactureConsigne_Fourniseur" Association="Self.FK_FactureConsigne_Fourniseur">
+      <End Role="Fourniseur" EntitySet="Fourniseur" />
+      <End Role="FactureConsigne" EntitySet="FactureConsigne" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactureConsigne_PointVente" Association="Self.FK_FactureConsigne_PointVente">
+      <End Role="PointVente" EntitySet="PointVente" />
+      <End Role="FactureConsigne" EntitySet="FactureConsigne" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FactureConsigne_Support" Association="Self.FK_FactureConsigne_Support">
+      <End Role="Support" EntitySet="Support" />
+      <End Role="FactureConsigne" EntitySet="FactureConsigne" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fourniseur_Banque" Association="Self.FK_Fourniseur_Banque">
+      <End Role="Banque" EntitySet="Banque" />
+      <End Role="Fourniseur" EntitySet="Fourniseur" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fourniseur_PointVente" Association="Self.FK_Fourniseur_PointVente">
+      <End Role="PointVente" EntitySet="PointVente" />
+      <End Role="Fourniseur" EntitySet="Fourniseur" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fourniseur_TypeClient" Association="Self.FK_Fourniseur_TypeClient">
+      <End Role="TypeClient" EntitySet="TypeClient" />
+      <End Role="Fourniseur" EntitySet="Fourniseur" />
     </AssociationSet>
     <AssociationSet Name="FK_MouvementStock_ClotureProd" Association="Self.FK_MouvementStock_ClotureProd">
       <End Role="ClotureProd" EntitySet="ClotureProd" />
@@ -952,9 +1166,25 @@
       <End Role="Support" EntitySet="Support" />
       <End Role="MouvementStock" EntitySet="MouvementStock" />
     </AssociationSet>
+    <AssociationSet Name="FK_MouvementStock_Variete" Association="Self.FK_MouvementStock_Variete">
+      <End Role="Variete" EntitySet="Variete" />
+      <End Role="MouvementStock" EntitySet="MouvementStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParametrageProduction_ParametrageProduction" Association="Self.FK_ParametrageProduction_ParametrageProduction">
+      <End Role="ParametrageProduction" EntitySet="ParametrageProduction" />
+      <End Role="ParametrageProduction1" EntitySet="ParametrageProduction" />
+    </AssociationSet>
     <AssociationSet Name="FK_Production_Commande" Association="Self.FK_Production_Commande">
       <End Role="Commande" EntitySet="Commande" />
       <End Role="Production" EntitySet="Production" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Production_ParametrageProduction" Association="Self.FK_Production_ParametrageProduction">
+      <End Role="ParametrageProduction" EntitySet="ParametrageProduction" />
+      <End Role="Production" EntitySet="Production" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Production_Production" Association="Self.FK_Production_Production">
+      <End Role="Production" EntitySet="Production" />
+      <End Role="Production1" EntitySet="Production" />
     </AssociationSet>
     <AssociationSet Name="FK_Production_Serre" Association="Self.FK_Production_Serre">
       <End Role="Serre" EntitySet="Serre" />
@@ -999,6 +1229,22 @@
     <AssociationSet Name="FK_Serre_Emplacement" Association="Self.FK_Serre_Emplacement">
       <End Role="Emplacement" EntitySet="Emplacement" />
       <End Role="Serre" EntitySet="Serre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SortieConsigne_Livreur" Association="Self.FK_SortieConsigne_Livreur">
+      <End Role="Livreur" EntitySet="Livreur" />
+      <End Role="SortieConsigne" EntitySet="SortieConsigne" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SortieConsigne_MoyenTransport" Association="Self.FK_SortieConsigne_MoyenTransport">
+      <End Role="MoyenTransport" EntitySet="MoyenTransport" />
+      <End Role="SortieConsigne" EntitySet="SortieConsigne" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SortieConsigne_PointVente" Association="Self.FK_SortieConsigne_PointVente">
+      <End Role="PointVente" EntitySet="PointVente" />
+      <End Role="SortieConsigne" EntitySet="SortieConsigne" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SortieConsigne_Support" Association="Self.FK_SortieConsigne_Support">
+      <End Role="Support" EntitySet="Support" />
+      <End Role="SortieConsigne" EntitySet="SortieConsigne" />
     </AssociationSet>
     <AssociationSet Name="FK_Utilisateur_Profil" Association="Self.FK_Utilisateur_Profil">
       <End Role="Profil" EntitySet="Profil" />

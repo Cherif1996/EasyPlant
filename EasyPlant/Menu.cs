@@ -12,6 +12,7 @@ using EasyPlant.Commun;
 using EasyPlant.Commande;
 using EasyPlant.ParametreDeDonnees;
 using EasyPlant.Dossier;
+using EasyPlant.Consignes;
 
 namespace EasyPlant
 {
@@ -103,7 +104,8 @@ namespace EasyPlant
 
         private void créationProfilsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmGestionProfils Profils = new frmGestionProfils();
+            Profils.ShowDialog();
         }
 
         private void banqueToolStripMenuItem_Click(object sender, EventArgs e)
@@ -178,6 +180,36 @@ namespace EasyPlant
             frmVariete variete = new frmVariete();
             variete.ShowDialog();
 
+        }
+
+        private void achatConsignesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAchatConsignes formconsigne = new frmAchatConsignes();
+            formconsigne.ShowDialog();
+        }
+
+        private void sortieConsignesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSortieConsigne formSortie = new frmSortieConsigne();
+            formSortie.ShowDialog();
+        }
+
+        private void listeSerresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSerres serres = new frmSerres();
+            serres.ShowDialog();
+        }
+
+        private void listesEmplacementsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmplacements Emplacement = new frmEmplacements();
+            Emplacement.ShowDialog();
+        }
+
+        private void paramétreDeProductionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmParametrageProductions parametrageProductions = new frmParametrageProductions();
+            parametrageProductions.ShowDialog();
         }
     }
 }

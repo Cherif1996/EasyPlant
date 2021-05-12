@@ -14,16 +14,7 @@ namespace EasyPlant.DAL
     
     public partial class TypeComptage
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TypeComptage()
-        {
-            this.Comptages = new HashSet<Comptage>();
-        }
-    
         public int CodeTypeCom { get; set; }
         public string Libelle { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comptage> Comptages { get; set; }
     }
 }

@@ -14,7 +14,16 @@ namespace EasyPlant.DAL
     
     public partial class Livreur
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Livreur()
+        {
+            this.SortieConsignes = new HashSet<SortieConsigne>();
+        }
+    
         public int CodeLivreur { get; set; }
         public string Libelle { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SortieConsigne> SortieConsignes { get; set; }
     }
 }

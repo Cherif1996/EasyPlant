@@ -23,22 +23,25 @@ namespace EasyPlant.DAL
     
         public int CodeProduction { get; set; }
         public int CodeVariete { get; set; }
-        public Nullable<int> RefCommande { get; set; }
+        public int RefCommande { get; set; }
         public int CodeTypeProduction { get; set; }
         public int CodeSupport { get; set; }
         public int RefSerre { get; set; }
-        public string CodeUtilisateur { get; set; }
+        public int CodeUtilisateur { get; set; }
         public System.DateTime DateSemi { get; set; }
-        public decimal CapaciteProd { get; set; }
         public System.DateTime DateLivPrevu { get; set; }
         public System.DateTime DateLiv { get; set; }
         public System.DateTime DateGreffage { get; set; }
+        public int CodeParProduction { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClotureProd> ClotureProds { get; set; }
         public virtual Commande Commande { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comptage> Comptages { get; set; }
+        public virtual ParametrageProduction ParametrageProduction { get; set; }
+        public virtual Production Production1 { get; set; }
+        public virtual Production Production2 { get; set; }
         public virtual Serre Serre { get; set; }
         public virtual TypeProduction TypeProduction { get; set; }
         public virtual Utilisateur Utilisateur { get; set; }

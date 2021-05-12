@@ -14,11 +14,22 @@ namespace EasyPlant.DAL
     
     public partial class ParametrageProduction
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ParametrageProduction()
+        {
+            this.Productions = new HashSet<Production>();
+        }
+    
         public int CodeParProduction { get; set; }
         public int Capacite { get; set; }
         public int RappelLivraison { get; set; }
         public int RappelSemis { get; set; }
         public int RappelSemisPorte { get; set; }
         public int RappelGreffage { get; set; }
+    
+        public virtual ParametrageProduction ParametrageProduction1 { get; set; }
+        public virtual ParametrageProduction ParametrageProduction2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Production> Productions { get; set; }
     }
 }

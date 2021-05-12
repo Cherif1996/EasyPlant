@@ -18,34 +18,40 @@ namespace EasyPlant.DAL
         public Support()
         {
             this.Commandes = new HashSet<Commande>();
+            this.FactureConsignes = new HashSet<FactureConsigne>();
             this.MouvementStocks = new HashSet<MouvementStock>();
+            this.SortieConsignes = new HashSet<SortieConsigne>();
         }
     
         public int CodeSupport { get; set; }
         public string Libelle { get; set; }
         public string Matiere { get; set; }
-        public int Dimension { get; set; }
-        public int NbrAlv { get; set; }
-        public int VolAlv { get; set; }
-        public decimal Poids { get; set; }
-        public decimal PrixAchatHT { get; set; }
-        public decimal PrixAchatTTC { get; set; }
-        public decimal PrixVenteHT { get; set; }
-        public decimal PrixVenteTTC { get; set; }
-        public double Marge { get; set; }
-        public double TVA { get; set; }
+        public Nullable<int> Dimension { get; set; }
+        public Nullable<int> NbrAlv { get; set; }
+        public Nullable<int> VolAlv { get; set; }
+        public Nullable<decimal> Poids { get; set; }
+        public Nullable<decimal> PrixAchatHT { get; set; }
+        public Nullable<decimal> PrixAchatTTC { get; set; }
+        public Nullable<decimal> PrixVenteHT { get; set; }
+        public Nullable<decimal> PrixVenteTTC { get; set; }
+        public Nullable<double> Marge { get; set; }
+        public Nullable<double> TVA { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Commande> Commandes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FactureConsigne> FactureConsignes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MouvementStock> MouvementStocks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SortieConsigne> SortieConsignes { get; set; }
 
         public string codeLibelle
         {
             get
             {
-                return CodeSupport+":"+Libelle;
+                return CodeSupport + ":" + Libelle;
             }
         }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Commande> Commandes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MouvementStock> MouvementStocks { get; set; }
     }
 }

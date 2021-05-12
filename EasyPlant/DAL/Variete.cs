@@ -18,22 +18,42 @@ namespace EasyPlant.DAL
         public Variete()
         {
             this.Commandes = new HashSet<Commande>();
+            this.MouvementStocks = new HashSet<MouvementStock>();
         }
     
         public int CodeVariete { get; set; }
         public int CodeEspece { get; set; }
-        public string LibelleVariete { get; set; }
-        public int CodeTypeProd { get; set; }
+        public string TypeVariete { get; set; }
         public int NBjoursCV { get; set; }
         public int NBjoursCG { get; set; }
         public int NBjoursPG { get; set; }
         public decimal Marge { get; set; }
         public decimal MontantMarge { get; set; }
         public decimal PrixVente { get; set; }
+        public string LibelleVariete { get; set; }
+        public Nullable<int> CodeTypeProd { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Commande> Commandes { get; set; }
         public virtual Espece Espece { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MouvementStock> MouvementStocks { get; set; }
         public virtual TypeProduction TypeProduction { get; set; }
+
+        public string LibelleEspece
+        {
+            get
+            {
+                return Espece.LibelleEspece;
+            }
+        }
+        //////////////////
+        public string LibelleTypeProd
+        {
+            get
+            {
+                return TypeProduction.Libelle;
+            }
+        }
     }
 }

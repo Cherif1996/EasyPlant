@@ -27,34 +27,35 @@ namespace EasyPlant.DAL
         public int RefCommande { get; set; }
         public int CodeClient { get; set; }
         public System.DateTime DateCommande { get; set; }
-        public string Note { get; set; }
         public string NomCommercial { get; set; }
-        public int CapaciteProd { get; set; }
-        public int CodeVariete { get; set; }
-        public System.DateTime DateLivraisonPrevu { get; set; }
-        public decimal MntBrutHT { get; set; }
-        public decimal Remise { get; set; }
-        public decimal MntRemise { get; set; }
-        public decimal MntNETHT { get; set; }
-        public decimal TVA { get; set; }
-        public decimal MntNETTTC { get; set; }
-        public decimal PrixUnitaire { get; set; }
-        public decimal PrixUnitaireNet { get; set; }
-        public decimal TotalBrut { get; set; }
-        public decimal TotalBrutNet { get; set; }
+        public string CapaciteProd { get; set; }
+        public string Note { get; set; }
+        public Nullable<int> CodeVariete { get; set; }
+        public Nullable<System.DateTime> DateLivraisonPrevu { get; set; }
+        public Nullable<decimal> MntBrutHT { get; set; }
+        public Nullable<decimal> Remise { get; set; }
+        public Nullable<decimal> MntRemise { get; set; }
+        public Nullable<decimal> MntNETHT { get; set; }
+        public Nullable<decimal> TVA { get; set; }
+        public Nullable<decimal> MntNETTTC { get; set; }
+        public Nullable<decimal> PrixUnitaire { get; set; }
+        public Nullable<decimal> PrixUnitaireNet { get; set; }
+        public Nullable<decimal> TotalBrut { get; set; }
+        public Nullable<decimal> TotalBrutNet { get; set; }
         public string ReservationCons { get; set; }
-        public decimal Accompte { get; set; }
-        public decimal Brut { get; set; }
-        public decimal Timbre { get; set; }
-        public decimal RemiseTot { get; set; }
-        public decimal Net { get; set; }
-        public int CodeSupport { get; set; }
-        public int CodeTypeProd { get; set; }
-        public System.DateTime DateCV { get; set; }
-        public System.DateTime DateCG { get; set; }
-        public System.DateTime DatePG { get; set; }
-        public int Qte { get; set; }
+        public Nullable<decimal> Accompte { get; set; }
+        public Nullable<decimal> Brut { get; set; }
+        public Nullable<decimal> Timbre { get; set; }
+        public Nullable<decimal> RemiseTot { get; set; }
+        public Nullable<decimal> Net { get; set; }
+        public Nullable<int> CodeSupport { get; set; }
+        public Nullable<int> CodeTypeProd { get; set; }
+        public Nullable<System.DateTime> DateCV { get; set; }
+        public Nullable<System.DateTime> DateCG { get; set; }
+        public Nullable<System.DateTime> DatePG { get; set; }
+        public Nullable<int> Qte { get; set; }
         public string TypeCommande { get; set; }
+        public string LibelleVariete { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Avance> Avances { get; set; }
@@ -70,26 +71,5 @@ namespace EasyPlant.DAL
         public virtual ICollection<Production> Productions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReceptionSemence> ReceptionSemences { get; set; }
-        public string LibelleVariete
-        {
-            get
-            {
-                return Variete.LibelleVariete;
-            }
-        }
-        public string libelleSupport
-        {
-            get
-            {
-                return Support.Libelle;
-            }
-        }
-        public string LibelleTypeProd
-        {
-            get
-            {
-                return TypeProduction.Libelle;
-            }
-        }
     }
 }

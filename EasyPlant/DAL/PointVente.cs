@@ -18,6 +18,9 @@ namespace EasyPlant.DAL
         public PointVente()
         {
             this.Clients = new HashSet<Client>();
+            this.FactureConsignes = new HashSet<FactureConsigne>();
+            this.Fourniseurs = new HashSet<Fourniseur>();
+            this.SortieConsignes = new HashSet<SortieConsigne>();
         }
     
         public int CodePointVente { get; set; }
@@ -27,5 +30,11 @@ namespace EasyPlant.DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Client> Clients { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FactureConsigne> FactureConsignes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Fourniseur> Fourniseurs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SortieConsigne> SortieConsignes { get; set; }
     }
 }

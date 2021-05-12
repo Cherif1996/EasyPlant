@@ -156,7 +156,7 @@ namespace EasyPlant.Commande
                 comboBoxRegTVA.Text = model.RegTVA;
                 comboBoxTarif.Text = model.Tarif;
                 comboBoxtypeclient.Text = model.TypeClient.Libelle;
-
+                
 
 
             }

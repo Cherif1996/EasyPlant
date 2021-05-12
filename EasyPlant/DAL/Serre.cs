@@ -20,7 +20,7 @@ namespace EasyPlant.DAL
             this.Productions = new HashSet<Production>();
         }
     
-        public int RefSerre { get; set; }
+        public int CodeSerre { get; set; }
         public int CodeEmplacement { get; set; }
         public decimal Superficier { get; set; }
         public decimal Capacite { get; set; }
@@ -28,5 +28,15 @@ namespace EasyPlant.DAL
         public virtual Emplacement Emplacement { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Production> Productions { get; set; }
+
+        public string Libelle
+        {
+            get
+            {
+                return Emplacement.Libelle;
+            }
+
+
+        }
     }
 }

@@ -46,10 +46,10 @@
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -99,6 +99,18 @@
     </Compile>
     <Compile Include="Commande\frmReceptionS.Designer.cs">
       <DependentUpon>frmReceptionS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consignes\frmAchatConsignes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consignes\frmAchatConsignes.designer.cs">
+      <DependentUpon>frmAchatConsignes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consignes\frmSortieConsigne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consignes\frmSortieConsigne.Designer.cs">
+      <DependentUpon>frmSortieConsigne.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\Avance.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
@@ -151,16 +163,16 @@
     <Compile Include="DAL\Espece.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\FactureConsigne.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Famille.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\FonctionMenu.cs">
+    <Compile Include="DAL\Fourniseur.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Livreur.cs">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Menu.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\ModeReglement.cs">
@@ -199,6 +211,9 @@
     <Compile Include="DAL\Societe.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\SortieConsigne.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Support.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
@@ -219,6 +234,36 @@
     </Compile>
     <Compile Include="DAL\Variete.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dossier\frmFourniseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dossier\frmFourniseur.designer.cs">
+      <DependentUpon>frmFourniseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dossier\frmGestionProfils.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dossier\frmGestionProfils.designer.cs">
+      <DependentUpon>frmGestionProfils.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dossier\frmParametrageProductions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dossier\frmParametrageProductions.designer.cs">
+      <DependentUpon>frmParametrageProductions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametreDeDonnees\frmEmplacements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametreDeDonnees\frmEmplacements.designer.cs">
+      <DependentUpon>frmEmplacements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametreDeDonnees\frmSerres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametreDeDonnees\frmSerres.designer.cs">
+      <DependentUpon>frmSerres.cs</DependentUpon>
     </Compile>
     <Compile Include="ParametreDeDonnees\frmVariete.cs">
       <SubType>Form</SubType>
@@ -319,6 +364,27 @@
     <EmbeddedResource Include="Commande\frmReceptionS.resx">
       <DependentUpon>frmReceptionS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consignes\frmAchatConsignes.resx">
+      <DependentUpon>frmAchatConsignes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consignes\frmSortieConsigne.resx">
+      <DependentUpon>frmSortieConsigne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dossier\frmFourniseur.resx">
+      <DependentUpon>frmFourniseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dossier\frmGestionProfils.resx">
+      <DependentUpon>frmGestionProfils.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dossier\frmParametrageProductions.resx">
+      <DependentUpon>frmParametrageProductions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametreDeDonnees\frmEmplacements.resx">
+      <DependentUpon>frmEmplacements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametreDeDonnees\frmSerres.resx">
+      <DependentUpon>frmSerres.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ParametreDeDonnees\frmVariete.resx">
       <DependentUpon>frmVariete.cs</DependentUpon>
     </EmbeddedResource>
@@ -378,6 +444,7 @@
     <None Include="DAL\DBModels.edmx.diagram">
       <DependentUpon>DBModels.edmx</DependentUpon>
     </None>
+    <None Include="DAL\packages.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -421,8 +488,8 @@
   <ItemGroup>
     <Content Include="DAL\DBModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBModels.edmx</DependentUpon>
       <LastGenOutput>DBModels.Context.cs</LastGenOutput>
+      <DependentUpon>DBModels.edmx</DependentUpon>
     </Content>
     <Content Include="DAL\DBModels.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

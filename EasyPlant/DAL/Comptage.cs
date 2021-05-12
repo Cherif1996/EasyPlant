@@ -16,13 +16,12 @@ namespace EasyPlant.DAL
     {
         public int CodeComptage { get; set; }
         public int CodeProduction { get; set; }
-        public string CodeUtilisateur { get; set; }
+        public int CodeUtilisateur { get; set; }
         public string Libelle { get; set; }
         public System.DateTime DateCompatage { get; set; }
         public int QuantiteComptage { get; set; }
-        public int TypeComptage { get; set; }
+        public string TypeComptage { get; set; }
     
-        public virtual TypeComptage TypeComptage1 { get; set; }
         public virtual Production Production { get; set; }
         public virtual Utilisateur Utilisateur { get; set; }
     }

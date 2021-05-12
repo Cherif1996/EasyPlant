@@ -16,8 +16,7 @@ namespace EasyPlant.DAL
     {
         public int CodeSociete { get; set; }
         public string LibelleFr { get; set; }
-        public string VilleFr { get; set; }
-        public int CodePostal { get; set; }
+        public Nullable<int> CodePostal { get; set; }
         public string Tel { get; set; }
         public string Banque { get; set; }
         public string RIB { get; set; }
@@ -31,6 +30,7 @@ namespace EasyPlant.DAL
         public string RegCom { get; set; }
         public string Fonction { get; set; }
         public string Email { get; set; }
+        public string VilleFr { get; set; }
         public string LibelleAr { get; set; }
         public string AdresseAr { get; set; }
         public string VilleAr { get; set; }

@@ -22,7 +22,7 @@ namespace EasyPlant.DAL
         }
     
         public int CodeEspece { get; set; }
-        public int CodeFamille { get; set; }
+        public Nullable<int> CodeFamille { get; set; }
         public string LibelleEspece { get; set; }
     
         public virtual Famille Famille { get; set; }
@@ -30,5 +30,13 @@ namespace EasyPlant.DAL
         public virtual ICollection<Semence> Semences { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Variete> Varietes { get; set; }
+
+        public string LibelleFamille
+        {
+            get
+            {
+                return Famille.LibelleFamille;
+            }
+        }
     }
 }

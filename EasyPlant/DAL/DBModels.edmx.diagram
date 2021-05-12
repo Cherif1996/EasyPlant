@@ -4,45 +4,47 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="43bdf6dc68754c21be85951fd9d37b6f" Name="Diagram1">
-        <EntityTypeShape EntityType="BDPlantModel.Avance" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Banque" Width="1.5" PointX="1.5" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.BonLivraison" Width="1.5" PointX="5.25" PointY="18.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Client" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.ClotureCommande" Width="1.5" PointX="5.25" PointY="22" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.ClotureProd" Width="1.5" PointX="7.5" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Colisage" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Commande" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Comptage" Width="1.5" PointX="10.5" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.DetailsBL" Width="1.5" PointX="7.5" PointY="18.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Emplacement" Width="1.5" PointX="0.75" PointY="33.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Espece" Width="1.5" PointX="3.75" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Famille" Width="1.5" PointX="1.5" PointY="25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.FonctionMenu" Width="1.5" PointX="13" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Livreur" Width="1.5" PointX="2.75" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Menu" Width="1.5" PointX="10.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.ModeReglement" Width="1.5" PointX="6" PointY="25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.MouvementStock" Width="1.5" PointX="9.75" PointY="18.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.MoyenTransport" Width="1.5" PointX="4.75" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.ParametrageProduction" Width="1.5" PointX="10.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.PointVente" Width="1.5" PointX="1.5" PointY="21" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Production" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Profil" Width="1.5" PointX="0.75" PointY="36.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.ReceptionSemence" Width="1.5" PointX="8.25" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Semence" Width="1.5" PointX="6" PointY="28.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Semencier" Width="1.5" PointX="3.75" PointY="28.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Serre" Width="1.5" PointX="3" PointY="33" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Societe" Width="1.5" PointX="11.75" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Support" Width="1.5" PointX="0.75" PointY="28.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.TypeClient" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.TypeComptage" Width="1.5" PointX="8.25" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.TypeProduction" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Unite" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Utilisateur" Width="1.5" PointX="3" PointY="35.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDPlantModel.Variete" Width="1.5" PointX="6" PointY="14" IsExpanded="true" />
-        <AssociationConnector Association="BDPlantModel.FK_Avance_Avance" ManuallyRouted="false" />
+      <Diagram DiagramId="be3286a91fbd4c4b8cd6a9efee060958" Name="Diagram1">
+        <EntityTypeShape EntityType="BDPlantModel.Avance" Width="1.5" PointX="13.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Banque" Width="1.5" PointX="0.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.BonLivraison" Width="1.5" PointX="13.5" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Client" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.ClotureCommande" Width="1.5" PointX="13.5" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.ClotureProd" Width="1.5" PointX="18.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Colisage" Width="1.5" PointX="17.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Commande" Width="1.5" PointX="11.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Comptage" Width="1.5" PointX="21.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.DetailsBL" Width="1.5" PointX="15.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Emplacement" Width="1.5" PointX="12" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Espece" Width="1.5" PointX="6.75" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.FactureConsigne" Width="1.5" PointX="6" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Famille" Width="1.5" PointX="4.5" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Fourniseur" Width="1.5" PointX="9" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Livreur" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.ModeReglement" Width="1.5" PointX="11.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.MouvementStock" Width="1.5" PointX="18" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.MoyenTransport" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.ParametrageProduction" Width="1.5" PointX="14.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.PointVente" Width="1.5" PointX="0.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Production" Width="1.5" PointX="16.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Profil" Width="1.5" PointX="12" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.ReceptionSemence" Width="1.5" PointX="19.5" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Semence" Width="1.5" PointX="17.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Semencier" Width="1.5" PointX="15" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Serre" Width="1.5" PointX="14.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Societe" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.SortieConsigne" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Support" Width="1.5" PointX="0.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.TypeClient" Width="1.5" PointX="0.75" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.TypeComptage" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.TypeProduction" Width="1.5" PointX="9" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Unite" Width="1.5" PointX="17.25" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Utilisateur" Width="1.5" PointX="14.25" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDPlantModel.Variete" Width="1.5" PointX="9" PointY="26" IsExpanded="true" />
         <AssociationConnector Association="BDPlantModel.FK_Avance_Commande" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_Avance_ModeReglement" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_Client_Banque" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_Fourniseur_Banque" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_BonLivraison_Commande" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_DetailsBL_BonLivraison" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_Client_PointVente" ManuallyRouted="false" />
@@ -58,7 +60,6 @@
         <AssociationConnector Association="BDPlantModel.FK_Commande_Variete" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_Production_Commande" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_ReceptionSemence_Commande1" ManuallyRouted="false" />
-        <AssociationConnector Association="BDPlantModel.FK_Comptage_Comptage" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_Comptage_Production" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_Comptage_Utilisateur" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_MouvementStock_DetailsBL" ManuallyRouted="false" />
@@ -66,8 +67,19 @@
         <AssociationConnector Association="BDPlantModel.FK_Espece_Famille" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_Semence_Espece" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_Variete_Espece" ManuallyRouted="false" />
-        <AssociationConnector Association="BDPlantModel.FK_FonctionMenu_FonctionMenu" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_FactureConsigne_Fourniseur" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_FactureConsigne_PointVente" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_FactureConsigne_Support" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_Fourniseur_PointVente" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_Fourniseur_TypeClient" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_SortieConsigne_Livreur" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_MouvementStock_Support" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_MouvementStock_Variete" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_SortieConsigne_MoyenTransport" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_ParametrageProduction_ParametrageProduction" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_Production_ParametrageProduction" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_SortieConsigne_PointVente" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_Production_Production" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_Production_Serre" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_Production_TypeProduction" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_Production_Utilisateur" ManuallyRouted="false" />
@@ -75,6 +87,7 @@
         <AssociationConnector Association="BDPlantModel.FK_ReceptionSemence_Semence" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_ReceptionSemence_Unite" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_Semence_Semencier" ManuallyRouted="false" />
+        <AssociationConnector Association="BDPlantModel.FK_SortieConsigne_Support" ManuallyRouted="false" />
         <AssociationConnector Association="BDPlantModel.FK_Variete_TypeProduction" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

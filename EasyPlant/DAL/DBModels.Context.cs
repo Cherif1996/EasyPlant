@@ -37,10 +37,10 @@ namespace EasyPlant.DAL
         public virtual DbSet<DetailsBL> DetailsBLs { get; set; }
         public virtual DbSet<Emplacement> Emplacements { get; set; }
         public virtual DbSet<Espece> Especes { get; set; }
+        public virtual DbSet<FactureConsigne> FactureConsignes { get; set; }
         public virtual DbSet<Famille> Familles { get; set; }
-        public virtual DbSet<FonctionMenu> FonctionMenus { get; set; }
+        public virtual DbSet<Fourniseur> Fourniseurs { get; set; }
         public virtual DbSet<Livreur> Livreurs { get; set; }
-        public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<ModeReglement> ModeReglements { get; set; }
         public virtual DbSet<MouvementStock> MouvementStocks { get; set; }
         public virtual DbSet<MoyenTransport> MoyenTransports { get; set; }
@@ -53,6 +53,7 @@ namespace EasyPlant.DAL
         public virtual DbSet<Semencier> Semenciers { get; set; }
         public virtual DbSet<Serre> Serres { get; set; }
         public virtual DbSet<Societe> Societes { get; set; }
+        public virtual DbSet<SortieConsigne> SortieConsignes { get; set; }
         public virtual DbSet<Support> Supports { get; set; }
         public virtual DbSet<TypeClient> TypeClients { get; set; }
         public virtual DbSet<TypeComptage> TypeComptages { get; set; }

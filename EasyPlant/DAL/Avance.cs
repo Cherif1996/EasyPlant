@@ -14,14 +14,14 @@ namespace EasyPlant.DAL
     
     public partial class Avance
     {
-        public string CodeAvance { get; set; }
+        public int CodeAvance { get; set; }
         public int RefCommande { get; set; }
         public decimal Montant { get; set; }
         public System.DateTime DateAvance { get; set; }
         public int CodeModeReglement { get; set; }
         public string Note { get; set; }
     
-        public virtual ModeReglement ModeReglement { get; set; }
         public virtual Commande Commande { get; set; }
+        public virtual ModeReglement ModeReglement { get; set; }
     }
 }

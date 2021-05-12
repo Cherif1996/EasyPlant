@@ -14,7 +14,16 @@ namespace EasyPlant.DAL
     
     public partial class MoyenTransport
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public MoyenTransport()
+        {
+            this.SortieConsignes = new HashSet<SortieConsigne>();
+        }
+    
         public int CodeMoyenTransport { get; set; }
         public string Libelle { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SortieConsigne> SortieConsignes { get; set; }
     }
 }
