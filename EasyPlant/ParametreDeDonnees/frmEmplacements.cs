@@ -24,21 +24,7 @@ namespace EasyPlant
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            model.CodeEmplacement = Convert.ToInt32(textBoxCodeEmpl.Text.Trim());
-            model.Libelle = textBoxLibelle.Text.Trim();
-            model.CapaciteEmplacement = Convert.ToInt32(textBoxCapaciteEmpl.Text.Trim());
 
-            if (Code > 0)
-                db.Entry(model).State = EntityState.Modified;
-            else
-            {
-                db.Emplacements.Add(model);
-            }
-
-            db.SaveChanges();
-            Clear();
-            DataGridEmplacement();
-            MessageBox.Show("Enregistrement avec succées");
         }
 
         private void frmEmplacements_Load(object sender, EventArgs e)
@@ -94,5 +80,23 @@ namespace EasyPlant
         {
             Clear();
         }
+
+        //private void btnSave_MouseHover(object sender, EventArgs e)
+        //{
+        //    Color jaune = ColorTranslator.FromHtml("#cd722d");
+        //    btnSave.BackColor = jaune;
+        //}
+
+        //private void btnCancel_MouseHover(object sender, EventArgs e)
+        //{
+        //    Color jaune = ColorTranslator.FromHtml("#cd722d");
+        //   btnCancel.BackColor = jaune;
+        //}
+
+        //private void btnSave_MouseLeave(object sender, EventArgs e)
+        //{
+        //    Color v = ColorTranslator.FromHtml("#33341c");
+        //    btnSave.BackColor = v;
+        //}
     }
 }
